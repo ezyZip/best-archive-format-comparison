@@ -1,0 +1,39 @@
+{
+ "schema_version": 2,
+ "id": "rar5",
+ "name": "RAR 5 (WinRAR/rar)",
+ "tier": "A",
+ "level": "default",
+ "dataset": "text",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "directory",
+ "origin": "brew rar (proprietary, licensed)",
+ "notes": "Default level -m3; RAR5 archive format is the tool default.",
+ "create_cmd": "rar a -r -idq {archive} .",
+ "extract_cmd": "unrar x -idq {archive} {out_dir}/",
+ "runs": 1,
+ "timeout_s": 1800,
+ "recorded_at": "2026-07-09T09:33:02+00:00",
+ "input_bytes": 11559589,
+ "status": "ok",
+ "archive_bytes": 3462064,
+ "ratio_pct": 29.95,
+ "compress_s": [
+  0.20904470793902874
+ ],
+ "decompress_s": [
+  0.050518041010946035
+ ],
+ "compress_s_median": 0.209,
+ "decompress_s_median": 0.051,
+ "compress_rss_bytes": 152961024,
+ "decompress_rss_bytes": 19038208,
+ "verify": {
+  "method": "tree",
+  "detail": "4 files verified against manifest",
+  "extras_ignored": []
+ },
+ "error": ""
+}

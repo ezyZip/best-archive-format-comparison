@@ -1,0 +1,550 @@
+# The declarative format registry - single source of truth for the benchmark.
+#
+# Placeholders: {archive} absolute archive path; {tar_file} canonical dataset
+# tar (tar-mode only, relative to cwd); {out_dir} extraction dir (extract
+# commands run with cwd={out_dir}); {out_tar} = {out_dir}/CORPUS.TAR;
+# {archive_base} = {archive} minus its extension (for tools that append
+# their own slice suffixes).
+#
+# Policy: create commands are tool DEFAULTS; the only permitted "max" change
+# is the compression-level dial. Method/dictionary tuning is not allowed.
+# input_mode tar = single-stream compressors and tools that cannot store
+# directory trees compress the canonical dataset tarball (like gzip does).
+
+# ---------------------------------------------------------------- mainstream
+- id: zip
+  name: "ZIP (Info-ZIP)"
+  tier: A
+  ext: zip
+  engine: native
+  input_mode: directory
+  create:
+    default: "zip -q -r {archive} ."
+    max: "zip -q -r -9 {archive} ."
+  extract: "unzip -q {archive} -d {out_dir}"
+  verify: tree
+  runs: 3
+  timeout: {default: 900, max: 900}
+  version_cmd: "zip -v | head -2"
+  origin: "macOS bundled (Info-ZIP)"
+  notes: "Default level is -6 (deflate)."
+
+- id: sevenzip
+  name: "7z (7-Zip, LZMA2)"
+  tier: A
+  ext: 7z
+  engine: native
+  input_mode: directory
+  create:
+    default: "7zz a -bso0 -bsp0 {archive} ."
+    max: "7zz a -bso0 -bsp0 -mx=9 {archive} ."
+  extract: "7zz x -bso0 -bsp0 -y -o{out_dir} {archive}"
+  verify: tree
+  runs: 3
+  timeout: {default: 1800, max: 3600}
+  version_cmd: "7zz | head -3 | tail -1"
+  origin: "brew sevenzip"
+  notes: "Default level -mx=5; multithreaded by default (disclosed)."
+
+- id: rar5
+  name: "RAR 5 (WinRAR/rar)"
+  tier: A
+  ext: rar
+  engine: native
+  input_mode: directory
+  create:
+    default: "rar a -r -idq {archive} ."
+    max: "rar a -r -idq -m5 {archive} ."
+  extract: "unrar x -idq {archive} {out_dir}/"
+  verify: tree
+  runs: 3
+  timeout: {default: 1800, max: 3600}
+  version_cmd: "rar | head -2 | tail -1"
+  origin: "brew rar (proprietary, licensed)"
+  notes: "Default level -m3; RAR5 archive format is the tool default."
+
+- id: rar4
+  name: "RAR 4 (legacy format)"
+  tier: A
+  ext: rar
+  engine: native
+  input_mode: directory
+  create:
+    default: "rar a -r -idq -ma4 {archive} ."
+    max: "rar a -r -idq -ma4 -m5 {archive} ."
+  extract: "unrar x -idq {archive} {out_dir}/"
+  verify: tree
+  runs: 3
+  timeout: {default: 1800, max: 3600}
+  version_cmd: "rar | head -2 | tail -1"
+  origin: "brew rar (proprietary, licensed)"
+  notes: "-ma4 selects the legacy RAR4 archive format version (not a method tune)."
+
+# ---------------------------------------------------------------- tar family
+- id: tar
+  name: "tar (uncompressed, baseline)"
+  tier: A
+  ext: tar
+  engine: native
+  input_mode: directory
+  create:
+    default: "bsdtar -cf {archive} ."
+  extract: "bsdtar -xf {archive}"
+  verify: tree
+  runs: 3
+  timeout: {default: 300}
+  version_cmd: "bsdtar --version"
+  origin: "macOS bundled (libarchive)"
+  notes: "Container overhead baseline; no compression."
+
+- id: tar-gz
+  name: "tar.gz (gzip)"
+  tier: A
+  ext: tar.gz
+  engine: native
+  input_mode: tar
+  create:
+    default: "gzip -c {tar_file} > {archive}"
+    max: "gzip -9 -c {tar_file} > {archive}"
+  extract: "gzip -dc {archive} > {out_tar}"
+  verify: tar
+  runs: 3
+  timeout: {default: 900, max: 900}
+  version_cmd: "gzip --version | head -1"
+  origin: "macOS bundled"
+  notes: "Default level -6 (RFC 1952 deflate)."
+
+- id: tar-gz-zopfli
+  name: "tar.gz (zopfli, exhaustive deflate)"
+  tier: A
+  ext: tar.gz
+  engine: native
+  input_mode: tar
+  create:
+    default: "zopfli -c {tar_file} > {archive}"
+  extract: "gzip -dc {archive} > {out_tar}"
+  verify: tar
+  runs: 1
+  timeout: {default: 3600}
+  version_cmd: "brew list --versions zopfli"
+  origin: "brew zopfli"
+  notes: "Same on-disk format as gzip; no level dial (always exhaustive). Decompresses with stock gzip."
+
+- id: tar-bz2
+  name: "tar.bz2 (bzip2)"
+  tier: A
+  ext: tar.bz2
+  engine: native
+  input_mode: tar
+  create:
+    default: "bzip2 -c {tar_file} > {archive}"
+  extract: "bzip2 -dc {archive} > {out_tar}"
+  verify: tar
+  runs: 3
+  timeout: {default: 900}
+  version_cmd: "bzip2 --help 2>&1 | head -1"
+  origin: "macOS bundled"
+  notes: "bzip2's default block size (-9) already is its maximum: default = max."
+
+- id: tar-xz
+  name: "tar.xz (xz/LZMA2)"
+  tier: A
+  ext: tar.xz
+  engine: native
+  input_mode: tar
+  create:
+    default: "xz -c {tar_file} > {archive}"
+    max: "xz -9e -c {tar_file} > {archive}"
+  extract: "xz -dc {archive} > {out_tar}"
+  verify: tar
+  runs: 3
+  timeout: {default: 1800, max: 3600}
+  version_cmd: "xz --version"
+  origin: "brew xz"
+  notes: "Default level -6; -9e = maximum preset with extreme modifier (still the level dial)."
+
+- id: tar-zst
+  name: "tar.zst (Zstandard)"
+  tier: A
+  ext: tar.zst
+  engine: native
+  input_mode: tar
+  create:
+    default: "zstd -q -o {archive} {tar_file}"
+    max: "zstd -q --ultra -22 -o {archive} {tar_file}"
+  extract: "zstd -q -d -o {out_tar} {archive}"
+  verify: tar
+  runs: 3
+  timeout: {default: 900, max: 3600}
+  version_cmd: "zstd --version"
+  origin: "brew zstd"
+  notes: "Default level 3; --ultra -22 is the documented maximum level."
+
+- id: tar-lz4
+  name: "tar.lz4 (LZ4)"
+  tier: A
+  ext: tar.lz4
+  engine: native
+  input_mode: tar
+  create:
+    default: "lz4 -q {tar_file} {archive}"
+    max: "lz4 -q -12 {tar_file} {archive}"
+  extract: "lz4 -q -d {archive} {out_tar}"
+  verify: tar
+  runs: 3
+  timeout: {default: 900, max: 900}
+  version_cmd: "lz4 --version"
+  origin: "brew lz4"
+  notes: "Default level 1 (fast mode); -12 is maximum (LZ4-HC). CLI is multithreaded by default (v1.10)."
+
+- id: tar-br
+  name: "tar.br (Brotli)"
+  tier: A
+  ext: tar.br
+  engine: native
+  input_mode: tar
+  create:
+    default: "brotli -c {tar_file} > {archive}"
+  extract: "brotli -dc {archive} > {out_tar}"
+  verify: tar
+  runs: 3
+  timeout: {default: 1800}
+  version_cmd: "brotli --version"
+  origin: "brew brotli"
+  notes: "The brotli CLI's default quality is already the maximum (q=11): default = max."
+
+- id: tar-lzo
+  name: "tar.lzo (lzop)"
+  tier: A
+  ext: tar.lzo
+  engine: native
+  input_mode: tar
+  create:
+    default: "lzop -q -o {archive} {tar_file}"
+    max: "lzop -q -9 -o {archive} {tar_file}"
+  extract: "lzop -q -d -o {out_tar} {archive}"
+  verify: tar
+  runs: 3
+  timeout: {default: 900, max: 900}
+  version_cmd: "lzop --version | head -1"
+  origin: "brew lzop"
+  notes: "Default level -3."
+
+- id: tar-lrz
+  name: "tar.lrz (lrzip)"
+  tier: A
+  ext: tar.lrz
+  engine: native
+  input_mode: tar
+  create:
+    default: "lrzip -q -o {archive} {tar_file}"
+    max: "lrzip -q -L9 -o {archive} {tar_file}"
+  extract: "lrzip -q -d -o {out_tar} {archive}"
+  verify: tar
+  runs: 3
+  timeout: {default: 1800, max: 3600}
+  version_cmd: "lrzip --version | head -1"
+  origin: "brew lrzip"
+  notes: "Default backend LZMA at level 7; -L9 is the level dial (no backend change)."
+
+- id: tar-bz3
+  name: "tar.bz3 (bzip3)"
+  tier: A
+  ext: tar.bz3
+  engine: native
+  input_mode: tar
+  create:
+    default: "bzip3 -e -c {tar_file} > {archive}"
+    max: "bzip3 -e -b 511 -c {tar_file} > {archive}"
+  extract: "bzip3 -d -c {archive} > {out_tar}"
+  verify: tar
+  runs: 3
+  timeout: {default: 1800, max: 3600}
+  version_cmd: "bzip3 --version | head -1"
+  origin: "brew bzip3"
+  notes: "bzip3's only dial is block size (default 16 MiB, max 511 MiB); treated as its level."
+
+- id: tar-z
+  name: "tar.Z (compress, LZW 1984)"
+  tier: A
+  ext: tar.Z
+  engine: native
+  input_mode: tar
+  create:
+    default: "compress -c {tar_file} > {archive}"
+  extract: "uncompress -c {archive} > {out_tar}"
+  verify: tar
+  runs: 3
+  timeout: {default: 900}
+  version_cmd: "echo 'compress (macOS bundled, ncompress also installed)'"
+  origin: "macOS bundled"
+  notes: "Unix compress; 16-bit LZW is both default and maximum. The .Z format of 1984."
+
+- id: tar-lzip
+  name: "tar.lz (lzip)"
+  tier: A
+  ext: tar.lz
+  engine: native
+  input_mode: tar
+  create:
+    default: "lzip -c {tar_file} > {archive}"
+    max: "lzip -9 -c {tar_file} > {archive}"
+  extract: "lzip -dc {archive} > {out_tar}"
+  verify: tar
+  runs: 3
+  timeout: {default: 1800, max: 3600}
+  version_cmd: "lzip --version | head -1"
+  origin: "brew lzip"
+  notes: "Default level -6. plzip (parallel implementation of the same format) intentionally excluded: one row per format."
+
+- id: tar-rz
+  name: "tar.rz (rzip)"
+  tier: A
+  ext: tar.rz
+  engine: native
+  input_mode: tar
+  create:
+    default: "rzip -k -o {archive} {tar_file}"
+    max: "rzip -9 -k -o {archive} {tar_file}"
+  extract: "rzip -d -k -o {out_tar} {archive}"
+  verify: tar
+  runs: 3
+  timeout: {default: 1800, max: 1800}
+  version_cmd: "rzip -V 2>&1 | head -1"
+  origin: "brew rzip"
+  notes: "Long-range redundancy + bzip2 backend; default level 6."
+
+- id: zpaq
+  name: "zpaq (journaling PAQ-family)"
+  tier: A
+  ext: zpaq
+  engine: native
+  input_mode: directory
+  create:
+    default: "zpaq a {archive} . 2>/dev/null"
+    max: "zpaq a {archive} . -m5 2>/dev/null"
+  extract: "zpaq x {archive} -to {out_dir} 2>/dev/null"
+  verify: tree
+  runs: 1
+  timeout: {default: 3600, max: 14400}
+  version_cmd: "zpaq 2>&1 | head -1"
+  origin: "brew zpaq"
+  notes: "Default method -m1; -m5 is the maximum level (context-mixing, very slow)."
+
+# ---------------------------------------------------------------- macOS native
+- id: apple-archive
+  name: "Apple Archive (.aar, lzfse)"
+  tier: A
+  ext: aar
+  engine: native
+  input_mode: directory
+  create:
+    default: "aa archive -d . -o {archive}"
+  extract: "aa extract -d {out_dir} -i {archive}"
+  verify: tree
+  runs: 3
+  timeout: {default: 900}
+  version_cmd: "echo 'aa (macOS bundled Apple Archive tool)'"
+  origin: "macOS bundled"
+  notes: "No level dial; default algorithm lzfse. Introduced macOS 11 (2020)."
+
+- id: dmg-udzo
+  name: "DMG (UDZO, zlib-compressed image)"
+  tier: A
+  ext: dmg
+  engine: native
+  input_mode: directory
+  create:
+    default: "hdiutil create -quiet -ov -format UDZO -volname CORPUS -srcfolder . {archive}"
+    max: "hdiutil create -quiet -ov -format UDZO -imagekey zlib-level=9 -volname CORPUS -srcfolder . {archive}"
+  extract: "hdiutil attach -quiet -nobrowse -readonly -mountpoint ./__mnt {archive} && ditto ./__mnt . && hdiutil detach -quiet ./__mnt && rm -rf ./__mnt"
+  verify: tree
+  runs: 3
+  timeout: {default: 1800, max: 1800}
+  version_cmd: "hdiutil info | head -2 | tail -1"
+  origin: "macOS bundled"
+  notes: "zlib-level is hdiutil's documented level dial for UDZO."
+
+- id: dmg-ulmo
+  name: "DMG (ULMO, lzma-compressed image)"
+  tier: A
+  ext: dmg
+  engine: native
+  input_mode: directory
+  create:
+    default: "hdiutil create -quiet -ov -format ULMO -volname CORPUS -srcfolder . {archive}"
+  extract: "hdiutil attach -quiet -nobrowse -readonly -mountpoint ./__mnt {archive} && ditto ./__mnt . && hdiutil detach -quiet ./__mnt && rm -rf ./__mnt"
+  verify: tree
+  runs: 3
+  timeout: {default: 1800}
+  version_cmd: "hdiutil info | head -2 | tail -1"
+  origin: "macOS bundled"
+  notes: "Sibling format row to UDZO (lzma variant); hdiutil exposes no level dial for ULMO."
+
+- id: xar
+  name: "xar (macOS eXtensible ARchiver)"
+  tier: A
+  ext: xar
+  engine: native
+  input_mode: directory
+  create:
+    default: "xar -cf {archive} ."
+  extract: "xar -xf {archive}"
+  verify: tree
+  runs: 3
+  timeout: {default: 900}
+  version_cmd: "xar --version 2>&1 | head -1"
+  origin: "macOS bundled"
+  notes: "Default gzip encoding; no level flag exposed."
+
+# ---------------------------------------------------------------- imaging / container
+- id: squashfs
+  name: "SquashFS (mksquashfs)"
+  tier: A
+  ext: squashfs
+  engine: native
+  input_mode: directory
+  create:
+    default: "mksquashfs . {archive} -quiet -no-progress"
+  extract: "unsquashfs -q -d ./tree {archive}"
+  verify: tree
+  runs: 3
+  timeout: {default: 900}
+  version_cmd: "mksquashfs -version | head -1"
+  origin: "brew squashfs"
+  notes: "Default compression gzip at its own default level; multithreaded by default."
+
+- id: wim
+  name: "WIM (wimlib, LZX)"
+  tier: A
+  ext: wim
+  engine: native
+  input_mode: directory
+  create:
+    default: "wimlib-imagex capture . {archive} CORPUS --quiet"
+    max: "wimlib-imagex capture . {archive} CORPUS --quiet --compress=LZX:100"
+  extract: "wimlib-imagex apply {archive} 1 . --quiet"
+  verify: tree
+  runs: 3
+  timeout: {default: 900, max: 1800}
+  version_cmd: "wimlib-imagex --version | head -1"
+  origin: "brew wimlib"
+  notes: "Default LZX at wimlib's default level (50); LZX:100 is the documented maximum of the same method."
+
+- id: iso
+  name: "ISO 9660 (mkisofs, store-only)"
+  tier: A
+  ext: iso
+  engine: native
+  input_mode: directory
+  create:
+    default: "mkisofs -quiet -R -J -o {archive} ."
+  extract: "bsdtar -xf {archive}"
+  verify: tree
+  runs: 3
+  timeout: {default: 900}
+  version_cmd: "mkisofs --version 2>&1 | head -1"
+  origin: "brew cdrtools"
+  notes: "No compression (store-only container); Rock Ridge + Joliet for name fidelity."
+
+- id: dar
+  name: "dar (Disk ARchive)"
+  tier: A
+  ext: dar
+  engine: native
+  input_mode: directory
+  create:
+    default: "dar -Q -q -w -z -c {archive_base} -R ."
+  extract: "dar -Q -q -w -O -x {archive_base} -R ."
+  verify: tree
+  runs: 3
+  timeout: {default: 1800}
+  version_cmd: "dar --version 2>/dev/null | grep -m1 'dar version'"
+  origin: "brew dar"
+  archive_glob: "{archive_base}.*.dar"
+  notes: "-z defaults to gzip level 9, so default = max for dar's gzip mode."
+
+- id: cab
+  name: "CAB (gcab, MSZIP)"
+  tier: A
+  ext: cab
+  engine: native
+  input_mode: directory
+  create:
+    default: "find . -type f | sed 's|^\\./||' | LC_ALL=C sort | xargs gcab -c -z {archive}"
+  extract: "cabextract -q -d . {archive}"
+  verify: tree
+  runs: 3
+  timeout: {default: 900}
+  version_cmd: "gcab --version"
+  origin: "brew gcab"
+  notes: "MSZIP is gcab's only compression; no level dial. LZX cab creation requires Windows cabarc."
+
+# ---------------------------------------------------------------- appendix (store-only unix containers)
+- id: cpio
+  name: "cpio (appendix: store-only)"
+  tier: A
+  ext: cpio
+  engine: native
+  input_mode: directory
+  create:
+    default: "find . -type f | LC_ALL=C sort | cpio -o > {archive}"
+  extract: "cpio -id < {archive}"
+  verify: tree
+  runs: 1
+  timeout: {default: 300}
+  version_cmd: "cpio --version | head -1"
+  origin: "macOS bundled (bsdcpio)"
+  appendix: true
+  notes: "Uncompressed container; appendix row for container-overhead comparison."
+
+- id: ar
+  name: "ar (appendix: unix archiver, store-only)"
+  tier: A
+  ext: a
+  engine: native
+  input_mode: tar
+  create:
+    default: "ar rcS {archive} {tar_file}"
+  extract: "ar x {archive}"
+  verify: tar
+  runs: 1
+  timeout: {default: 300}
+  version_cmd: "ar -V 2>&1 | head -1 || echo 'ar (macOS bundled)'"
+  origin: "macOS bundled"
+  appendix: true
+  notes: "Flat container (no directory trees) - archives the canonical tar; appendix row. -S suppresses the object-file symbol table (meaningless for data)."
+
+- id: pax
+  name: "pax (appendix: POSIX archiver)"
+  tier: A
+  ext: pax
+  engine: native
+  input_mode: directory
+  create:
+    default: "pax -w -f {archive} ."
+  extract: "pax -r -f {archive}"
+  verify: tree
+  runs: 1
+  timeout: {default: 300}
+  version_cmd: "echo 'pax (macOS bundled, POSIX)'"
+  origin: "macOS bundled"
+  appendix: true
+  notes: "Uncompressed POSIX container; appendix row."
+
+- id: shar
+  name: "shar (appendix: shell archive)"
+  tier: A
+  ext: shar
+  engine: native
+  input_mode: directory
+  create:
+    default: "shar $(find . -type f | LC_ALL=C sort) > {archive}"
+  extract: "sh {archive}"
+  verify: tree
+  runs: 1
+  timeout: {default: 300}
+  version_cmd: "echo 'shar (macOS bundled)'"
+  origin: "macOS bundled"
+  appendix: true
+  notes: "1980s shell archive; expected to fail on binary content (documented outcome either way)."

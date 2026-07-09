@@ -1,0 +1,39 @@
+{
+ "schema_version": 2,
+ "id": "tar-xz",
+ "name": "tar.xz (xz/LZMA2)",
+ "tier": "A",
+ "level": "max",
+ "dataset": "text",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "tar",
+ "origin": "brew xz",
+ "notes": "Default level -6; -9e = maximum preset with extreme modifier (still the level dial).",
+ "create_cmd": "xz -9e -c {tar_file} > {archive}",
+ "extract_cmd": "xz -dc {archive} > {out_tar}",
+ "runs": 1,
+ "timeout_s": 3600,
+ "recorded_at": "2026-07-09T09:33:26+00:00",
+ "input_bytes": 11559589,
+ "status": "ok",
+ "archive_bytes": 3111996,
+ "ratio_pct": 26.921,
+ "compress_s": [
+  4.868483750149608
+ ],
+ "decompress_s": [
+  0.13616637513041496
+ ],
+ "compress_s_median": 4.868,
+ "decompress_s_median": 0.136,
+ "compress_rss_bytes": 186810368,
+ "decompress_rss_bytes": 28098560,
+ "verify": {
+  "method": "tar",
+  "detail": "decompressed tar SHA-256 matches canonical tar",
+  "extras_ignored": []
+ },
+ "error": ""
+}

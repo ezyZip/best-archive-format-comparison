@@ -1,0 +1,39 @@
+{
+ "schema_version": 2,
+ "id": "tar",
+ "name": "tar (uncompressed, baseline)",
+ "tier": "A",
+ "level": "default",
+ "dataset": "text",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "directory",
+ "origin": "macOS bundled (libarchive)",
+ "notes": "Container overhead baseline; no compression.",
+ "create_cmd": "bsdtar -cf {archive} .",
+ "extract_cmd": "bsdtar -xf {archive}",
+ "runs": 1,
+ "timeout_s": 300,
+ "recorded_at": "2026-07-09T09:33:03+00:00",
+ "input_bytes": 11559589,
+ "status": "ok",
+ "archive_bytes": 11564032,
+ "ratio_pct": 100.038,
+ "compress_s": [
+  0.04593012481927872
+ ],
+ "decompress_s": [
+  0.02717424975708127
+ ],
+ "compress_s_median": 0.046,
+ "decompress_s_median": 0.027,
+ "compress_rss_bytes": 3342336,
+ "decompress_rss_bytes": 3407872,
+ "verify": {
+  "method": "tree",
+  "detail": "4 files verified against manifest",
+  "extras_ignored": []
+ },
+ "error": ""
+}

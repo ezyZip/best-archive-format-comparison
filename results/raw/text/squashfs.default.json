@@ -1,0 +1,39 @@
+{
+ "schema_version": 2,
+ "id": "squashfs",
+ "name": "SquashFS (mksquashfs)",
+ "tier": "A",
+ "level": "default",
+ "dataset": "text",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "directory",
+ "origin": "brew squashfs",
+ "notes": "Default compression gzip at its own default level; multithreaded by default.",
+ "create_cmd": "mksquashfs . {archive} -quiet -no-progress",
+ "extract_cmd": "unsquashfs -q -d ./tree {archive}",
+ "runs": 1,
+ "timeout_s": 900,
+ "recorded_at": "2026-07-09T09:36:01+00:00",
+ "input_bytes": 11559589,
+ "status": "ok",
+ "archive_bytes": 4149248,
+ "ratio_pct": 35.894,
+ "compress_s": [
+  0.09637237479910254
+ ],
+ "decompress_s": [
+  0.49071412486955523
+ ],
+ "compress_s_median": 0.096,
+ "decompress_s_median": 0.491,
+ "compress_rss_bytes": 37371904,
+ "decompress_rss_bytes": 15843328,
+ "verify": {
+  "method": "tree",
+  "detail": "4 files verified against manifest",
+  "extras_ignored": []
+ },
+ "error": ""
+}

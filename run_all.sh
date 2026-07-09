@@ -14,8 +14,13 @@ if [[ "${1:-}" == "--quick" ]]; then
     QUICK="--quick"
 fi
 
-PY=python3
-command -v "$PY" >/dev/null || { echo "python3 is required"; exit 1; }
+# Bootstrap a project venv (pyyaml + matplotlib) on first run.
+if [[ ! -x .venv/bin/python ]]; then
+    PYBASE=$(command -v python3.12 || command -v python3.11 || command -v python3)
+    "$PYBASE" -m venv .venv
+    .venv/bin/pip -q install -r harness/requirements.txt
+fi
+PY=.venv/bin/python
 
 echo "==> [1/5] Tool availability check"
 "$PY" harness/bench.py check

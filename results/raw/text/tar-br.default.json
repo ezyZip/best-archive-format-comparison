@@ -1,0 +1,39 @@
+{
+ "schema_version": 2,
+ "id": "tar-br",
+ "name": "tar.br (Brotli)",
+ "tier": "A",
+ "level": "default",
+ "dataset": "text",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "tar",
+ "origin": "brew brotli",
+ "notes": "The brotli CLI's default quality is already the maximum (q=11): default = max.",
+ "create_cmd": "brotli -c {tar_file} > {archive}",
+ "extract_cmd": "brotli -dc {archive} > {out_tar}",
+ "runs": 1,
+ "timeout_s": 1800,
+ "recorded_at": "2026-07-09T09:33:35+00:00",
+ "input_bytes": 11559589,
+ "status": "ok",
+ "archive_bytes": 3127358,
+ "ratio_pct": 27.054,
+ "compress_s": [
+  14.764277582988143
+ ],
+ "decompress_s": [
+  0.055046750232577324
+ ],
+ "compress_s_median": 14.764,
+ "decompress_s_median": 0.055,
+ "compress_rss_bytes": 233062400,
+ "decompress_rss_bytes": 14565376,
+ "verify": {
+  "method": "tar",
+  "detail": "decompressed tar SHA-256 matches canonical tar",
+  "extras_ignored": []
+ },
+ "error": ""
+}

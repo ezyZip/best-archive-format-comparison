@@ -1,0 +1,39 @@
+{
+ "schema_version": 2,
+ "id": "pax",
+ "name": "pax (appendix: POSIX archiver)",
+ "tier": "A",
+ "level": "default",
+ "dataset": "text",
+ "engine": "native",
+ "emulated": false,
+ "appendix": true,
+ "input_mode": "directory",
+ "origin": "macOS bundled",
+ "notes": "Uncompressed POSIX container; appendix row.",
+ "create_cmd": "pax -w -f {archive} .",
+ "extract_cmd": "pax -r -f {archive}",
+ "runs": 1,
+ "timeout_s": 300,
+ "recorded_at": "2026-07-09T09:36:03+00:00",
+ "input_bytes": 11559589,
+ "status": "ok",
+ "archive_bytes": 11571200,
+ "ratio_pct": 100.1,
+ "compress_s": [
+  0.0481009166687727
+ ],
+ "decompress_s": [
+  0.03286583302542567
+ ],
+ "compress_s_median": 0.048,
+ "decompress_s_median": 0.033,
+ "compress_rss_bytes": 1622016,
+ "decompress_rss_bytes": 1622016,
+ "verify": {
+  "method": "tree",
+  "detail": "4 files verified against manifest",
+  "extras_ignored": []
+ },
+ "error": ""
+}

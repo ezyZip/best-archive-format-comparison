@@ -1,0 +1,39 @@
+{
+ "schema_version": 2,
+ "id": "shar",
+ "name": "shar (appendix: shell archive)",
+ "tier": "A",
+ "level": "default",
+ "dataset": "text",
+ "engine": "native",
+ "emulated": false,
+ "appendix": true,
+ "input_mode": "directory",
+ "origin": "macOS bundled",
+ "notes": "1980s shell archive; expected to fail on binary content (documented outcome either way).",
+ "create_cmd": "shar $(find . -type f | LC_ALL=C sort) > {archive}",
+ "extract_cmd": "sh {archive}",
+ "runs": 1,
+ "timeout_s": 300,
+ "recorded_at": "2026-07-09T09:36:03+00:00",
+ "input_bytes": 11559589,
+ "status": "ok",
+ "archive_bytes": 11836674,
+ "ratio_pct": 102.397,
+ "compress_s": [
+  0.13187087513506413
+ ],
+ "decompress_s": [
+  0.18451308365911245
+ ],
+ "compress_s_median": 0.132,
+ "decompress_s_median": 0.185,
+ "compress_rss_bytes": 2080768,
+ "decompress_rss_bytes": 47841280,
+ "verify": {
+  "method": "tree",
+  "detail": "4 files verified against manifest",
+  "extras_ignored": []
+ },
+ "error": ""
+}

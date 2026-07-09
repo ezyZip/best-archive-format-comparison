@@ -1,0 +1,39 @@
+{
+ "schema_version": 2,
+ "id": "cab",
+ "name": "CAB (gcab, MSZIP)",
+ "tier": "A",
+ "level": "default",
+ "dataset": "text",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "directory",
+ "origin": "brew gcab",
+ "notes": "MSZIP is gcab's only compression; no level dial. LZX cab creation requires Windows cabarc.",
+ "create_cmd": "find . -type f | sed 's|^\\./||' | LC_ALL=C sort | xargs gcab -c -z {archive}",
+ "extract_cmd": "cabextract -q -d . {archive}",
+ "runs": 1,
+ "timeout_s": 900,
+ "recorded_at": "2026-07-09T09:37:30+00:00",
+ "input_bytes": 11559589,
+ "status": "ok",
+ "archive_bytes": 4456570,
+ "ratio_pct": 38.553,
+ "compress_s": [
+  0.3574020001105964
+ ],
+ "decompress_s": [
+  0.5554825416766107
+ ],
+ "compress_s_median": 0.357,
+ "decompress_s_median": 0.555,
+ "compress_rss_bytes": 15269888,
+ "decompress_rss_bytes": 1802240,
+ "verify": {
+  "method": "tree",
+  "detail": "4 files verified against manifest",
+  "extras_ignored": []
+ },
+ "error": ""
+}

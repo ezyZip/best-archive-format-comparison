@@ -1,0 +1,39 @@
+{
+ "schema_version": 2,
+ "id": "zip",
+ "name": "ZIP (Info-ZIP)",
+ "tier": "A",
+ "level": "max",
+ "dataset": "text",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "directory",
+ "origin": "macOS bundled (Info-ZIP)",
+ "notes": "Default level is -6 (deflate).",
+ "create_cmd": "zip -q -r -9 {archive} .",
+ "extract_cmd": "unzip -q {archive} -d {out_dir}",
+ "runs": 1,
+ "timeout_s": 900,
+ "recorded_at": "2026-07-09T09:32:56+00:00",
+ "input_bytes": 11559589,
+ "status": "ok",
+ "archive_bytes": 4036316,
+ "ratio_pct": 34.917,
+ "compress_s": [
+  0.5629473752342165
+ ],
+ "decompress_s": [
+  0.08495637541636825
+ ],
+ "compress_s_median": 0.563,
+ "decompress_s_median": 0.085,
+ "compress_rss_bytes": 1867776,
+ "decompress_rss_bytes": 2605056,
+ "verify": {
+  "method": "tree",
+  "detail": "4 files verified against manifest",
+  "extras_ignored": []
+ },
+ "error": ""
+}
