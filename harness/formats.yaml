@@ -563,7 +563,7 @@
   verify: tar
   runs: 3
   timeout: {default: 3600}
-  version_cmd: "ha 2>&1 | head -2 | tail -1"
+  version_cmd: "ha 2>&1 | head -1 | tr -cd '[:print:]'"
   origin: "source build: HA 0.999 (github.com/l-4-l/ha)"
   notes: "Early PPM-style archiver by Harri Hirvola; no level dial (default method). Archives the canonical tar."
 

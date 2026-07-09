@@ -20,12 +20,35 @@ against the original files), timings are taken on an otherwise idle machine,
 and all raw results are committed as JSON so every number in the paper is
 auditable.
 
-## Results
+## Headline results
 
-See [`paper/paper.md`](paper/paper.md) (and the PDF built from it) for the full
-academic write-up, and [`results/tables/`](results/tables/) for the data
-tables. The exact hardware/software environment is auto-generated into
-[`results/environment.md`](results/environment.md).
+On the full 55 MB mixed corpus (a realistic home folder), tested at each tool's
+default and maximum settings:
+
+| Need | Format | Full-corpus size | vs. ZIP |
+|---|---|---:|---|
+| Universal compatibility | **ZIP** | 82% | baseline |
+| Best size/speed balance | **7-Zip** (`.7z`), max | **60%** in ~4 s | ~27% smaller |
+| Best size/speed balance | **Zstandard** (`.tar.zst`), max | 61% | ~25% smaller |
+| Absolute smallest | **zpaq**, max | **56%** in ~150 s | ~32% smaller |
+
+Other findings:
+
+- **Office documents barely compress with ZIP** (99%, since `.docx`/`.xlsx` are
+  already ZIPs internally) but **7-Zip recompresses them to 60%**.
+- **Photos and video are near-incompressible** for every format (~98–100%);
+  archiving them is about bundling, not size.
+- **A 1993 PKZIP binary**, run under DOS emulation, still makes a `.zip` modern
+  `unzip` opens — and its 35.5% on text is nearly identical to today's ZIP.
+- **Some 2000s Windows-only archivers no longer run** to completion on Apple
+  Silicon even under Wine (FreeArc, UHARC deadlock); a 40-year-old open DOS
+  format proved more durable than a 20-year-old proprietary Windows one.
+
+See [`paper/paper.md`](paper/paper.md) (and [`paper/paper.pdf`](paper/paper.pdf))
+for the full academic write-up, [`results/tables/results.md`](results/tables/results.md)
+for every ranking, [`results/tables/results.csv`](results/tables/results.csv)
+for the raw data, and [`results/environment.md`](results/environment.md) for the
+exact hardware/software environment (auto-generated).
 
 ## Reproduce it yourself
 

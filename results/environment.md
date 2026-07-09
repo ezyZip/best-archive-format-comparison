@@ -1,6 +1,6 @@
 # Benchmark environment
 
-Generated: 2026-07-09T13:26:26+00:00
+Generated: 2026-07-09T13:30:50+00:00
 
 ## Machine
 
@@ -26,7 +26,7 @@ Generated: 2026-07-09T13:26:26+00:00
 ## Corpus
 
 - Manifest: `corpus/MANIFEST.sha256`, 18 files, 57,747,676 bytes
-- Git commit: e647b7714da7065b3a4beba119afb0808eed5c8b
+- Git commit: a6882156ce34fbd111bdad7958b2068f6c0f8433
 
 ## Archiver versions
 
@@ -64,7 +64,7 @@ Generated: 2026-07-09T13:26:26+00:00
 | zoo (1986) | source build: zoo 2.10 (Debian orig + patches) | zoo 2.1 $Date: 91/07/09 02:10:34 $ |
 | ARC (SEA, 1985) | source build: github.com/hyc/arc (ARC 5.21p) | ARC - Archive utility, Version 5.21p, created on 08/07/2010 |
 | ARJ (1991) | source build: arj 3.10.22 (Debian orig + patches) | ARJ32 v 3.10, Copyright (c) 1998-2004, ARJ Software Russia. |
-| HA (1993, PPM-family) | source build: HA 0.999 (github.com/l-4-l/ha) | (exit 0, no output) |
+| HA (1993, PPM-family) | source build: HA 0.999 (github.com/l-4-l/ha) | HA 0.999� Copyright (c) 1995 Harri Hirvola |
 | freeze (1993) | source build: freeze 2.5.0 (ibiblio.org) | @(#) freeze.c 2.5.0 2/7/93 leo@ipmce.su |
 | paq8px (context mixing, state of the art) | source build: github.com/hxim/paq8px (v216) | paq8px data compressor v216 (c) 2026, Matt Mahoney et al. |
 | FreeArc 0.666 (2007, Wine) | archive.org FreeArc-portable-0.666-win32.zip, run under Wine 11 | FreeArc 0.666 (2007) console Arc.exe via Wine |
