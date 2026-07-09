@@ -1,0 +1,39 @@
+{
+ "schema_version": 2,
+ "id": "paq8px",
+ "name": "paq8px (context mixing, state of the art)",
+ "tier": "B",
+ "level": "max",
+ "dataset": "text",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "tar",
+ "origin": "source build: github.com/hxim/paq8px (v216)",
+ "notes": "PAQ-family context-mixing compressor; -5 is the documented default level, -9 a higher level of the same method (RAM-bounded). Extremely slow by design (~12 KB/s), so restricted to the compressible categories (text, documents) where context mixing pays off; on already-compressed images/video every compressor is ~100%, and the full 55 MB corpus is impractical at this throughput (itself a finding).",
+ "create_cmd": "paq8px -9 {tar_file} {archive} > /dev/null",
+ "extract_cmd": "paq8px -d {archive} {out_tar} > /dev/null",
+ "runs": 1,
+ "timeout_s": 43200,
+ "recorded_at": "2026-07-09T13:55:48+00:00",
+ "input_bytes": 11559589,
+ "status": "ok",
+ "archive_bytes": 2053016,
+ "ratio_pct": 17.76,
+ "compress_s": [
+  1127.552014542278
+ ],
+ "decompress_s": [
+  1134.5050180424005
+ ],
+ "compress_s_median": 1127.552,
+ "decompress_s_median": 1134.505,
+ "compress_rss_bytes": 3240853504,
+ "decompress_rss_bytes": 3221274624,
+ "verify": {
+  "method": "tar",
+  "detail": "decompressed tar SHA-256 matches canonical tar",
+  "extras_ignored": []
+ },
+ "error": ""
+}

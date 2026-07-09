@@ -230,13 +230,14 @@ are not comparable).](figures/pareto_full.png){width=90%}
   smallest of any format on the full corpus—but took roughly 150 seconds to
   compress and again to decompress, against 7-Zip's four. The even more extreme
   context-mixing **paq8px** goes further still, compressing the text category to
-  **18.0%**—the smallest result any format achieved on any category—but at a
-  throughput near 12 KB/s: about fifteen minutes to compress the 11 MB of text,
-  and as long again to decompress, with an archive only paq8px itself can open.
+  **17.8%**—the smallest result any format achieved on any category—but at a
+  throughput near 12 KB/s: roughly fifteen to nineteen minutes to compress the
+  11 MB of text, and as long again to decompress, with an archive only paq8px
+  itself can open.
 
 **Diminishing returns are dramatic.** On text, the best mainstream tools
 (bzip2 at 25.8%, 7-Zip and xz at about 27%) sit within a few percentage points
-of the exotic maximum—zpaq's 19.9% and paq8px's 18.0%—while costing a fraction
+of the exotic maximum—zpaq's 19.9% and paq8px's 17.8%—while costing a fraction
 of a second rather than the minutes those extreme tools demand. Plain ZIP reached 35%—and, strikingly, the *1993* PKZIP 2.04g binary
 we ran under DOS emulation produced a nearly identical 35.5%, a reminder that
 the ZIP format a casual user gets today is essentially the one from three
