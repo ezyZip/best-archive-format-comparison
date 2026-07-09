@@ -1,6 +1,6 @@
 # Benchmark environment
 
-Generated: 2026-07-09T13:31:26+00:00
+Generated: 2026-07-09T15:52:46+00:00
 
 ## Machine
 
@@ -26,7 +26,7 @@ Generated: 2026-07-09T13:31:26+00:00
 ## Corpus
 
 - Manifest: `corpus/MANIFEST.sha256`, 18 files, 57,747,676 bytes
-- Git commit: e1e48d98b8bf7444e916484d7825525efb7faf75
+- Git commit: 80ea7e521b3f9e50cdb0efd860a865d61108f33b
 
 ## Archiver versions
 
