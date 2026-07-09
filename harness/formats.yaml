@@ -480,6 +480,126 @@
   origin: "brew gcab"
   notes: "MSZIP is gcab's only compression; no level dial. LZX cab creation requires Windows cabarc."
 
+# ---------------------------------------------------------------- Tier B: vintage formats, built from source
+# All binaries produced by tools/setup_source_builds.sh into tools/bin/
+# (which takes PATH precedence during benchmark runs).
+
+- id: lha
+  name: "LHA/LZH (1988, lh5)"
+  tier: B
+  ext: lzh
+  engine: native
+  input_mode: directory
+  create:
+    default: "lha aq {archive} ."
+    max: "lha aqo7 {archive} ."
+  extract: "lha xq {archive}"
+  verify: tree
+  runs: 3
+  timeout: {default: 1800, max: 1800}
+  version_cmd: "lha 2>&1 | head -1"
+  origin: "source build: github.com/jca02266/lha"
+  notes: "Default method lh5 (8 KiB dict); -o7 selects lh7 (64 KiB dict), the format's largest. Extraction verified with the independent lhasa implementation."
+
+- id: zoo
+  name: "zoo (1986)"
+  tier: B
+  ext: zoo
+  engine: native
+  input_mode: tar
+  create:
+    default: "zoo a {archive} {tar_file} > /dev/null"
+    max: "zoo ah {archive} {tar_file} > /dev/null"
+  extract: "zoo x {archive} > /dev/null"
+  verify: tar
+  runs: 3
+  timeout: {default: 1800, max: 1800}
+  version_cmd: "zoo 2>&1 | head -1"
+  origin: "source build: zoo 2.10 (Debian orig + patches)"
+  notes: "Default LZW; 'h' selects high-compression mode (lzh), zoo's only dial. Cannot store deep directory trees reliably: archives the canonical tar."
+
+- id: arc-sea
+  name: "ARC (SEA, 1985)"
+  tier: B
+  ext: arc
+  engine: native
+  input_mode: tar
+  create:
+    default: "arc a a.arc {tar_file} > /dev/null && mv a.arc {archive}"
+  extract: "cp {archive} a.arc && arc x a.arc > /dev/null && rm -f a.arc"
+  verify: tar
+  runs: 3
+  timeout: {default: 1800}
+  version_cmd: "arc 2>&1 | head -1"
+  origin: "source build: github.com/hyc/arc (ARC 5.21p)"
+  notes: "The BBS-era original. Auto-selects its best method per file (no dial). No directory support: archives the canonical tar. ARC's fixed argv buffer requires short archive names, so create writes a short name (moved into place) and extract copies to a local name first. Distinct from FreeArc (2007)."
+
+- id: arj
+  name: "ARJ (1991)"
+  tier: B
+  ext: arj
+  engine: native
+  input_mode: directory
+  create:
+    default: "arj a -r -i -y {archive} . > /dev/null"
+    max: "arj a -r -i -y -jm {archive} . > /dev/null"
+  extract: "arj x -i -y {archive} > /dev/null"
+  verify: tree
+  runs: 3
+  timeout: {default: 1800, max: 3600}
+  version_cmd: "arj 2>&1 | head -1"
+  origin: "source build: arj 3.10.22 (Debian orig + patches)"
+  notes: "Default method -m1; -jm enables maximum-compression mode (the documented dial)."
+
+- id: ha
+  name: "HA (1993, PPM-family)"
+  tier: B
+  ext: ha
+  engine: native
+  input_mode: tar
+  create:
+    default: "ha a {archive_base} {tar_file} > /dev/null"
+  extract: "ha xy {archive} > /dev/null"
+  verify: tar
+  runs: 3
+  timeout: {default: 3600}
+  version_cmd: "ha 2>&1 | head -2 | tail -1"
+  origin: "source build: HA 0.999 (github.com/l-4-l/ha)"
+  notes: "Early PPM-style archiver by Harri Hirvola; no level dial (default method). Archives the canonical tar."
+
+- id: freeze
+  name: "freeze (1993)"
+  tier: B
+  ext: F
+  engine: native
+  input_mode: tar
+  create:
+    default: "freeze -c {tar_file} > {archive}"
+  extract: "freeze -dc {archive} > {out_tar}"
+  verify: tar
+  runs: 3
+  timeout: {default: 1800}
+  version_cmd: "freeze -V 2>&1 | head -1"
+  origin: "source build: freeze 2.5.0 (ibiblio.org)"
+  notes: "LZSS + adaptive Huffman, comp.sources.misc era; no level dial."
+
+- id: paq8px
+  name: "paq8px (context mixing, state of the art)"
+  tier: B
+  ext: paq
+  engine: native
+  input_mode: tar
+  create:
+    default: "paq8px -5 {tar_file} {archive} > /dev/null"
+    max: "paq8px -9 {tar_file} {archive} > /dev/null"
+  extract: "paq8px -d {archive} {out_tar} > /dev/null"
+  verify: tar
+  runs: 1
+  timeout: {default: 43200, max: 43200}
+  version_cmd: "paq8px 2>&1 | head -1"
+  origin: "source build: github.com/hxim/paq8px (v216)"
+  notes: "PAQ-family context-mixing compressor; -5 is the documented default level, -9 a higher level of the same method (RAM-bounded). Extremely slow by design."
+
 # ---------------------------------------------------------------- appendix (store-only unix containers)
 - id: cpio
   name: "cpio (appendix: store-only)"

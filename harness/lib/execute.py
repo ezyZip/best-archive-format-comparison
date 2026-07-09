@@ -14,8 +14,10 @@ import os
 import signal
 import subprocess
 import time
+from pathlib import Path
 
 TIME_BIN = "/usr/bin/time"
+TOOLS_BIN = Path(__file__).resolve().parent.parent.parent / "tools" / "bin"
 
 
 @dataclasses.dataclass
@@ -34,6 +36,8 @@ class Result:
 
 def run(cmd: str, cwd, timeout: int, env: dict | None = None) -> Result:
     full_env = dict(os.environ)
+    # Source-built vintage tools (tools/bin) take PATH precedence.
+    full_env["PATH"] = f"{TOOLS_BIN}:{full_env.get('PATH', '')}"
     if env:
         full_env.update(env)
     start = time.monotonic()

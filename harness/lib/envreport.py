@@ -11,9 +11,13 @@ from .registry import REPO_DIR, load
 
 
 def _sh(cmd: str, timeout: int = 15) -> str:
+    import os
+    env = dict(os.environ)
+    env["PATH"] = f"{REPO_DIR / 'tools' / 'bin'}:{env.get('PATH', '')}"
     try:
         out = subprocess.run(
-            ["/bin/sh", "-c", cmd], capture_output=True, text=True, timeout=timeout)
+            ["/bin/sh", "-c", cmd], capture_output=True, text=True,
+            timeout=timeout, cwd=REPO_DIR, env=env)
         text = (out.stdout or out.stderr).strip()
         return text if text else f"(exit {out.returncode}, no output)"
     except Exception as e:  # noqa: BLE001 - report, don't crash

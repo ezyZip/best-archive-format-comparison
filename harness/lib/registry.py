@@ -64,8 +64,9 @@ def load(path: Path = REGISTRY_FILE) -> list[Format]:
         if not f.create:
             raise ValueError(f"{f.id}: no create commands")
         for level, cmd in f.create.items():
-            if "{archive}" not in cmd and "{archive_base}" not in cmd:
+            if not any(tok in cmd for tok in
+                       ("{archive}", "{archive_base}", "{archive_name}")):
                 raise ValueError(f"{f.id}/{level}: create must reference "
-                                 "{archive} or {archive_base}")
+                                 "{archive}, {archive_base} or {archive_name}")
         formats.append(f)
     return formats

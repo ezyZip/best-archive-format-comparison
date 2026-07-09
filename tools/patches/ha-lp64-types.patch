@@ -1,0 +1,24 @@
+--- a/machine.h	2026-07-09 21:01:56
++++ b/machine.h	2026-07-09 21:02:08
+@@ -25,16 +25,16 @@
+ #include <sys/stat.h>
+ #include <signal.h>
+ 
+-#define BETA "á"
++#define BETA "ï¿½"
+ typedef short S16B;
+ typedef unsigned short U16B;
+-typedef long S32B;
+-typedef unsigned long U32B;
++typedef int S32B;
++typedef unsigned int U32B;
+ 
+ #define EXAMPLE "\n examples : ha a21r foo /bar/* , ha l foo , ha xy foo" 
+ #define ALLFILES "*"
+-#define F_32B "ld"
+-#define FX_32B "lX"
++#define F_32B "d"
++#define FX_32B "X"
+ 
+ #define O_BINARY  0
+ 

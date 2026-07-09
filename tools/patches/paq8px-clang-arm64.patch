@@ -1,0 +1,35 @@
+--- a/CMakeLists.txt	2026-07-09 19:47:03
++++ b/CMakeLists.txt	2026-07-09 19:47:09
+@@ -23,10 +23,8 @@
+ # Base optimization flags
+ set(BASE_FLAGS
+     -O3
+-    -floop-strip-mine
+     -funroll-loops
+     -ftree-vectorize
+-    -fgcse-sm
+     -falign-loops=16
+     ${SAFEFP_FLAGS}
+ )
+--- a/src/model/SimilarityModel.cpp	2026-07-09 19:47:49
++++ b/src/model/SimilarityModel.cpp	2026-07-09 19:47:49
+@@ -24,7 +24,7 @@
+ void SimilarityModel::update(uint32_t warmup) {
+ 
+   // Find best record period
+-  const size_t count = min(warmup, MAX_RECORD_LENGTH);
++  const size_t count = std::min<size_t>(warmup, MAX_RECORD_LENGTH);
+   record_score = UINT32_MAX;
+ 
+   // if two periods have identical ema values, the one with the shorter period wins
+--- a/src/model/SimilarityModelPair.cpp	2026-07-09 19:48:04
++++ b/src/model/SimilarityModelPair.cpp	2026-07-09 19:48:12
+@@ -39,7 +39,7 @@
+   head_pos--; // point to last known byte (c1)
+   INJECT_SHARED_c1
+   INJECT_SHARED_buf
+-  const size_t byte_count = min(warmup, MAX_MATCH_DISTANCE); // number of valid history bytes available
++  const size_t byte_count = std::min<size_t>(warmup, MAX_MATCH_DISTANCE); // number of valid history bytes available
+   warmup++; // total bytes processed; capped to MAX_MATCH_DISTANCE
+ 
+   // EMA update loop

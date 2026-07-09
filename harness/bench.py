@@ -19,6 +19,7 @@ run options:
 from __future__ import annotations
 
 import argparse
+import os
 import shutil
 import subprocess
 import sys
@@ -32,9 +33,12 @@ from lib import corpus, envreport, registry, runner  # noqa: E402
 
 def cmd_check(_args) -> int:
     failures = 0
+    env = dict(os.environ)
+    env["PATH"] = f"{registry.REPO_DIR / 'tools' / 'bin'}:{env.get('PATH', '')}"
     for fmt in registry.load():
         out = subprocess.run(["/bin/sh", "-c", fmt.version_cmd],
-                             capture_output=True, text=True, timeout=30)
+                             capture_output=True, text=True, timeout=30,
+                             cwd=registry.REPO_DIR, env=env)
         text = (out.stdout or out.stderr).strip().splitlines()
         ok = bool(text)
         print(f"{'ok  ' if ok else 'MISS'} {fmt.id:<16} {text[0][:80] if text else '(no output)'}")

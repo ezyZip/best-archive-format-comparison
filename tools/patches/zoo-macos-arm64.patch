@@ -1,0 +1,13 @@
+--- a/options.h	2026-07-09 19:41:11
++++ b/options.h	2026-07-09 19:43:06
+@@ -129,8 +129,8 @@
+ #define SETBUF
+ #define GETTZ
+ #define FATTR
+-#define T_SIGNAL	int
+-#define VARARGS
++#define T_SIGNAL	void
++#define STDARG
+ #define NEED_MEMMOVE
+ #define T_UINT16		unsigned short		/* must be 16 bit unsigned */
+ #define HAVE_ISATTY
