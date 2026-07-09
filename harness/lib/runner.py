@@ -36,6 +36,8 @@ class Ctx:
     staging: Path
     cwd: Path          # where the create command runs
     out_dir: Path
+    archive: Path      # the run-unit's archive path (for engine adapters)
+    dos_archive: str = ""   # short 8.3 archive name (dosbox engine)
 
 
 def result_path(fmt_id: str, level: str, dataset: str) -> Path:
@@ -87,14 +89,18 @@ def run_unit(fmt: Format, level: str, dataset: str, runs_override: int | None = 
     archive_dir.mkdir(parents=True, exist_ok=True)
     archive = archive_dir / f"{dataset}.{level}.{fmt.ext}"
 
-    ctx = Ctx(staging=staging, cwd=input_dir, out_dir=out_dir)
+    dos_archive = f"A.{fmt.ext.upper()[:3]}"
+    ctx = Ctx(staging=staging, cwd=input_dir, out_dir=out_dir, archive=archive,
+              dos_archive=dos_archive)
     subst = {
         "archive": str(archive),
         "archive_base": str(archive.with_suffix("")),
         "archive_name": archive.name,
+        "dos_archive": dos_archive,
         "tar_file": "CORPUS.TAR",
         "out_dir": str(out_dir),
         "out_tar": str(out_dir / "CORPUS.TAR"),
+        "wine_dl": str(REPO_DIR / "tools" / "wine" / "downloads"),
     }
 
     base = {
@@ -136,7 +142,8 @@ def run_unit(fmt: Format, level: str, dataset: str, runs_override: int | None = 
     archive_bytes = _archive_size(archive, fmt, subst)
 
     # ---- extract ---------------------------------------------------------
-    extract_cmd, env = adapters.prepare(fmt, fmt.extract.format(**subst), ctx)
+    extract_cmd, env = adapters.prepare(fmt, fmt.extract.format(**subst), ctx,
+                                        engine=fmt.extract_engine)
     d_walls, d_rss = [], []
     for i in range(runs):
         shutil.rmtree(out_dir)

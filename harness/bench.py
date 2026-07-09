@@ -80,7 +80,8 @@ def cmd_run(args) -> int:
              for ds in datasets
              for f in formats
              for level in f.levels
-             if not args.level or level == args.level]
+             if (not args.level or level == args.level)
+             and (f.datasets is None or ds in f.datasets)]
     print(f"{len(units)} run-units queued\n")
 
     t0 = time.monotonic()

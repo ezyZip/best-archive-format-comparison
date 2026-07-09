@@ -35,7 +35,14 @@ class Format:
     emulated: bool = False
     appendix: bool = False
     archive_glob: Optional[str] = None   # for tools producing slices (dar)
+    dos_tools: str = ""                  # DOS .EXE names to stage (dosbox engine)
+    extract_engine: str = ""             # defaults to `engine` if unset
+    datasets: Optional[list] = None      # restrict to these datasets (None = all)
     notes: str = ""
+
+    def __post_init__(self):
+        if not self.extract_engine:
+            self.extract_engine = self.engine
 
     @property
     def levels(self) -> list[str]:
@@ -65,8 +72,10 @@ def load(path: Path = REGISTRY_FILE) -> list[Format]:
             raise ValueError(f"{f.id}: no create commands")
         for level, cmd in f.create.items():
             if not any(tok in cmd for tok in
-                       ("{archive}", "{archive_base}", "{archive_name}")):
+                       ("{archive}", "{archive_base}", "{archive_name}",
+                        "{dos_archive}")):
                 raise ValueError(f"{f.id}/{level}: create must reference "
-                                 "{archive}, {archive_base} or {archive_name}")
+                                 "{archive}, {archive_base}, {archive_name} "
+                                 "or {dos_archive}")
         formats.append(f)
     return formats

@@ -598,7 +598,77 @@
   timeout: {default: 43200, max: 43200}
   version_cmd: "paq8px 2>&1 | head -1"
   origin: "source build: github.com/hxim/paq8px (v216)"
-  notes: "PAQ-family context-mixing compressor; -5 is the documented default level, -9 a higher level of the same method (RAM-bounded). Extremely slow by design."
+  datasets: [text, documents, full]
+  notes: "PAQ-family context-mixing compressor; -5 is the documented default level, -9 a higher level of the same method (RAM-bounded). Extremely slow by design (~12 KB/s), so restricted to the compressible categories (text, documents) plus the full mixed corpus; on already-compressed images/video every compressor is ~100%, so those are omitted for paq8px."
+
+# ---------------------------------------------------------------- Tier C: Windows tools under Wine
+# Downloaded Win32 archivers run under Wine 11 + Rosetta 2. On Apple Silicon
+# these deadlock in their compression cores under x86->ARM binary translation
+# (see tools/README.md); they are included as *attempted* formats and recorded
+# as timeouts - an empirical format-longevity finding discussed in the paper.
+# Short timeout so the full run isn't stalled by known deadlocks.
+
+- id: freearc
+  name: "FreeArc 0.666 (2007, Wine)"
+  tier: C
+  ext: arc
+  engine: wine
+  input_mode: tar
+  create:
+    default: "{wine_dl}/freearc/bin/Arc.exe a -y {archive_name} {tar_file}"
+    max: "{wine_dl}/freearc/bin/Arc.exe a -y -m9 {archive_name} {tar_file}"
+  extract: "{wine_dl}/freearc/bin/Arc.exe x -y {archive}"
+  verify: tar
+  runs: 1
+  timeout: {default: 120, max: 120}
+  version_cmd: "echo 'FreeArc 0.666 (2007) console Arc.exe via Wine'"
+  origin: "archive.org FreeArc-portable-0.666-win32.zip, run under Wine 11"
+  emulated: true
+  datasets: [text, full]
+  notes: "LZMA-family archiver. Deadlocks in its compression core under Wine 11 + Rosetta 2 on Apple Silicon (empirical); recorded as timeout. Attempted on representative datasets only."
+
+- id: uharc
+  name: "UHARC 0.6b (2005, Wine)"
+  tier: C
+  ext: uha
+  engine: wine
+  input_mode: tar
+  create:
+    default: "{wine_dl}/uharc/UHARC.EXE a -y+ -o+ {archive_name} {tar_file}"
+    max: "{wine_dl}/uharc/UHARC.EXE a -y+ -o+ -mx {archive_name} {tar_file}"
+  extract: "{wine_dl}/uharc/UHARC.EXE e -y+ -o+ {archive}"
+  verify: tar
+  runs: 1
+  timeout: {default: 120, max: 120}
+  version_cmd: "echo 'UHARC 0.6b (2005) via Wine'"
+  origin: "archive.org uharc06b.zip, run under Wine 11"
+  emulated: true
+  datasets: [text, full]
+  notes: "High-compression multimedia archiver (ALZ engine). Deadlocks mid-compression under Wine 11 + Rosetta 2 on Apple Silicon (empirical); recorded as timeout. Attempted on representative datasets only."
+
+# ---------------------------------------------------------------- Tier D: DOS-era tools under DOSBox
+# Real x86 interpretation (no Wine/Rosetta PE translation). Timings under CPU
+# emulation are excluded from results; size + round-trip integrity only.
+
+- id: pkzip
+  name: "ZIP (PKZIP 2.04g, 1993)"
+  tier: D
+  ext: zip
+  engine: dosbox
+  extract_engine: native
+  input_mode: tar
+  dos_tools: "PKZIP.EXE"
+  create:
+    default: "PKZIP {dos_archive} {tar_file}"
+    max: "PKZIP -ex {dos_archive} {tar_file}"
+  extract: "unzip -q {archive}"
+  verify: tar
+  runs: 1
+  timeout: {default: 600, max: 600}
+  version_cmd: "echo 'PKZIP 2.04g (1993), PKWARE - DOS binary via DOSBox-X'"
+  origin: "archive.org PKZ204G.EXE (1993), run under DOSBox-X"
+  emulated: true
+  notes: "The original PKWARE archiver, resurrected under DOS emulation. Default vs -ex (maximal) deflate. Archives read back with modern Info-ZIP unzip: a 1993 encoder vs modern deflate (Info-ZIP) vs exhaustive deflate (zopfli), same .zip format."
 
 # ---------------------------------------------------------------- appendix (store-only unix containers)
 - id: cpio

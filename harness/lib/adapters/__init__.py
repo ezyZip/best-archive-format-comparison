@@ -15,9 +15,10 @@ _ADAPTERS = {
 }
 
 
-def prepare(fmt, cmd: str, ctx) -> tuple[str, dict]:
+def prepare(fmt, cmd: str, ctx, engine: str | None = None) -> tuple[str, dict]:
+    engine = engine or fmt.engine
     try:
-        adapter = _ADAPTERS[fmt.engine]
+        adapter = _ADAPTERS[engine]
     except KeyError:
-        raise NotImplementedError(f"engine {fmt.engine} not supported yet")
+        raise NotImplementedError(f"engine {engine} not supported yet")
     return adapter.prepare(fmt, cmd, ctx)
