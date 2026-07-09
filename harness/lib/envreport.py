@@ -65,6 +65,7 @@ def generate() -> str:
     ]
     for fmt in load():
         version = _sh(fmt.version_cmd).replace("\n", " ").replace("|", "\\|")[:120]
+        version = version.encode("ascii", "ignore").decode("ascii")  # drop stray bytes
         lines.append(f"| {fmt.name} | {fmt.origin} | {version} |")
     lines.append("")
     return "\n".join(lines)
