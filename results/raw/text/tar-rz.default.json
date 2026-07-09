@@ -13,23 +13,27 @@
  "notes": "Long-range redundancy + bzip2 backend; default level 6.",
  "create_cmd": "rzip -k -o {archive} {tar_file}",
  "extract_cmd": "rzip -d -k -o {out_tar} {archive}",
- "runs": 1,
+ "runs": 3,
  "timeout_s": 1800,
- "recorded_at": "2026-07-09T09:34:14+00:00",
+ "recorded_at": "2026-07-09T12:17:33+00:00",
  "input_bytes": 11559589,
  "status": "ok",
  "archive_bytes": 3054208,
  "ratio_pct": 26.421,
  "compress_s": [
-  0.8079391662031412
+  0.7478950419463217,
+  0.7219858751632273,
+  0.7295325412414968
  ],
  "decompress_s": [
-  0.34798941714689136
+  0.2999812918715179,
+  0.3037342503666878,
+  0.3055739579722285
  ],
- "compress_s_median": 0.808,
- "decompress_s_median": 0.348,
- "compress_rss_bytes": 57229312,
- "decompress_rss_bytes": 9175040,
+ "compress_s_median": 0.73,
+ "decompress_s_median": 0.304,
+ "compress_rss_bytes": 56131584,
+ "decompress_rss_bytes": 7782400,
  "verify": {
   "method": "tar",
   "detail": "decompressed tar SHA-256 matches canonical tar",

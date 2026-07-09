@@ -1,0 +1,43 @@
+{
+ "schema_version": 2,
+ "id": "tar-lz4",
+ "name": "tar.lz4 (LZ4)",
+ "tier": "A",
+ "level": "default",
+ "dataset": "video",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "tar",
+ "origin": "brew lz4",
+ "notes": "Default level 1 (fast mode); -12 is maximum (LZ4-HC). CLI is multithreaded by default (v1.10).",
+ "create_cmd": "lz4 -q {tar_file} {archive}",
+ "extract_cmd": "lz4 -q -d {archive} {out_tar}",
+ "runs": 3,
+ "timeout_s": 900,
+ "recorded_at": "2026-07-09T12:47:26+00:00",
+ "input_bytes": 13683124,
+ "status": "ok",
+ "archive_bytes": 13671052,
+ "ratio_pct": 99.912,
+ "compress_s": [
+  0.02357604168355465,
+  0.018508833833038807,
+  0.01900116726756096
+ ],
+ "decompress_s": [
+  0.01948683289811015,
+  0.020908209029585123,
+  0.017921041697263718
+ ],
+ "compress_s_median": 0.019,
+ "decompress_s_median": 0.019,
+ "compress_rss_bytes": 19726336,
+ "decompress_rss_bytes": 29097984,
+ "verify": {
+  "method": "tar",
+  "detail": "decompressed tar SHA-256 matches canonical tar",
+  "extras_ignored": []
+ },
+ "error": ""
+}

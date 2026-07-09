@@ -15,19 +15,19 @@
  "extract_cmd": "pax -r -f {archive}",
  "runs": 1,
  "timeout_s": 300,
- "recorded_at": "2026-07-09T09:36:03+00:00",
+ "recorded_at": "2026-07-09T12:32:25+00:00",
  "input_bytes": 11559589,
  "status": "ok",
  "archive_bytes": 11571200,
  "ratio_pct": 100.1,
  "compress_s": [
-  0.0481009166687727
+  0.03727841703221202
  ],
  "decompress_s": [
-  0.03286583302542567
+  0.035475040785968304
  ],
- "compress_s_median": 0.048,
- "decompress_s_median": 0.033,
+ "compress_s_median": 0.037,
+ "decompress_s_median": 0.035,
  "compress_rss_bytes": 1622016,
  "decompress_rss_bytes": 1622016,
  "verify": {

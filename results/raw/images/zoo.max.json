@@ -1,0 +1,43 @@
+{
+ "schema_version": 2,
+ "id": "zoo",
+ "name": "zoo (1986)",
+ "tier": "B",
+ "level": "max",
+ "dataset": "images",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "tar",
+ "origin": "source build: zoo 2.10 (Debian orig + patches)",
+ "notes": "Default LZW; 'h' selects high-compression mode (lzh), zoo's only dial. Cannot store deep directory trees reliably: archives the canonical tar.",
+ "create_cmd": "zoo ah {archive} {tar_file} > /dev/null",
+ "extract_cmd": "zoo x {archive} > /dev/null",
+ "runs": 3,
+ "timeout_s": 1800,
+ "recorded_at": "2026-07-09T12:45:11+00:00",
+ "input_bytes": 17011359,
+ "status": "ok",
+ "archive_bytes": 14302916,
+ "ratio_pct": 84.079,
+ "compress_s": [
+  0.9258269174024463,
+  0.9133329167962074,
+  0.919539500027895
+ ],
+ "decompress_s": [
+  0.5939931669272482,
+  0.6455027079209685,
+  0.5792618338018656
+ ],
+ "compress_s_median": 0.92,
+ "decompress_s_median": 0.594,
+ "compress_rss_bytes": 1949696,
+ "decompress_rss_bytes": 1949696,
+ "verify": {
+  "method": "tar",
+  "detail": "decompressed tar SHA-256 matches canonical tar",
+  "extras_ignored": []
+ },
+ "error": ""
+}

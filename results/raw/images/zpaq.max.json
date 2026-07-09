@@ -1,0 +1,39 @@
+{
+ "schema_version": 2,
+ "id": "zpaq",
+ "name": "zpaq (journaling PAQ-family)",
+ "tier": "A",
+ "level": "max",
+ "dataset": "images",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "directory",
+ "origin": "brew zpaq",
+ "notes": "Default method -m1; -m5 is the maximum level (context-mixing, very slow).",
+ "create_cmd": "zpaq a {archive} . -m5 2>/dev/null",
+ "extract_cmd": "zpaq x {archive} -to {out_dir} 2>/dev/null",
+ "runs": 1,
+ "timeout_s": 14400,
+ "recorded_at": "2026-07-09T12:42:31+00:00",
+ "input_bytes": 17011359,
+ "status": "ok",
+ "archive_bytes": 11459900,
+ "ratio_pct": 67.366,
+ "compress_s": [
+  45.564437583088875
+ ],
+ "decompress_s": [
+  47.153998124878854
+ ],
+ "compress_s_median": 45.564,
+ "decompress_s_median": 47.154,
+ "compress_rss_bytes": 504119296,
+ "decompress_rss_bytes": 489504768,
+ "verify": {
+  "method": "tree",
+  "detail": "6 files verified against manifest",
+  "extras_ignored": []
+ },
+ "error": ""
+}

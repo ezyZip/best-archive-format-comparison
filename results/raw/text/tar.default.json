@@ -13,21 +13,25 @@
  "notes": "Container overhead baseline; no compression.",
  "create_cmd": "bsdtar -cf {archive} .",
  "extract_cmd": "bsdtar -xf {archive}",
- "runs": 1,
+ "runs": 3,
  "timeout_s": 300,
- "recorded_at": "2026-07-09T09:33:03+00:00",
+ "recorded_at": "2026-07-09T12:15:01+00:00",
  "input_bytes": 11559589,
  "status": "ok",
  "archive_bytes": 11564032,
  "ratio_pct": 100.038,
  "compress_s": [
-  0.04593012481927872
+  0.036773374769836664,
+  0.03015520889312029,
+  0.02887979196384549
  ],
  "decompress_s": [
-  0.02717424975708127
+  0.02152604190632701,
+  0.025830124970525503,
+  0.028459792025387287
  ],
- "compress_s_median": 0.046,
- "decompress_s_median": 0.027,
+ "compress_s_median": 0.03,
+ "decompress_s_median": 0.026,
  "compress_rss_bytes": 3342336,
  "decompress_rss_bytes": 3407872,
  "verify": {

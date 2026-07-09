@@ -1,0 +1,43 @@
+{
+ "schema_version": 2,
+ "id": "tar-lrz",
+ "name": "tar.lrz (lrzip)",
+ "tier": "A",
+ "level": "default",
+ "dataset": "video",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "tar",
+ "origin": "brew lrzip",
+ "notes": "Default backend LZMA at level 7; -L9 is the level dial (no backend change).",
+ "create_cmd": "lrzip -q -o {archive} {tar_file}",
+ "extract_cmd": "lrzip -q -d -o {out_tar} {archive}",
+ "runs": 3,
+ "timeout_s": 1800,
+ "recorded_at": "2026-07-09T12:48:13+00:00",
+ "input_bytes": 13683124,
+ "status": "ok",
+ "archive_bytes": 13525099,
+ "ratio_pct": 98.845,
+ "compress_s": [
+  0.4881135420873761,
+  0.44006420811638236,
+  0.44014416728168726
+ ],
+ "decompress_s": [
+  0.051961749792099,
+  0.05258629098534584,
+  0.05259920796379447
+ ],
+ "compress_s_median": 0.44,
+ "decompress_s_median": 0.053,
+ "compress_rss_bytes": 125714432,
+ "decompress_rss_bytes": 15679488,
+ "verify": {
+  "method": "tar",
+  "detail": "decompressed tar SHA-256 matches canonical tar",
+  "extras_ignored": []
+ },
+ "error": ""
+}

@@ -1,0 +1,43 @@
+{
+ "schema_version": 2,
+ "id": "iso",
+ "name": "ISO 9660 (mkisofs, store-only)",
+ "tier": "A",
+ "level": "default",
+ "dataset": "video",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "directory",
+ "origin": "brew cdrtools",
+ "notes": "No compression (store-only container); Rock Ridge + Joliet for name fidelity.",
+ "create_cmd": "mkisofs -quiet -R -J -o {archive} .",
+ "extract_cmd": "bsdtar -xf {archive}",
+ "runs": 3,
+ "timeout_s": 900,
+ "recorded_at": "2026-07-09T12:51:42+00:00",
+ "input_bytes": 13683124,
+ "status": "ok",
+ "archive_bytes": 14055424,
+ "ratio_pct": 102.721,
+ "compress_s": [
+  0.022578167263418436,
+  0.01703595882281661,
+  0.01479729125276208
+ ],
+ "decompress_s": [
+  0.01723920786753297,
+  0.012378917075693607,
+  0.012747374828904867
+ ],
+ "compress_s_median": 0.017,
+ "decompress_s_median": 0.013,
+ "compress_rss_bytes": 6471680,
+ "decompress_rss_bytes": 3571712,
+ "verify": {
+  "method": "tree",
+  "detail": "2 files verified against manifest",
+  "extras_ignored": []
+ },
+ "error": ""
+}

@@ -13,22 +13,26 @@
  "notes": "Default level -6; -9e = maximum preset with extreme modifier (still the level dial).",
  "create_cmd": "xz -c {tar_file} > {archive}",
  "extract_cmd": "xz -dc {archive} > {out_tar}",
- "runs": 1,
+ "runs": 3,
  "timeout_s": 1800,
- "recorded_at": "2026-07-09T09:33:21+00:00",
+ "recorded_at": "2026-07-09T12:15:22+00:00",
  "input_bytes": 11559589,
  "status": "ok",
  "archive_bytes": 3112172,
  "ratio_pct": 26.923,
  "compress_s": [
-  4.567720249760896
+  3.285800459329039,
+  3.2098689158447087,
+  3.2251915000379086
  ],
  "decompress_s": [
-  0.1369386250153184
+  0.12493908405303955,
+  0.12664541602134705,
+  0.1244264580309391
  ],
- "compress_s_median": 4.568,
- "decompress_s_median": 0.137,
- "compress_rss_bytes": 111493120,
+ "compress_s_median": 3.225,
+ "decompress_s_median": 0.125,
+ "compress_rss_bytes": 112623616,
  "decompress_rss_bytes": 24903680,
  "verify": {
   "method": "tar",

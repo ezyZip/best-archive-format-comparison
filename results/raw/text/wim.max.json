@@ -13,21 +13,25 @@
  "notes": "Default LZX at wimlib's default level (50); LZX:100 is the documented maximum of the same method.",
  "create_cmd": "wimlib-imagex capture . {archive} CORPUS --quiet --compress=LZX:100",
  "extract_cmd": "wimlib-imagex apply {archive} 1 . --quiet",
- "runs": 1,
+ "runs": 3,
  "timeout_s": 1800,
- "recorded_at": "2026-07-09T09:36:02+00:00",
+ "recorded_at": "2026-07-09T12:19:52+00:00",
  "input_bytes": 11559589,
  "status": "ok",
- "archive_bytes": 4205646,
+ "archive_bytes": 4205654,
  "ratio_pct": 36.382,
  "compress_s": [
-  0.23095058323815465
+  0.1973429173231125,
+  0.19667341699823737,
+  0.19625404197722673
  ],
  "decompress_s": [
-  0.04710495891049504
+  0.050415875390172005,
+  0.051334834191948175,
+  0.0517143327742815
  ],
- "compress_s_median": 0.231,
- "decompress_s_median": 0.047,
+ "compress_s_median": 0.197,
+ "decompress_s_median": 0.051,
  "compress_rss_bytes": 24297472,
  "decompress_rss_bytes": 1900544,
  "verify": {

@@ -13,21 +13,25 @@
  "notes": "Default level -3.",
  "create_cmd": "lzop -q -o {archive} {tar_file}",
  "extract_cmd": "lzop -q -d -o {out_tar} {archive}",
- "runs": 1,
+ "runs": 3,
  "timeout_s": 900,
- "recorded_at": "2026-07-09T09:33:50+00:00",
+ "recorded_at": "2026-07-09T12:16:33+00:00",
  "input_bytes": 11559589,
  "status": "ok",
  "archive_bytes": 6535028,
  "ratio_pct": 56.533,
  "compress_s": [
-  0.05796629237011075
+  0.05293125007301569,
+  0.047089166007936,
+  0.04685687506571412
  ],
  "decompress_s": [
-  0.055755707900971174
+  0.04884799988940358,
+  0.04562666732817888,
+  0.04195649968460202
  ],
- "compress_s_median": 0.058,
- "decompress_s_median": 0.056,
+ "compress_s_median": 0.047,
+ "decompress_s_median": 0.046,
  "compress_rss_bytes": 2195456,
  "decompress_rss_bytes": 1736704,
  "verify": {

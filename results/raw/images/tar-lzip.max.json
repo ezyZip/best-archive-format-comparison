@@ -1,0 +1,43 @@
+{
+ "schema_version": 2,
+ "id": "tar-lzip",
+ "name": "tar.lz (lzip)",
+ "tier": "A",
+ "level": "max",
+ "dataset": "images",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "tar",
+ "origin": "brew lzip",
+ "notes": "Default level -6. plzip (parallel implementation of the same format) intentionally excluded: one row per format.",
+ "create_cmd": "lzip -9 -c {tar_file} > {archive}",
+ "extract_cmd": "lzip -dc {archive} > {out_tar}",
+ "runs": 3,
+ "timeout_s": 3600,
+ "recorded_at": "2026-07-09T12:42:05+00:00",
+ "input_bytes": 17011359,
+ "status": "ok",
+ "archive_bytes": 12919275,
+ "ratio_pct": 75.945,
+ "compress_s": [
+  3.3518438329920173,
+  3.3647280829027295,
+  3.4057331667281687
+ ],
+ "decompress_s": [
+  0.8662786250934005,
+  0.865620750002563,
+  0.8732160837389529
+ ],
+ "compress_s_median": 3.365,
+ "decompress_s_median": 0.866,
+ "compress_rss_bytes": 188891136,
+ "decompress_rss_bytes": 18497536,
+ "verify": {
+  "method": "tar",
+  "detail": "decompressed tar SHA-256 matches canonical tar",
+  "extras_ignored": []
+ },
+ "error": ""
+}

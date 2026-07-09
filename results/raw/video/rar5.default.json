@@ -1,0 +1,43 @@
+{
+ "schema_version": 2,
+ "id": "rar5",
+ "name": "RAR 5 (WinRAR/rar)",
+ "tier": "A",
+ "level": "default",
+ "dataset": "video",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "directory",
+ "origin": "brew rar (proprietary, licensed)",
+ "notes": "Default level -m3; RAR5 archive format is the tool default.",
+ "create_cmd": "rar a -r -idq {archive} .",
+ "extract_cmd": "unrar x -idq {archive} {out_dir}/",
+ "runs": 3,
+ "timeout_s": 1800,
+ "recorded_at": "2026-07-09T12:46:47+00:00",
+ "input_bytes": 13683124,
+ "status": "ok",
+ "archive_bytes": 13654550,
+ "ratio_pct": 99.791,
+ "compress_s": [
+  0.20126837491989136,
+  0.1892895419150591,
+  0.181402915623039
+ ],
+ "decompress_s": [
+  0.055281125009059906,
+  0.053689708933234215,
+  0.05369883356615901
+ ],
+ "compress_s_median": 0.189,
+ "decompress_s_median": 0.054,
+ "compress_rss_bytes": 258719744,
+ "decompress_rss_bytes": 24723456,
+ "verify": {
+  "method": "tree",
+  "detail": "2 files verified against manifest",
+  "extras_ignored": []
+ },
+ "error": ""
+}

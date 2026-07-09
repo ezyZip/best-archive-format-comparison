@@ -15,21 +15,21 @@
  "extract_cmd": "sh {archive}",
  "runs": 1,
  "timeout_s": 300,
- "recorded_at": "2026-07-09T09:36:03+00:00",
+ "recorded_at": "2026-07-09T12:32:25+00:00",
  "input_bytes": 11559589,
  "status": "ok",
  "archive_bytes": 11836674,
  "ratio_pct": 102.397,
  "compress_s": [
-  0.13187087513506413
+  0.12579191662371159
  ],
  "decompress_s": [
-  0.18451308365911245
+  0.17726433277130127
  ],
- "compress_s_median": 0.132,
- "decompress_s_median": 0.185,
- "compress_rss_bytes": 2080768,
- "decompress_rss_bytes": 47841280,
+ "compress_s_median": 0.126,
+ "decompress_s_median": 0.177,
+ "compress_rss_bytes": 2064384,
+ "decompress_rss_bytes": 47824896,
  "verify": {
   "method": "tree",
   "detail": "4 files verified against manifest",

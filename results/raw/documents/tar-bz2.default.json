@@ -1,0 +1,43 @@
+{
+ "schema_version": 2,
+ "id": "tar-bz2",
+ "name": "tar.bz2 (bzip2)",
+ "tier": "A",
+ "level": "default",
+ "dataset": "documents",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "tar",
+ "origin": "macOS bundled",
+ "notes": "bzip2's default block size (-9) already is its maximum: default = max.",
+ "create_cmd": "bzip2 -c {tar_file} > {archive}",
+ "extract_cmd": "bzip2 -dc {archive} > {out_tar}",
+ "runs": 3,
+ "timeout_s": 900,
+ "recorded_at": "2026-07-09T12:32:50+00:00",
+ "input_bytes": 15493604,
+ "status": "ok",
+ "archive_bytes": 15453958,
+ "ratio_pct": 99.744,
+ "compress_s": [
+  1.1654194169677794,
+  1.1453379169106483,
+  1.1563531658612192
+ ],
+ "decompress_s": [
+  0.5796564999036491,
+  0.584077250212431,
+  0.5755332079716027
+ ],
+ "compress_s_median": 1.156,
+ "decompress_s_median": 0.58,
+ "compress_rss_bytes": 7995392,
+ "decompress_rss_bytes": 4980736,
+ "verify": {
+  "method": "tar",
+  "detail": "decompressed tar SHA-256 matches canonical tar",
+  "extras_ignored": []
+ },
+ "error": ""
+}

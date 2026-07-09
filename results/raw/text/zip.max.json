@@ -13,21 +13,25 @@
  "notes": "Default level is -6 (deflate).",
  "create_cmd": "zip -q -r -9 {archive} .",
  "extract_cmd": "unzip -q {archive} -d {out_dir}",
- "runs": 1,
+ "runs": 3,
  "timeout_s": 900,
- "recorded_at": "2026-07-09T09:32:56+00:00",
+ "recorded_at": "2026-07-09T12:14:44+00:00",
  "input_bytes": 11559589,
  "status": "ok",
  "archive_bytes": 4036316,
  "ratio_pct": 34.917,
  "compress_s": [
-  0.5629473752342165
+  0.5444523748010397,
+  0.5397317088209093,
+  0.5829415000043809
  ],
  "decompress_s": [
-  0.08495637541636825
+  0.07429370796307921,
+  0.07429454103112221,
+  0.0739847500808537
  ],
- "compress_s_median": 0.563,
- "decompress_s_median": 0.085,
+ "compress_s_median": 0.544,
+ "decompress_s_median": 0.074,
  "compress_rss_bytes": 1867776,
  "decompress_rss_bytes": 2605056,
  "verify": {

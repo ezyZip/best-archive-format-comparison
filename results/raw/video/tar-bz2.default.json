@@ -1,0 +1,43 @@
+{
+ "schema_version": 2,
+ "id": "tar-bz2",
+ "name": "tar.bz2 (bzip2)",
+ "tier": "A",
+ "level": "default",
+ "dataset": "video",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "tar",
+ "origin": "macOS bundled",
+ "notes": "bzip2's default block size (-9) already is its maximum: default = max.",
+ "create_cmd": "bzip2 -c {tar_file} > {archive}",
+ "extract_cmd": "bzip2 -dc {archive} > {out_tar}",
+ "runs": 3,
+ "timeout_s": 900,
+ "recorded_at": "2026-07-09T12:47:02+00:00",
+ "input_bytes": 13683124,
+ "status": "ok",
+ "archive_bytes": 13701815,
+ "ratio_pct": 100.137,
+ "compress_s": [
+  1.0223402921110392,
+  1.0162859167903662,
+  1.0261578750796616
+ ],
+ "decompress_s": [
+  0.4988956656306982,
+  0.4973021657206118,
+  0.5002448749728501
+ ],
+ "compress_s_median": 1.022,
+ "decompress_s_median": 0.499,
+ "compress_rss_bytes": 7995392,
+ "decompress_rss_bytes": 4980736,
+ "verify": {
+  "method": "tar",
+  "detail": "decompressed tar SHA-256 matches canonical tar",
+  "extras_ignored": []
+ },
+ "error": ""
+}

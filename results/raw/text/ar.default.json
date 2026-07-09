@@ -15,19 +15,19 @@
  "extract_cmd": "ar x {archive}",
  "runs": 1,
  "timeout_s": 300,
- "recorded_at": "2026-07-09T09:37:31+00:00",
+ "recorded_at": "2026-07-09T12:32:25+00:00",
  "input_bytes": 11559589,
  "status": "ok",
  "archive_bytes": 11571268,
  "ratio_pct": 100.101,
  "compress_s": [
-  0.075249208137393
+  0.06866129161790013
  ],
  "decompress_s": [
-  0.037272458896040916
+  0.038525499869138
  ],
- "compress_s_median": 0.075,
- "decompress_s_median": 0.037,
+ "compress_s_median": 0.069,
+ "decompress_s_median": 0.039,
  "compress_rss_bytes": 1228800,
  "decompress_rss_bytes": 1228800,
  "verify": {

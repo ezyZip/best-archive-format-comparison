@@ -598,8 +598,8 @@
   timeout: {default: 43200, max: 43200}
   version_cmd: "paq8px 2>&1 | head -1"
   origin: "source build: github.com/hxim/paq8px (v216)"
-  datasets: [text, documents, full]
-  notes: "PAQ-family context-mixing compressor; -5 is the documented default level, -9 a higher level of the same method (RAM-bounded). Extremely slow by design (~12 KB/s), so restricted to the compressible categories (text, documents) plus the full mixed corpus; on already-compressed images/video every compressor is ~100%, so those are omitted for paq8px."
+  datasets: [text, documents]
+  notes: "PAQ-family context-mixing compressor; -5 is the documented default level, -9 a higher level of the same method (RAM-bounded). Extremely slow by design (~12 KB/s), so restricted to the compressible categories (text, documents) where context mixing pays off; on already-compressed images/video every compressor is ~100%, and the full 55 MB corpus is impractical at this throughput (itself a finding)."
 
 # ---------------------------------------------------------------- Tier C: Windows tools under Wine
 # Downloaded Win32 archivers run under Wine 11 + Rosetta 2. On Apple Silicon

@@ -13,23 +13,27 @@
  "notes": "Default level is -6 (deflate).",
  "create_cmd": "zip -q -r {archive} .",
  "extract_cmd": "unzip -q {archive} -d {out_dir}",
- "runs": 1,
+ "runs": 3,
  "timeout_s": 900,
- "recorded_at": "2026-07-09T09:32:55+00:00",
+ "recorded_at": "2026-07-09T12:14:42+00:00",
  "input_bytes": 11559589,
  "status": "ok",
  "archive_bytes": 4062367,
  "ratio_pct": 35.143,
  "compress_s": [
-  0.4199331668205559
+  0.41673295805230737,
+  0.4090683329850435,
+  0.40951937483623624
  ],
  "decompress_s": [
-  0.0846695420332253
+  0.08508195821195841,
+  0.08819749997928739,
+  0.0843602498061955
  ],
- "compress_s_median": 0.42,
+ "compress_s_median": 0.41,
  "decompress_s_median": 0.085,
  "compress_rss_bytes": 1884160,
- "decompress_rss_bytes": 2621440,
+ "decompress_rss_bytes": 2605056,
  "verify": {
   "method": "tree",
   "detail": "4 files verified against manifest",

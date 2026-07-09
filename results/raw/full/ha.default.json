@@ -1,0 +1,43 @@
+{
+ "schema_version": 2,
+ "id": "ha",
+ "name": "HA (1993, PPM-family)",
+ "tier": "B",
+ "level": "default",
+ "dataset": "full",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "tar",
+ "origin": "source build: HA 0.999 (github.com/l-4-l/ha)",
+ "notes": "Early PPM-style archiver by Harri Hirvola; no level dial (default method). Archives the canonical tar.",
+ "create_cmd": "ha a {archive_base} {tar_file} > /dev/null",
+ "extract_cmd": "ha xy {archive} > /dev/null",
+ "runs": 3,
+ "timeout_s": 3600,
+ "recorded_at": "2026-07-09T13:13:10+00:00",
+ "input_bytes": 57747676,
+ "status": "ok",
+ "archive_bytes": 47964248,
+ "ratio_pct": 83.058,
+ "compress_s": [
+  4.218344792257994,
+  4.2571585001423955,
+  4.213939290959388
+ ],
+ "decompress_s": [
+  3.76855779113248,
+  3.7705454593524337,
+  3.7702709580771625
+ ],
+ "compress_s_median": 4.218,
+ "decompress_s_median": 3.77,
+ "compress_rss_bytes": 1949696,
+ "decompress_rss_bytes": 1949696,
+ "verify": {
+  "method": "tar",
+  "detail": "decompressed tar SHA-256 matches canonical tar",
+  "extras_ignored": []
+ },
+ "error": ""
+}

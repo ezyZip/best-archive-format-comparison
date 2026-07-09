@@ -1,0 +1,43 @@
+{
+ "schema_version": 2,
+ "id": "tar-rz",
+ "name": "tar.rz (rzip)",
+ "tier": "A",
+ "level": "max",
+ "dataset": "documents",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "tar",
+ "origin": "brew rzip",
+ "notes": "Long-range redundancy + bzip2 backend; default level 6.",
+ "create_cmd": "rzip -9 -k -o {archive} {tar_file}",
+ "extract_cmd": "rzip -d -k -o {out_tar} {archive}",
+ "runs": 3,
+ "timeout_s": 1800,
+ "recorded_at": "2026-07-09T12:34:44+00:00",
+ "input_bytes": 15493604,
+ "status": "ok",
+ "archive_bytes": 9279937,
+ "ratio_pct": 59.895,
+ "compress_s": [
+  0.9228981249034405,
+  0.8943081670440733,
+  0.8890351662412286
+ ],
+ "decompress_s": [
+  0.1845930409617722,
+  0.18170141708105803,
+  0.18157733418047428
+ ],
+ "compress_s_median": 0.894,
+ "decompress_s_median": 0.182,
+ "compress_rss_bytes": 95715328,
+ "decompress_rss_bytes": 7405568,
+ "verify": {
+  "method": "tar",
+  "detail": "decompressed tar SHA-256 matches canonical tar",
+  "extras_ignored": []
+ },
+ "error": ""
+}

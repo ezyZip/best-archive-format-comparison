@@ -1,0 +1,39 @@
+{
+ "schema_version": 2,
+ "id": "cpio",
+ "name": "cpio (appendix: store-only)",
+ "tier": "A",
+ "level": "default",
+ "dataset": "documents",
+ "engine": "native",
+ "emulated": false,
+ "appendix": true,
+ "input_mode": "directory",
+ "origin": "macOS bundled (bsdcpio)",
+ "notes": "Uncompressed container; appendix row for container-overhead comparison.",
+ "create_cmd": "find . -type f | LC_ALL=C sort | cpio -o > {archive}",
+ "extract_cmd": "cpio -id < {archive}",
+ "runs": 1,
+ "timeout_s": 300,
+ "recorded_at": "2026-07-09T12:38:26+00:00",
+ "input_bytes": 15493604,
+ "status": "ok",
+ "archive_bytes": 15494656,
+ "ratio_pct": 100.007,
+ "compress_s": [
+  0.10140479216352105
+ ],
+ "decompress_s": [
+  0.03995100036263466
+ ],
+ "compress_s_median": 0.101,
+ "decompress_s_median": 0.04,
+ "compress_rss_bytes": 3227648,
+ "decompress_rss_bytes": 3375104,
+ "verify": {
+  "method": "tree",
+  "detail": "6 files verified against manifest",
+  "extras_ignored": []
+ },
+ "error": ""
+}

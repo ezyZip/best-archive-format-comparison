@@ -13,23 +13,27 @@
  "notes": "No compression (store-only container); Rock Ridge + Joliet for name fidelity.",
  "create_cmd": "mkisofs -quiet -R -J -o {archive} .",
  "extract_cmd": "bsdtar -xf {archive}",
- "runs": 1,
+ "runs": 3,
  "timeout_s": 900,
- "recorded_at": "2026-07-09T09:36:02+00:00",
+ "recorded_at": "2026-07-09T12:19:53+00:00",
  "input_bytes": 11559589,
  "status": "ok",
  "archive_bytes": 11933696,
  "ratio_pct": 103.236,
  "compress_s": [
-  0.03429962508380413
+  0.04047904070466757,
+  0.0325250830501318,
+  0.025731666013598442
  ],
  "decompress_s": [
-  0.025910750031471252
+  0.037907791789621115,
+  0.012043790891766548,
+  0.01116700004786253
  ],
- "compress_s_median": 0.034,
- "decompress_s_median": 0.026,
- "compress_rss_bytes": 6455296,
- "decompress_rss_bytes": 3620864,
+ "compress_s_median": 0.033,
+ "decompress_s_median": 0.012,
+ "compress_rss_bytes": 6471680,
+ "decompress_rss_bytes": 3571712,
  "verify": {
   "method": "tree",
   "detail": "4 files verified against manifest",

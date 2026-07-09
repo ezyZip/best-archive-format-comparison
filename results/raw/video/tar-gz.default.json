@@ -1,0 +1,43 @@
+{
+ "schema_version": 2,
+ "id": "tar-gz",
+ "name": "tar.gz (gzip)",
+ "tier": "A",
+ "level": "default",
+ "dataset": "video",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "tar",
+ "origin": "macOS bundled",
+ "notes": "Default level -6 (RFC 1952 deflate).",
+ "create_cmd": "gzip -c {tar_file} > {archive}",
+ "extract_cmd": "gzip -dc {archive} > {out_tar}",
+ "runs": 3,
+ "timeout_s": 900,
+ "recorded_at": "2026-07-09T12:46:50+00:00",
+ "input_bytes": 13683124,
+ "status": "ok",
+ "archive_bytes": 13652721,
+ "ratio_pct": 99.778,
+ "compress_s": [
+  0.2356831249780953,
+  0.23637766717001796,
+  0.23637287504971027
+ ],
+ "decompress_s": [
+  0.01550104096531868,
+  0.05162787530571222,
+  0.018699707929044962
+ ],
+ "compress_s_median": 0.236,
+ "decompress_s_median": 0.019,
+ "compress_rss_bytes": 1949696,
+ "decompress_rss_bytes": 1949696,
+ "verify": {
+  "method": "tar",
+  "detail": "decompressed tar SHA-256 matches canonical tar",
+  "extras_ignored": []
+ },
+ "error": ""
+}

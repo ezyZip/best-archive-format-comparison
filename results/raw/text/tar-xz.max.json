@@ -13,23 +13,27 @@
  "notes": "Default level -6; -9e = maximum preset with extreme modifier (still the level dial).",
  "create_cmd": "xz -9e -c {tar_file} > {archive}",
  "extract_cmd": "xz -dc {archive} > {out_tar}",
- "runs": 1,
+ "runs": 3,
  "timeout_s": 3600,
- "recorded_at": "2026-07-09T09:33:26+00:00",
+ "recorded_at": "2026-07-09T12:15:32+00:00",
  "input_bytes": 11559589,
  "status": "ok",
  "archive_bytes": 3111996,
  "ratio_pct": 26.921,
  "compress_s": [
-  4.868483750149608
+  3.52038845885545,
+  3.5027589588426054,
+  3.491194250062108
  ],
  "decompress_s": [
-  0.13616637513041496
+  0.12702504079788923,
+  0.12671837536618114,
+  0.12397037493065
  ],
- "compress_s_median": 4.868,
- "decompress_s_median": 0.136,
- "compress_rss_bytes": 186810368,
- "decompress_rss_bytes": 28098560,
+ "compress_s_median": 3.503,
+ "decompress_s_median": 0.127,
+ "compress_rss_bytes": 188006400,
+ "decompress_rss_bytes": 28082176,
  "verify": {
   "method": "tar",
   "detail": "decompressed tar SHA-256 matches canonical tar",

@@ -13,23 +13,27 @@
  "notes": "No level dial; default algorithm lzfse. Introduced macOS 11 (2020).",
  "create_cmd": "aa archive -d . -o {archive}",
  "extract_cmd": "aa extract -d {out_dir} -i {archive}",
- "runs": 1,
+ "runs": 3,
  "timeout_s": 900,
- "recorded_at": "2026-07-09T09:35:20+00:00",
+ "recorded_at": "2026-07-09T12:18:36+00:00",
  "input_bytes": 11559589,
  "status": "ok",
- "archive_bytes": 4122002,
+ "archive_bytes": 4122000,
  "ratio_pct": 35.659,
  "compress_s": [
-  0.07200033264234662
+  0.07622329238802195,
+  0.059414124581962824,
+  0.0581135000102222
  ],
  "decompress_s": [
-  0.03910195827484131
+  0.03594145784154534,
+  0.03768975008279085,
+  0.03344408283010125
  ],
- "compress_s_median": 0.072,
- "decompress_s_median": 0.039,
- "compress_rss_bytes": 22052864,
- "decompress_rss_bytes": 27328512,
+ "compress_s_median": 0.059,
+ "decompress_s_median": 0.036,
+ "compress_rss_bytes": 22069248,
+ "decompress_rss_bytes": 27639808,
  "verify": {
   "method": "tree",
   "detail": "4 files verified against manifest",

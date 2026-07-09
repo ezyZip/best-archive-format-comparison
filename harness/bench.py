@@ -70,6 +70,9 @@ def cmd_run(args) -> int:
         if unknown:
             sys.exit(f"unknown format ids: {sorted(unknown)}")
         formats = [f for f in formats if f.id in wanted]
+    if args.skip:
+        skipped = set(args.skip.split(","))
+        formats = [f for f in formats if f.id not in skipped]
     if args.tier:
         formats = [f for f in formats if f.tier == args.tier]
 
@@ -135,6 +138,7 @@ def main() -> int:
     run.add_argument("--force", action="store_true")
     run.add_argument("--retry-timeouts", action="store_true")
     run.add_argument("--only")
+    run.add_argument("--skip", help="comma-separated format ids to skip")
     run.add_argument("--dataset", choices=corpus.DATASETS)
     run.add_argument("--tier", choices=sorted(registry.TIERS))
     run.add_argument("--level")

@@ -1,0 +1,43 @@
+{
+ "schema_version": 2,
+ "id": "dmg-ulmo",
+ "name": "DMG (ULMO, lzma-compressed image)",
+ "tier": "A",
+ "level": "default",
+ "dataset": "documents",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "directory",
+ "origin": "macOS bundled",
+ "notes": "Sibling format row to UDZO (lzma variant); hdiutil exposes no level dial for ULMO.",
+ "create_cmd": "hdiutil create -quiet -ov -format ULMO -volname CORPUS -srcfolder . {archive}",
+ "extract_cmd": "hdiutil attach -quiet -nobrowse -readonly -mountpoint ./__mnt {archive} && ditto ./__mnt . && hdiutil detach -quiet ./__mnt && rm -rf ./__mnt",
+ "runs": 3,
+ "timeout_s": 1800,
+ "recorded_at": "2026-07-09T12:36:28+00:00",
+ "input_bytes": 15493604,
+ "status": "ok",
+ "archive_bytes": 15706786,
+ "ratio_pct": 101.376,
+ "compress_s": [
+  6.0579319996759295,
+  6.079016707837582,
+  6.091811750084162
+ ],
+ "decompress_s": [
+  3.2884339997544885,
+  0.49003124982118607,
+  0.4589680409990251
+ ],
+ "compress_s_median": 6.079,
+ "decompress_s_median": 0.49,
+ "compress_rss_bytes": 6602752,
+ "decompress_rss_bytes": 6668288,
+ "verify": {
+  "method": "tree",
+  "detail": "6 files verified against manifest",
+  "extras_ignored": []
+ },
+ "error": ""
+}

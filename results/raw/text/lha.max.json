@@ -1,0 +1,43 @@
+{
+ "schema_version": 2,
+ "id": "lha",
+ "name": "LHA/LZH (1988, lh5)",
+ "tier": "B",
+ "level": "max",
+ "dataset": "text",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "directory",
+ "origin": "source build: github.com/jca02266/lha",
+ "notes": "Default method lh5 (8 KiB dict); -o7 selects lh7 (64 KiB dict), the format's largest. Extraction verified with the independent lhasa implementation.",
+ "create_cmd": "lha aqo7 {archive} .",
+ "extract_cmd": "lha xq {archive}",
+ "runs": 3,
+ "timeout_s": 1800,
+ "recorded_at": "2026-07-09T12:19:58+00:00",
+ "input_bytes": 11559589,
+ "status": "ok",
+ "archive_bytes": 3912090,
+ "ratio_pct": 33.843,
+ "compress_s": [
+  1.1284251250326633,
+  1.122046375181526,
+  1.123607040848583
+ ],
+ "decompress_s": [
+  0.13932479126378894,
+  0.13702995795756578,
+  0.13821524986997247
+ ],
+ "compress_s_median": 1.124,
+ "decompress_s_median": 0.138,
+ "compress_rss_bytes": 2441216,
+ "decompress_rss_bytes": 1720320,
+ "verify": {
+  "method": "tree",
+  "detail": "4 files verified against manifest",
+  "extras_ignored": []
+ },
+ "error": ""
+}

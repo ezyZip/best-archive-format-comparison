@@ -1,0 +1,39 @@
+{
+ "schema_version": 2,
+ "id": "tar-gz-zopfli",
+ "name": "tar.gz (zopfli, exhaustive deflate)",
+ "tier": "A",
+ "level": "default",
+ "dataset": "video",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "tar",
+ "origin": "brew zopfli",
+ "notes": "Same on-disk format as gzip; no level dial (always exhaustive). Decompresses with stock gzip.",
+ "create_cmd": "zopfli -c {tar_file} > {archive}",
+ "extract_cmd": "gzip -dc {archive} > {out_tar}",
+ "runs": 1,
+ "timeout_s": 3600,
+ "recorded_at": "2026-07-09T12:46:52+00:00",
+ "input_bytes": 13683124,
+ "status": "ok",
+ "archive_bytes": 13643438,
+ "ratio_pct": 99.71,
+ "compress_s": [
+  10.099907000083476
+ ],
+ "decompress_s": [
+  0.0343562918715179
+ ],
+ "compress_s_median": 10.1,
+ "decompress_s_median": 0.034,
+ "compress_rss_bytes": 593281024,
+ "decompress_rss_bytes": 1949696,
+ "verify": {
+  "method": "tar",
+  "detail": "decompressed tar SHA-256 matches canonical tar",
+  "extras_ignored": []
+ },
+ "error": ""
+}

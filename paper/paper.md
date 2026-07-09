@@ -166,6 +166,16 @@ Python `acefile` [@acefile], and PKZIP's DOS output is read by modern Info-ZIP
 `unzip` [@infozip]—so that a bug shared between a tool's compressor and
 decompressor cannot mask a corruption.
 
+This verification is not a formality. On the image category, ARC 5.21p produced
+an archive that its *own* extractor unpacked while reporting a CRC failure and
+emitting a file 55 bytes longer than the original; the harness's SHA-256 check
+rejected it. Had we trusted the tool's exit status, a silent corruption would
+have passed as a successful result—a concrete argument for content-level
+verification over exit codes. Likewise, the 1980s `shar` shell-archive format
+succeeds on the text category but fails on every binary category, exactly as its
+text-only design predicts; we report these as honest failures rather than
+omitting the format.
+
 **Emulation policy.** Formats produced under emulation (Tier C Wine, Tier D
 DOSBox) are flagged. Their archive **sizes are directly comparable** to native
 formats and are reported as first-class results; their **timings are excluded**
@@ -205,28 +215,42 @@ are not comparable).](figures/pareto_full.png){width=90%}
 **What should a casual user actually use?** Three answers, by need:
 
 - *For universal compatibility*—a file anyone can open with no extra
-  software—plain **ZIP** remains the correct choice, and it is a reasonable
-  compromise on size. Every operating system opens it natively, and it has done
-  so for thirty years.
+  software—plain **ZIP** remains the correct choice. On the full mixed corpus it
+  reached 82% of the original size; it is not the smallest, but every operating
+  system has opened it natively for thirty years.
 - *For the best mainstream size/speed balance*, **7-Zip** (`.7z`) and
-  **Zstandard** (`.tar.zst`) dominate the knee of the frontier: substantially
-  smaller than ZIP, still fast, and widely supported by modern tools.
-- *For the absolute smallest file*, when time is no object, the
-  context-mixing **paq8px** wins on compressible content—but at a throughput of
-  roughly 12 KB/s, compressing a folder can take longer than the user will ever
-  wait, and only paq8px itself can open the result.
+  **Zstandard** (`.tar.zst`) dominate the knee of the frontier. On the full
+  corpus 7-Zip reached **60% in about four seconds**—a quarter smaller than ZIP
+  for no perceptible extra effort—and Zstandard reached 61%. On the office-
+  document category the gap is starker still: ZIP left the already-compressed
+  `.docx`/`.xlsx` files essentially untouched at 99%, while 7-Zip recompressed
+  them to **60%** by working across the archive members.
+- *For the absolute smallest file*, when time is no object, the journaling
+  context-mixing archiver **zpaq** reached **56%** at its maximum setting—the
+  smallest of any format on the full corpus—but took roughly 150 seconds to
+  compress and again to decompress, against 7-Zip's four. The even more extreme
+  paq8px goes further still on pure text, at a throughput of roughly 12 KB/s
+  that makes it impractical for a whole folder, and only paq8px itself can open
+  its output.
 
-**Diminishing returns are dramatic.** On text, the gap between a mainstream
-choice and the theoretical best is a few percentage points of the *original*
-file size, while the time gap is measured in thousands of times. This is the
-single most important practical takeaway: beyond the mainstream tools, users pay
-enormous time and compatibility costs for very small size gains.
+**Diminishing returns are dramatic.** On text, the best mainstream tools
+(bzip2 at 25.8%, 7-Zip and xz at about 27%) sit within a few percentage points
+of the exotic maximum, while costing a fraction of a second rather than tens of
+seconds. Plain ZIP reached 35%—and, strikingly, the *1993* PKZIP 2.04g binary
+we ran under DOS emulation produced a nearly identical 35.5%, a reminder that
+the ZIP format a casual user gets today is essentially the one from three
+decades ago. This is the single most important practical takeaway: beyond the
+mainstream tools, users pay large time and compatibility costs for small size
+gains.
 
-**Already-compressed data resists everyone.** On the image and video categories,
-every format—old or new—clusters near 100% of the original size, because JPEG
-and H.264 are already compressed. The corollary for users is that "zipping" a
-folder of photos or videos saves almost nothing; the value of an archive there
-is bundling and convenience, not size.
+**Already-compressed data resists everyone.** On the video category every
+format—old or new—clustered between 98% and 100% of the original size, because
+H.264 is already compressed; several formats even *expanded* the data slightly
+through container overhead. The corollary for users is that "zipping" a folder
+of videos saves essentially nothing; the value of an archive there is bundling
+and convenience, not size. Photographs behaved similarly, though the
+uncompressed TIFF and BMP images in our set gave the stronger compressors
+(RAR4 at 70%, 7-Zip at 76%) some room to work.
 
 **Format longevity cuts both ways.** Remarkably, every vintage *format* in our
 set from 1985 onward can still be both created and read on a 2026 machine, once

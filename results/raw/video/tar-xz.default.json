@@ -1,0 +1,43 @@
+{
+ "schema_version": 2,
+ "id": "tar-xz",
+ "name": "tar.xz (xz/LZMA2)",
+ "tier": "A",
+ "level": "default",
+ "dataset": "video",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "tar",
+ "origin": "brew xz",
+ "notes": "Default level -6; -9e = maximum preset with extreme modifier (still the level dial).",
+ "create_cmd": "xz -c {tar_file} > {archive}",
+ "extract_cmd": "xz -dc {archive} > {out_tar}",
+ "runs": 3,
+ "timeout_s": 1800,
+ "recorded_at": "2026-07-09T12:47:06+00:00",
+ "input_bytes": 13683124,
+ "status": "ok",
+ "archive_bytes": 13643544,
+ "ratio_pct": 99.711,
+ "compress_s": [
+  2.885344082955271,
+  2.9065276668407023,
+  2.981914249714464
+ ],
+ "decompress_s": [
+  0.035714624915272,
+  0.03429025039076805,
+  0.03279554098844528
+ ],
+ "compress_s_median": 2.907,
+ "decompress_s_median": 0.034,
+ "compress_rss_bytes": 126795776,
+ "decompress_rss_bytes": 37552128,
+ "verify": {
+  "method": "tar",
+  "detail": "decompressed tar SHA-256 matches canonical tar",
+  "extras_ignored": []
+ },
+ "error": ""
+}

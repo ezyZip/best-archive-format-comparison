@@ -1,0 +1,43 @@
+{
+ "schema_version": 2,
+ "id": "tar-lrz",
+ "name": "tar.lrz (lrzip)",
+ "tier": "A",
+ "level": "default",
+ "dataset": "documents",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "tar",
+ "origin": "brew lrzip",
+ "notes": "Default backend LZMA at level 7; -L9 is the level dial (no backend change).",
+ "create_cmd": "lrzip -q -o {archive} {tar_file}",
+ "extract_cmd": "lrzip -q -d -o {out_tar} {archive}",
+ "runs": 3,
+ "timeout_s": 1800,
+ "recorded_at": "2026-07-09T12:33:47+00:00",
+ "input_bytes": 15493604,
+ "status": "ok",
+ "archive_bytes": 9314406,
+ "ratio_pct": 60.118,
+ "compress_s": [
+  0.9191183331422508,
+  0.87294758297503,
+  0.8782564592547715
+ ],
+ "decompress_s": [
+  0.33277254085987806,
+  0.33740950003266335,
+  0.3449625000357628
+ ],
+ "compress_s_median": 0.878,
+ "decompress_s_median": 0.337,
+ "compress_rss_bytes": 236208128,
+ "decompress_rss_bytes": 20856832,
+ "verify": {
+  "method": "tar",
+  "detail": "decompressed tar SHA-256 matches canonical tar",
+  "extras_ignored": []
+ },
+ "error": ""
+}

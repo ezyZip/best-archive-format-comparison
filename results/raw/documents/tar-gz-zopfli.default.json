@@ -1,0 +1,39 @@
+{
+ "schema_version": 2,
+ "id": "tar-gz-zopfli",
+ "name": "tar.gz (zopfli, exhaustive deflate)",
+ "tier": "A",
+ "level": "default",
+ "dataset": "documents",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "tar",
+ "origin": "brew zopfli",
+ "notes": "Same on-disk format as gzip; no level dial (always exhaustive). Decompresses with stock gzip.",
+ "create_cmd": "zopfli -c {tar_file} > {archive}",
+ "extract_cmd": "gzip -dc {archive} > {out_tar}",
+ "runs": 1,
+ "timeout_s": 3600,
+ "recorded_at": "2026-07-09T12:32:38+00:00",
+ "input_bytes": 15493604,
+ "status": "ok",
+ "archive_bytes": 15383500,
+ "ratio_pct": 99.289,
+ "compress_s": [
+  11.87968112481758
+ ],
+ "decompress_s": [
+  0.04871445894241333
+ ],
+ "compress_s_median": 11.88,
+ "decompress_s_median": 0.049,
+ "compress_rss_bytes": 345735168,
+ "decompress_rss_bytes": 1949696,
+ "verify": {
+  "method": "tar",
+  "detail": "decompressed tar SHA-256 matches canonical tar",
+  "extras_ignored": []
+ },
+ "error": ""
+}

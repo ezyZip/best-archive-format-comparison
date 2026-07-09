@@ -1,0 +1,43 @@
+{
+ "schema_version": 2,
+ "id": "tar-lzo",
+ "name": "tar.lzo (lzop)",
+ "tier": "A",
+ "level": "max",
+ "dataset": "documents",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "tar",
+ "origin": "brew lzop",
+ "notes": "Default level -3.",
+ "create_cmd": "lzop -q -9 -o {archive} {tar_file}",
+ "extract_cmd": "lzop -q -d -o {out_tar} {archive}",
+ "runs": 3,
+ "timeout_s": 900,
+ "recorded_at": "2026-07-09T12:33:45+00:00",
+ "input_bytes": 15493604,
+ "status": "ok",
+ "archive_bytes": 15424784,
+ "ratio_pct": 99.556,
+ "compress_s": [
+  0.7288506659679115,
+  0.714374375063926,
+  0.7090228330343962
+ ],
+ "decompress_s": [
+  0.019943916704505682,
+  0.019905583932995796,
+  0.015409667044878006
+ ],
+ "compress_s_median": 0.714,
+ "decompress_s_median": 0.02,
+ "compress_rss_bytes": 2539520,
+ "decompress_rss_bytes": 1736704,
+ "verify": {
+  "method": "tar",
+  "detail": "decompressed tar SHA-256 matches canonical tar",
+  "extras_ignored": []
+ },
+ "error": ""
+}

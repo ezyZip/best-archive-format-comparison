@@ -1,0 +1,43 @@
+{
+ "schema_version": 2,
+ "id": "xar",
+ "name": "xar (macOS eXtensible ARchiver)",
+ "tier": "A",
+ "level": "default",
+ "dataset": "full",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "directory",
+ "origin": "macOS bundled",
+ "notes": "Default gzip encoding; no level flag exposed.",
+ "create_cmd": "xar -cf {archive} .",
+ "extract_cmd": "xar -xf {archive}",
+ "runs": 3,
+ "timeout_s": 900,
+ "recorded_at": "2026-07-09T13:11:49+00:00",
+ "input_bytes": 57747676,
+ "status": "ok",
+ "archive_bytes": 47305399,
+ "ratio_pct": 81.917,
+ "compress_s": [
+  1.5343274590559304,
+  1.5321146668866277,
+  1.5256933751516044
+ ],
+ "decompress_s": [
+  0.12142541678622365,
+  0.11948154214769602,
+  0.11911962507292628
+ ],
+ "compress_s_median": 1.532,
+ "decompress_s_median": 0.119,
+ "compress_rss_bytes": 8945664,
+ "decompress_rss_bytes": 14303232,
+ "verify": {
+  "method": "tree",
+  "detail": "18 files verified against manifest",
+  "extras_ignored": []
+ },
+ "error": ""
+}

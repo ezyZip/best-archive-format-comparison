@@ -1,0 +1,43 @@
+{
+ "schema_version": 2,
+ "id": "apple-archive",
+ "name": "Apple Archive (.aar, lzfse)",
+ "tier": "A",
+ "level": "default",
+ "dataset": "video",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "directory",
+ "origin": "macOS bundled",
+ "notes": "No level dial; default algorithm lzfse. Introduced macOS 11 (2020).",
+ "create_cmd": "aa archive -d . -o {archive}",
+ "extract_cmd": "aa extract -d {out_dir} -i {archive}",
+ "runs": 3,
+ "timeout_s": 900,
+ "recorded_at": "2026-07-09T12:50:39+00:00",
+ "input_bytes": 13683124,
+ "status": "ok",
+ "archive_bytes": 13683450,
+ "ratio_pct": 100.002,
+ "compress_s": [
+  0.047164208721369505,
+  0.03939999965950847,
+  0.03881495771929622
+ ],
+ "decompress_s": [
+  0.02016729163005948,
+  0.027077999897301197,
+  0.02194666676223278
+ ],
+ "compress_s_median": 0.039,
+ "decompress_s_median": 0.022,
+ "compress_rss_bytes": 34324480,
+ "decompress_rss_bytes": 35930112,
+ "verify": {
+  "method": "tree",
+  "detail": "2 files verified against manifest",
+  "extras_ignored": []
+ },
+ "error": ""
+}

@@ -1,0 +1,43 @@
+{
+ "schema_version": 2,
+ "id": "rar4",
+ "name": "RAR 4 (legacy format)",
+ "tier": "A",
+ "level": "max",
+ "dataset": "images",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "directory",
+ "origin": "brew rar (proprietary, licensed)",
+ "notes": "-ma4 selects the legacy RAR4 archive format version (not a method tune).",
+ "create_cmd": "rar a -r -idq -ma4 -m5 {archive} .",
+ "extract_cmd": "unrar x -idq {archive} {out_dir}/",
+ "runs": 3,
+ "timeout_s": 3600,
+ "recorded_at": "2026-07-09T12:38:43+00:00",
+ "input_bytes": 17011359,
+ "status": "ok",
+ "archive_bytes": 11974885,
+ "ratio_pct": 70.393,
+ "compress_s": [
+  0.3199848751537502,
+  0.31276616640388966,
+  0.30664445785805583
+ ],
+ "decompress_s": [
+  0.20775424968451262,
+  0.20010270783677697,
+  0.2026140410453081
+ ],
+ "compress_s_median": 0.313,
+ "decompress_s_median": 0.203,
+ "compress_rss_bytes": 120111104,
+ "decompress_rss_bytes": 7241728,
+ "verify": {
+  "method": "tree",
+  "detail": "6 files verified against manifest",
+  "extras_ignored": []
+ },
+ "error": ""
+}

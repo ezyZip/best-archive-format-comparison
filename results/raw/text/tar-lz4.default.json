@@ -13,22 +13,26 @@
  "notes": "Default level 1 (fast mode); -12 is maximum (LZ4-HC). CLI is multithreaded by default (v1.10).",
  "create_cmd": "lz4 -q {tar_file} {archive}",
  "extract_cmd": "lz4 -q -d {archive} {out_tar}",
- "runs": 1,
+ "runs": 3,
  "timeout_s": 900,
- "recorded_at": "2026-07-09T09:33:35+00:00",
+ "recorded_at": "2026-07-09T12:15:52+00:00",
  "input_bytes": 11559589,
  "status": "ok",
  "archive_bytes": 6714551,
  "ratio_pct": 58.086,
  "compress_s": [
-  0.02205037511885166
+  0.022029290907084942,
+  0.01868829084560275,
+  0.018740625120699406
  ],
  "decompress_s": [
-  0.030995375011116266
+  0.01687566703185439,
+  0.015011792071163654,
+  0.025070624891668558
  ],
- "compress_s_median": 0.022,
- "decompress_s_median": 0.031,
- "compress_rss_bytes": 20201472,
+ "compress_s_median": 0.019,
+ "decompress_s_median": 0.017,
+ "compress_rss_bytes": 20250624,
  "decompress_rss_bytes": 19513344,
  "verify": {
   "method": "tar",

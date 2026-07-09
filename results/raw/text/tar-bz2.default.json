@@ -13,23 +13,27 @@
  "notes": "bzip2's default block size (-9) already is its maximum: default = max.",
  "create_cmd": "bzip2 -c {tar_file} > {archive}",
  "extract_cmd": "bzip2 -dc {archive} > {out_tar}",
- "runs": 1,
+ "runs": 3,
  "timeout_s": 900,
- "recorded_at": "2026-07-09T09:33:20+00:00",
+ "recorded_at": "2026-07-09T12:15:19+00:00",
  "input_bytes": 11559589,
  "status": "ok",
  "archive_bytes": 2983907,
  "ratio_pct": 25.813,
  "compress_s": [
-  0.7576965829357505
+  0.5855196667835116,
+  0.5817756252363324,
+  0.583463542163372
  ],
  "decompress_s": [
-  0.2396868751384318
+  0.21225420804694295,
+  0.21492041694000363,
+  0.2129283333197236
  ],
- "compress_s_median": 0.758,
- "decompress_s_median": 0.24,
- "compress_rss_bytes": 8011776,
- "decompress_rss_bytes": 4997120,
+ "compress_s_median": 0.583,
+ "decompress_s_median": 0.213,
+ "compress_rss_bytes": 7995392,
+ "decompress_rss_bytes": 4980736,
  "verify": {
   "method": "tar",
   "detail": "decompressed tar SHA-256 matches canonical tar",

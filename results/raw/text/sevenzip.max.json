@@ -13,22 +13,26 @@
  "notes": "Default level -mx=5; multithreaded by default (disclosed).",
  "create_cmd": "7zz a -bso0 -bsp0 -mx=9 {archive} .",
  "extract_cmd": "7zz x -bso0 -bsp0 -y -o{out_dir} {archive}",
- "runs": 1,
+ "runs": 3,
  "timeout_s": 3600,
- "recorded_at": "2026-07-09T09:32:59+00:00",
+ "recorded_at": "2026-07-09T12:14:52+00:00",
  "input_bytes": 11559589,
  "status": "ok",
  "archive_bytes": 3112581,
  "ratio_pct": 26.926,
  "compress_s": [
-  2.411821082700044
+  1.9860522500239313,
+  2.026507542002946,
+  1.9947648327797651
  ],
  "decompress_s": [
-  0.09117899974808097
+  0.0878737922757864,
+  0.08766608405858278,
+  0.08804583316668868
  ],
- "compress_s_median": 2.412,
- "decompress_s_median": 0.091,
- "compress_rss_bytes": 147046400,
+ "compress_s_median": 1.995,
+ "decompress_s_median": 0.088,
+ "compress_rss_bytes": 147030016,
  "decompress_rss_bytes": 18055168,
  "verify": {
   "method": "tree",

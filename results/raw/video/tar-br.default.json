@@ -1,0 +1,43 @@
+{
+ "schema_version": 2,
+ "id": "tar-br",
+ "name": "tar.br (Brotli)",
+ "tier": "A",
+ "level": "default",
+ "dataset": "video",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "tar",
+ "origin": "brew brotli",
+ "notes": "The brotli CLI's default quality is already the maximum (q=11): default = max.",
+ "create_cmd": "brotli -c {tar_file} > {archive}",
+ "extract_cmd": "brotli -dc {archive} > {out_tar}",
+ "runs": 3,
+ "timeout_s": 1800,
+ "recorded_at": "2026-07-09T12:47:26+00:00",
+ "input_bytes": 13683124,
+ "status": "ok",
+ "archive_bytes": 13489863,
+ "ratio_pct": 98.588,
+ "compress_s": [
+  14.789363791700453,
+  14.768312333151698,
+  14.750448999926448
+ ],
+ "decompress_s": [
+  0.046704457607120275,
+  0.04111654171720147,
+  0.0382942077703774
+ ],
+ "compress_s_median": 14.768,
+ "decompress_s_median": 0.041,
+ "compress_rss_bytes": 173260800,
+ "decompress_rss_bytes": 26017792,
+ "verify": {
+  "method": "tar",
+  "detail": "decompressed tar SHA-256 matches canonical tar",
+  "extras_ignored": []
+ },
+ "error": ""
+}

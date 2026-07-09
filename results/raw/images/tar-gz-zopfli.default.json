@@ -1,0 +1,39 @@
+{
+ "schema_version": 2,
+ "id": "tar-gz-zopfli",
+ "name": "tar.gz (zopfli, exhaustive deflate)",
+ "tier": "A",
+ "level": "default",
+ "dataset": "images",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "tar",
+ "origin": "brew zopfli",
+ "notes": "Same on-disk format as gzip; no level dial (always exhaustive). Decompresses with stock gzip.",
+ "create_cmd": "zopfli -c {tar_file} > {archive}",
+ "extract_cmd": "gzip -dc {archive} > {out_tar}",
+ "runs": 1,
+ "timeout_s": 3600,
+ "recorded_at": "2026-07-09T12:38:48+00:00",
+ "input_bytes": 17011359,
+ "status": "ok",
+ "archive_bytes": 13858329,
+ "ratio_pct": 81.465,
+ "compress_s": [
+  22.047421208117157
+ ],
+ "decompress_s": [
+  0.08079375000670552
+ ],
+ "compress_s_median": 22.047,
+ "decompress_s_median": 0.081,
+ "compress_rss_bytes": 213696512,
+ "decompress_rss_bytes": 1949696,
+ "verify": {
+  "method": "tar",
+  "detail": "decompressed tar SHA-256 matches canonical tar",
+  "extras_ignored": []
+ },
+ "error": ""
+}

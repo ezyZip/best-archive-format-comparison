@@ -13,23 +13,27 @@
  "notes": "Default level 3; --ultra -22 is the documented maximum level.",
  "create_cmd": "zstd -q -o {archive} {tar_file}",
  "extract_cmd": "zstd -q -d -o {out_tar} {archive}",
- "runs": 1,
+ "runs": 3,
  "timeout_s": 900,
- "recorded_at": "2026-07-09T09:33:31+00:00",
+ "recorded_at": "2026-07-09T12:15:43+00:00",
  "input_bytes": 11559589,
  "status": "ok",
  "archive_bytes": 3985558,
  "ratio_pct": 34.478,
  "compress_s": [
-  0.053142833057790995
+  0.05800762493163347,
+  0.04376895818859339,
+  0.043491207994520664
  ],
  "decompress_s": [
-  0.02235783264040947
+  0.02153470879420638,
+  0.020316292066127062,
+  0.0204494995996356
  ],
- "compress_s_median": 0.053,
- "decompress_s_median": 0.022,
- "compress_rss_bytes": 23085056,
- "decompress_rss_bytes": 7733248,
+ "compress_s_median": 0.044,
+ "decompress_s_median": 0.02,
+ "compress_rss_bytes": 23101440,
+ "decompress_rss_bytes": 8126464,
  "verify": {
   "method": "tar",
   "detail": "decompressed tar SHA-256 matches canonical tar",

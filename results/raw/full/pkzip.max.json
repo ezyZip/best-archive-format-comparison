@@ -1,0 +1,39 @@
+{
+ "schema_version": 2,
+ "id": "pkzip",
+ "name": "ZIP (PKZIP 2.04g, 1993)",
+ "tier": "D",
+ "level": "max",
+ "dataset": "full",
+ "engine": "dosbox",
+ "emulated": true,
+ "appendix": false,
+ "input_mode": "tar",
+ "origin": "archive.org PKZ204G.EXE (1993), run under DOSBox-X",
+ "notes": "The original PKWARE archiver, resurrected under DOS emulation. Default vs -ex (maximal) deflate. Archives read back with modern Info-ZIP unzip: a 1993 encoder vs modern deflate (Info-ZIP) vs exhaustive deflate (zopfli), same .zip format.",
+ "create_cmd": "PKZIP -ex {dos_archive} {tar_file}",
+ "extract_cmd": "unzip -q {archive}",
+ "runs": 1,
+ "timeout_s": 600,
+ "recorded_at": "2026-07-09T13:23:13+00:00",
+ "input_bytes": 57747676,
+ "status": "ok",
+ "archive_bytes": 47155471,
+ "ratio_pct": 81.658,
+ "compress_s": [
+  69.6064208750613
+ ],
+ "decompress_s": [
+  0.3586749997921288
+ ],
+ "compress_s_median": 69.606,
+ "decompress_s_median": 0.359,
+ "compress_rss_bytes": 153124864,
+ "decompress_rss_bytes": 2785280,
+ "verify": {
+  "method": "tar",
+  "detail": "decompressed tar SHA-256 matches canonical tar",
+  "extras_ignored": []
+ },
+ "error": ""
+}

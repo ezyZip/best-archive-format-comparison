@@ -1,0 +1,39 @@
+{
+ "schema_version": 2,
+ "id": "cpio",
+ "name": "cpio (appendix: store-only)",
+ "tier": "A",
+ "level": "default",
+ "dataset": "video",
+ "engine": "native",
+ "emulated": false,
+ "appendix": true,
+ "input_mode": "directory",
+ "origin": "macOS bundled (bsdcpio)",
+ "notes": "Uncompressed container; appendix row for container-overhead comparison.",
+ "create_cmd": "find . -type f | LC_ALL=C sort | cpio -o > {archive}",
+ "extract_cmd": "cpio -id < {archive}",
+ "runs": 1,
+ "timeout_s": 300,
+ "recorded_at": "2026-07-09T12:53:07+00:00",
+ "input_bytes": 13683124,
+ "status": "ok",
+ "archive_bytes": 13683712,
+ "ratio_pct": 100.004,
+ "compress_s": [
+  0.05810520797967911
+ ],
+ "decompress_s": [
+  0.013093291781842709
+ ],
+ "compress_s_median": 0.058,
+ "decompress_s_median": 0.013,
+ "compress_rss_bytes": 3162112,
+ "decompress_rss_bytes": 3309568,
+ "verify": {
+  "method": "tree",
+  "detail": "2 files verified against manifest",
+  "extras_ignored": []
+ },
+ "error": ""
+}

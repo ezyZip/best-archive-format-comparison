@@ -1,0 +1,43 @@
+{
+ "schema_version": 2,
+ "id": "tar-bz3",
+ "name": "tar.bz3 (bzip3)",
+ "tier": "A",
+ "level": "max",
+ "dataset": "video",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "tar",
+ "origin": "brew bzip3",
+ "notes": "bzip3's only dial is block size (default 16 MiB, max 511 MiB); treated as its level.",
+ "create_cmd": "bzip3 -e -b 511 -c {tar_file} > {archive}",
+ "extract_cmd": "bzip3 -d -c {archive} > {out_tar}",
+ "runs": 3,
+ "timeout_s": 3600,
+ "recorded_at": "2026-07-09T12:48:27+00:00",
+ "input_bytes": 13683124,
+ "status": "ok",
+ "archive_bytes": 13680742,
+ "ratio_pct": 99.983,
+ "compress_s": [
+  2.2112852497957647,
+  2.134757500141859,
+  2.1365520828403533
+ ],
+ "decompress_s": [
+  2.523536458145827,
+  2.1145719159394503,
+  2.097125042229891
+ ],
+ "compress_s_median": 2.137,
+ "decompress_s_median": 2.115,
+ "compress_rss_bytes": 1326710784,
+ "decompress_rss_bytes": 2215723008,
+ "verify": {
+  "method": "tar",
+  "detail": "decompressed tar SHA-256 matches canonical tar",
+  "extras_ignored": []
+ },
+ "error": ""
+}

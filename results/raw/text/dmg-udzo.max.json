@@ -13,23 +13,27 @@
  "notes": "zlib-level is hdiutil's documented level dial for UDZO.",
  "create_cmd": "hdiutil create -quiet -ov -format UDZO -imagekey zlib-level=9 -volname CORPUS -srcfolder . {archive}",
  "extract_cmd": "hdiutil attach -quiet -nobrowse -readonly -mountpoint ./__mnt {archive} && ditto ./__mnt . && hdiutil detach -quiet ./__mnt && rm -rf ./__mnt",
- "runs": 1,
+ "runs": 3,
  "timeout_s": 1800,
- "recorded_at": "2026-07-09T09:35:39+00:00",
+ "recorded_at": "2026-07-09T12:19:03+00:00",
  "input_bytes": 11559589,
  "status": "ok",
- "archive_bytes": 4201824,
+ "archive_bytes": 4201841,
  "ratio_pct": 36.349,
  "compress_s": [
-  5.043223959393799
+  5.040843000169843,
+  6.070322499610484,
+  6.073604959063232
  ],
  "decompress_s": [
-  3.9339749170467257
+  3.3210047078318894,
+  0.22091654082760215,
+  0.21536270901560783
  ],
- "compress_s_median": 5.043,
- "decompress_s_median": 3.934,
- "compress_rss_bytes": 6553600,
- "decompress_rss_bytes": 6651904,
+ "compress_s_median": 6.07,
+ "decompress_s_median": 0.221,
+ "compress_rss_bytes": 6602752,
+ "decompress_rss_bytes": 6602752,
  "verify": {
   "method": "tree",
   "detail": "4 files verified against manifest",

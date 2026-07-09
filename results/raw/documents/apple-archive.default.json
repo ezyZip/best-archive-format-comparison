@@ -1,0 +1,43 @@
+{
+ "schema_version": 2,
+ "id": "apple-archive",
+ "name": "Apple Archive (.aar, lzfse)",
+ "tier": "A",
+ "level": "default",
+ "dataset": "documents",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "directory",
+ "origin": "macOS bundled",
+ "notes": "No level dial; default algorithm lzfse. Introduced macOS 11 (2020).",
+ "create_cmd": "aa archive -d . -o {archive}",
+ "extract_cmd": "aa extract -d {out_dir} -i {archive}",
+ "runs": 3,
+ "timeout_s": 900,
+ "recorded_at": "2026-07-09T12:35:48+00:00",
+ "input_bytes": 15493604,
+ "status": "ok",
+ "archive_bytes": 15494298,
+ "ratio_pct": 100.004,
+ "compress_s": [
+  0.06692587537690997,
+  0.05495474999770522,
+  0.05338791571557522
+ ],
+ "decompress_s": [
+  0.04192274995148182,
+  0.041301249992102385,
+  0.043586290907114744
+ ],
+ "compress_s_median": 0.055,
+ "decompress_s_median": 0.042,
+ "compress_rss_bytes": 37879808,
+ "decompress_rss_bytes": 36880384,
+ "verify": {
+  "method": "tree",
+  "detail": "6 files verified against manifest",
+  "extras_ignored": []
+ },
+ "error": ""
+}

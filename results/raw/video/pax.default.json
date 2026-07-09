@@ -1,0 +1,39 @@
+{
+ "schema_version": 2,
+ "id": "pax",
+ "name": "pax (appendix: POSIX archiver)",
+ "tier": "A",
+ "level": "default",
+ "dataset": "video",
+ "engine": "native",
+ "emulated": false,
+ "appendix": true,
+ "input_mode": "directory",
+ "origin": "macOS bundled",
+ "notes": "Uncompressed POSIX container; appendix row.",
+ "create_cmd": "pax -w -f {archive} .",
+ "extract_cmd": "pax -r -f {archive}",
+ "runs": 1,
+ "timeout_s": 300,
+ "recorded_at": "2026-07-09T12:53:07+00:00",
+ "input_bytes": 13683124,
+ "status": "ok",
+ "archive_bytes": 13690880,
+ "ratio_pct": 100.057,
+ "compress_s": [
+  0.021951207891106606
+ ],
+ "decompress_s": [
+  0.021867541130632162
+ ],
+ "compress_s_median": 0.022,
+ "decompress_s_median": 0.022,
+ "compress_rss_bytes": 1622016,
+ "decompress_rss_bytes": 1622016,
+ "verify": {
+  "method": "tree",
+  "detail": "2 files verified against manifest",
+  "extras_ignored": []
+ },
+ "error": ""
+}

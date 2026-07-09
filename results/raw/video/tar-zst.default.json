@@ -1,0 +1,43 @@
+{
+ "schema_version": 2,
+ "id": "tar-zst",
+ "name": "tar.zst (Zstandard)",
+ "tier": "A",
+ "level": "default",
+ "dataset": "video",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "tar",
+ "origin": "brew zstd",
+ "notes": "Default level 3; --ultra -22 is the documented maximum level.",
+ "create_cmd": "zstd -q -o {archive} {tar_file}",
+ "extract_cmd": "zstd -q -d -o {out_tar} {archive}",
+ "runs": 3,
+ "timeout_s": 900,
+ "recorded_at": "2026-07-09T12:47:23+00:00",
+ "input_bytes": 13683124,
+ "status": "ok",
+ "archive_bytes": 13653246,
+ "ratio_pct": 99.782,
+ "compress_s": [
+  0.028416750021278858,
+  0.02408837480470538,
+  0.024560957681387663
+ ],
+ "decompress_s": [
+  0.017533374950289726,
+  0.017429541796445847,
+  0.015345874708145857
+ ],
+ "compress_s_median": 0.025,
+ "decompress_s_median": 0.017,
+ "compress_rss_bytes": 35160064,
+ "decompress_rss_bytes": 8077312,
+ "verify": {
+  "method": "tar",
+  "detail": "decompressed tar SHA-256 matches canonical tar",
+  "extras_ignored": []
+ },
+ "error": ""
+}

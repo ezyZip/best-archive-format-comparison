@@ -6,6 +6,7 @@ corpus-build/
 results/logs/
 results/archives/
 results/work/
+results/run*.log
 
 # Tool acquisition areas (downloaded/built at setup time; provenance recorded
 # in tools/README.md with URLs and SHA-256 checksums)

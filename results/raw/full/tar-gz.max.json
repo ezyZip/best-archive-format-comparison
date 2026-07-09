@@ -1,0 +1,43 @@
+{
+ "schema_version": 2,
+ "id": "tar-gz",
+ "name": "tar.gz (gzip)",
+ "tier": "A",
+ "level": "max",
+ "dataset": "full",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "tar",
+ "origin": "macOS bundled",
+ "notes": "Default level -6 (RFC 1952 deflate).",
+ "create_cmd": "gzip -9 -c {tar_file} > {archive}",
+ "extract_cmd": "gzip -dc {archive} > {out_tar}",
+ "runs": 3,
+ "timeout_s": 900,
+ "recorded_at": "2026-07-09T12:54:06+00:00",
+ "input_bytes": 57747676,
+ "status": "ok",
+ "archive_bytes": 47308709,
+ "ratio_pct": 81.923,
+ "compress_s": [
+  1.5012587499804795,
+  1.5004444592632353,
+  1.5356457908637822
+ ],
+ "decompress_s": [
+  0.09481279226019979,
+  0.09201525012031198,
+  0.09775795880705118
+ ],
+ "compress_s_median": 1.501,
+ "decompress_s_median": 0.095,
+ "compress_rss_bytes": 1949696,
+ "decompress_rss_bytes": 1949696,
+ "verify": {
+  "method": "tar",
+  "detail": "decompressed tar SHA-256 matches canonical tar",
+  "extras_ignored": []
+ },
+ "error": ""
+}

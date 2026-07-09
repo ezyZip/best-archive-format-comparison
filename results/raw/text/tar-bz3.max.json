@@ -13,23 +13,27 @@
  "notes": "bzip3's only dial is block size (default 16 MiB, max 511 MiB); treated as its level.",
  "create_cmd": "bzip3 -e -b 511 -c {tar_file} > {archive}",
  "extract_cmd": "bzip3 -d -c {archive} > {out_tar}",
- "runs": 1,
+ "runs": 3,
  "timeout_s": 3600,
- "recorded_at": "2026-07-09T09:34:00+00:00",
+ "recorded_at": "2026-07-09T12:17:01+00:00",
  "input_bytes": 11559589,
  "status": "ok",
  "archive_bytes": 2538975,
  "ratio_pct": 21.964,
  "compress_s": [
-  1.6078969580121338
+  1.556824583094567,
+  1.5210999581031501,
+  1.5430879998020828
  ],
  "decompress_s": [
-  1.7334945830516517
+  1.373270958662033,
+  0.8378651249222457,
+  0.8248894168063998
  ],
- "compress_s_median": 1.608,
- "decompress_s_median": 1.733,
- "compress_rss_bytes": 889651200,
- "decompress_rss_bytes": 2197438464,
+ "compress_s_median": 1.543,
+ "decompress_s_median": 0.838,
+ "compress_rss_bytes": 1620721664,
+ "decompress_rss_bytes": 2212478976,
  "verify": {
   "method": "tar",
   "detail": "decompressed tar SHA-256 matches canonical tar",

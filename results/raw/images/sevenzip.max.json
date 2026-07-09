@@ -1,0 +1,43 @@
+{
+ "schema_version": 2,
+ "id": "sevenzip",
+ "name": "7z (7-Zip, LZMA2)",
+ "tier": "A",
+ "level": "max",
+ "dataset": "images",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "directory",
+ "origin": "brew sevenzip",
+ "notes": "Default level -mx=5; multithreaded by default (disclosed).",
+ "create_cmd": "7zz a -bso0 -bsp0 -mx=9 {archive} .",
+ "extract_cmd": "7zz x -bso0 -bsp0 -y -o{out_dir} {archive}",
+ "runs": 3,
+ "timeout_s": 3600,
+ "recorded_at": "2026-07-09T12:38:34+00:00",
+ "input_bytes": 17011359,
+ "status": "ok",
+ "archive_bytes": 12900286,
+ "ratio_pct": 75.833,
+ "compress_s": [
+  1.1486934996210039,
+  1.1273650843650103,
+  1.111065249890089
+ ],
+ "decompress_s": [
+  0.28459500009194016,
+  0.28667762503027916,
+  0.27758104214444757
+ ],
+ "compress_s_median": 1.127,
+ "decompress_s_median": 0.285,
+ "compress_rss_bytes": 229687296,
+ "decompress_rss_bytes": 34013184,
+ "verify": {
+  "method": "tree",
+  "detail": "6 files verified against manifest",
+  "extras_ignored": []
+ },
+ "error": ""
+}

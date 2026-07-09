@@ -1,0 +1,43 @@
+{
+ "schema_version": 2,
+ "id": "tar-lz4",
+ "name": "tar.lz4 (LZ4)",
+ "tier": "A",
+ "level": "max",
+ "dataset": "documents",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "tar",
+ "origin": "brew lz4",
+ "notes": "Default level 1 (fast mode); -12 is maximum (LZ4-HC). CLI is multithreaded by default (v1.10).",
+ "create_cmd": "lz4 -q -12 {tar_file} {archive}",
+ "extract_cmd": "lz4 -q -d {archive} {out_tar}",
+ "runs": 3,
+ "timeout_s": 900,
+ "recorded_at": "2026-07-09T12:33:12+00:00",
+ "input_bytes": 15493604,
+ "status": "ok",
+ "archive_bytes": 15429841,
+ "ratio_pct": 99.588,
+ "compress_s": [
+  0.10397695796564221,
+  0.0979001666419208,
+  0.09949966613203287
+ ],
+ "decompress_s": [
+  0.014850583858788013,
+  0.019165582954883575,
+  0.01892299996688962
+ ],
+ "compress_s_median": 0.099,
+ "decompress_s_median": 0.019,
+ "compress_rss_bytes": 34340864,
+ "decompress_rss_bytes": 31326208,
+ "verify": {
+  "method": "tar",
+  "detail": "decompressed tar SHA-256 matches canonical tar",
+  "extras_ignored": []
+ },
+ "error": ""
+}

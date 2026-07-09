@@ -1,0 +1,43 @@
+{
+ "schema_version": 2,
+ "id": "tar-zst",
+ "name": "tar.zst (Zstandard)",
+ "tier": "A",
+ "level": "max",
+ "dataset": "documents",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "tar",
+ "origin": "brew zstd",
+ "notes": "Default level 3; --ultra -22 is the documented maximum level.",
+ "create_cmd": "zstd -q --ultra -22 -o {archive} {tar_file}",
+ "extract_cmd": "zstd -q -d -o {out_tar} {archive}",
+ "runs": 3,
+ "timeout_s": 3600,
+ "recorded_at": "2026-07-09T12:33:10+00:00",
+ "input_bytes": 15493604,
+ "status": "ok",
+ "archive_bytes": 9252215,
+ "ratio_pct": 59.716,
+ "compress_s": [
+  0.6196717917919159,
+  0.5828695418313146,
+  0.5967470407485962
+ ],
+ "decompress_s": [
+  0.018955625128000975,
+  0.018405291717499495,
+  0.019113125279545784
+ ],
+ "compress_s_median": 0.597,
+ "decompress_s_median": 0.019,
+ "compress_rss_bytes": 299089920,
+ "decompress_rss_bytes": 21348352,
+ "verify": {
+  "method": "tar",
+  "detail": "decompressed tar SHA-256 matches canonical tar",
+  "extras_ignored": []
+ },
+ "error": ""
+}

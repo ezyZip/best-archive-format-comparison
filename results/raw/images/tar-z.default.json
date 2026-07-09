@@ -1,0 +1,43 @@
+{
+ "schema_version": 2,
+ "id": "tar-z",
+ "name": "tar.Z (compress, LZW 1984)",
+ "tier": "A",
+ "level": "default",
+ "dataset": "images",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "tar",
+ "origin": "macOS bundled",
+ "notes": "Unix compress; 16-bit LZW is both default and maximum. The .Z format of 1984.",
+ "create_cmd": "compress -c {tar_file} > {archive}",
+ "extract_cmd": "uncompress -c {archive} > {out_tar}",
+ "runs": 3,
+ "timeout_s": 900,
+ "recorded_at": "2026-07-09T12:41:50+00:00",
+ "input_bytes": 17011359,
+ "status": "ok",
+ "archive_bytes": 17624039,
+ "ratio_pct": 103.602,
+ "compress_s": [
+  0.3166343327611685,
+  0.3258121251128614,
+  0.31329650012776256
+ ],
+ "decompress_s": [
+  0.13818162493407726,
+  0.13726749969646335,
+  0.13722987519577146
+ ],
+ "compress_s_median": 0.317,
+ "decompress_s_median": 0.137,
+ "compress_rss_bytes": 1966080,
+ "decompress_rss_bytes": 1966080,
+ "verify": {
+  "method": "tar",
+  "detail": "decompressed tar SHA-256 matches canonical tar",
+  "extras_ignored": []
+ },
+ "error": ""
+}

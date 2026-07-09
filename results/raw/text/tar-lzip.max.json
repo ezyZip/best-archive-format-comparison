@@ -13,21 +13,25 @@
  "notes": "Default level -6. plzip (parallel implementation of the same format) intentionally excluded: one row per format.",
  "create_cmd": "lzip -9 -c {tar_file} > {archive}",
  "extract_cmd": "lzip -dc {archive} > {out_tar}",
- "runs": 1,
+ "runs": 3,
  "timeout_s": 3600,
- "recorded_at": "2026-07-09T09:34:09+00:00",
+ "recorded_at": "2026-07-09T12:17:20+00:00",
  "input_bytes": 11559589,
  "status": "ok",
  "archive_bytes": 3108215,
  "ratio_pct": 26.889,
  "compress_s": [
-  4.648114500101656
+  3.921186374966055,
+  3.8164883330464363,
+  3.8423001668415964
  ],
  "decompress_s": [
-  0.24816545937210321
+  0.21896270755678415,
+  0.21856462489813566,
+  0.218964499887079
  ],
- "compress_s_median": 4.648,
- "decompress_s_median": 0.248,
+ "compress_s_median": 3.842,
+ "decompress_s_median": 0.219,
  "compress_rss_bytes": 123092992,
  "decompress_rss_bytes": 13058048,
  "verify": {

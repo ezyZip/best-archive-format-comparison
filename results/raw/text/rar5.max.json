@@ -13,23 +13,27 @@
  "notes": "Default level -m3; RAR5 archive format is the tool default.",
  "create_cmd": "rar a -r -idq -m5 {archive} .",
  "extract_cmd": "unrar x -idq {archive} {out_dir}/",
- "runs": 1,
+ "runs": 3,
  "timeout_s": 3600,
- "recorded_at": "2026-07-09T09:33:02+00:00",
+ "recorded_at": "2026-07-09T12:14:59+00:00",
  "input_bytes": 11559589,
  "status": "ok",
  "archive_bytes": 3408264,
  "ratio_pct": 29.484,
  "compress_s": [
-  0.3018942498601973
+  0.26713075023144484,
+  0.28209704207256436,
+  0.26577466586604714
  ],
  "decompress_s": [
-  0.04600362526252866
+  0.041962333023548126,
+  0.040709624998271465,
+  0.04354191664606333
  ],
- "compress_s_median": 0.302,
- "decompress_s_median": 0.046,
- "compress_rss_bytes": 152977408,
- "decompress_rss_bytes": 18857984,
+ "compress_s_median": 0.267,
+ "decompress_s_median": 0.042,
+ "compress_rss_bytes": 153075712,
+ "decompress_rss_bytes": 18841600,
  "verify": {
   "method": "tree",
   "detail": "4 files verified against manifest",

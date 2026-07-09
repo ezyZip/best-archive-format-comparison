@@ -1,0 +1,43 @@
+{
+ "schema_version": 2,
+ "id": "tar",
+ "name": "tar (uncompressed, baseline)",
+ "tier": "A",
+ "level": "default",
+ "dataset": "video",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "directory",
+ "origin": "macOS bundled (libarchive)",
+ "notes": "Container overhead baseline; no compression.",
+ "create_cmd": "bsdtar -cf {archive} .",
+ "extract_cmd": "bsdtar -xf {archive}",
+ "runs": 3,
+ "timeout_s": 300,
+ "recorded_at": "2026-07-09T12:46:50+00:00",
+ "input_bytes": 13683124,
+ "status": "ok",
+ "archive_bytes": 13686272,
+ "ratio_pct": 100.023,
+ "compress_s": [
+  0.023553833831101656,
+  0.0202287919819355,
+  0.018764750100672245
+ ],
+ "decompress_s": [
+  0.014074957929551601,
+  0.011898375116288662,
+  0.013109083753079176
+ ],
+ "compress_s_median": 0.02,
+ "decompress_s_median": 0.013,
+ "compress_rss_bytes": 3342336,
+ "decompress_rss_bytes": 3407872,
+ "verify": {
+  "method": "tree",
+  "detail": "2 files verified against manifest",
+  "extras_ignored": []
+ },
+ "error": ""
+}

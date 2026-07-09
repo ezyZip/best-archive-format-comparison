@@ -1,0 +1,43 @@
+{
+ "schema_version": 2,
+ "id": "freeze",
+ "name": "freeze (1993)",
+ "tier": "B",
+ "level": "default",
+ "dataset": "video",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "tar",
+ "origin": "source build: freeze 2.5.0 (ibiblio.org)",
+ "notes": "LZSS + adaptive Huffman, comp.sources.misc era; no level dial.",
+ "create_cmd": "freeze -c {tar_file} > {archive}",
+ "extract_cmd": "freeze -dc {archive} > {out_tar}",
+ "runs": 3,
+ "timeout_s": 1800,
+ "recorded_at": "2026-07-09T12:52:01+00:00",
+ "input_bytes": 13683124,
+ "status": "ok",
+ "archive_bytes": 13678831,
+ "ratio_pct": 99.969,
+ "compress_s": [
+  1.071783249732107,
+  1.0673431660979986,
+  1.0651822090148926
+ ],
+ "decompress_s": [
+  0.9113201661966741,
+  0.907476874999702,
+  0.9069074997678399
+ ],
+ "compress_s_median": 1.067,
+ "decompress_s_median": 0.907,
+ "compress_rss_bytes": 1949696,
+ "decompress_rss_bytes": 1949696,
+ "verify": {
+  "method": "tar",
+  "detail": "decompressed tar SHA-256 matches canonical tar",
+  "extras_ignored": []
+ },
+ "error": ""
+}

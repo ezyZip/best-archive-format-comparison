@@ -15,20 +15,20 @@
  "extract_cmd": "gzip -dc {archive} > {out_tar}",
  "runs": 1,
  "timeout_s": 3600,
- "recorded_at": "2026-07-09T09:33:04+00:00",
+ "recorded_at": "2026-07-09T12:15:05+00:00",
  "input_bytes": 11559589,
  "status": "ok",
  "archive_bytes": 3838112,
  "ratio_pct": 33.203,
  "compress_s": [
-  16.1574534997344
+  14.621053542010486
  ],
  "decompress_s": [
-  0.029026417061686516
+  0.026482583954930305
  ],
- "compress_s_median": 16.157,
- "decompress_s_median": 0.029,
- "compress_rss_bytes": 148455424,
+ "compress_s_median": 14.621,
+ "decompress_s_median": 0.026,
+ "compress_rss_bytes": 160153600,
  "decompress_rss_bytes": 1949696,
  "verify": {
   "method": "tar",

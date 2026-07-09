@@ -1,0 +1,43 @@
+{
+ "schema_version": 2,
+ "id": "dar",
+ "name": "dar (Disk ARchive)",
+ "tier": "A",
+ "level": "default",
+ "dataset": "full",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "directory",
+ "origin": "brew dar",
+ "notes": "-z defaults to gzip level 9, so default = max for dar's gzip mode.",
+ "create_cmd": "dar -Q -q -w -z -c {archive_base} -R .",
+ "extract_cmd": "dar -Q -q -w -O -x {archive_base} -R .",
+ "runs": 3,
+ "timeout_s": 1800,
+ "recorded_at": "2026-07-09T13:11:58+00:00",
+ "input_bytes": 57747676,
+ "status": "ok",
+ "archive_bytes": 47305099,
+ "ratio_pct": 81.917,
+ "compress_s": [
+  1.7526218751445413,
+  1.7334884158335626,
+  1.7291279169730842
+ ],
+ "decompress_s": [
+  0.3009480410255492,
+  0.2969370409846306,
+  0.29370170924812555
+ ],
+ "compress_s_median": 1.733,
+ "decompress_s_median": 0.297,
+ "compress_rss_bytes": 11911168,
+ "decompress_rss_bytes": 11534336,
+ "verify": {
+  "method": "tree",
+  "detail": "18 files verified against manifest",
+  "extras_ignored": []
+ },
+ "error": ""
+}

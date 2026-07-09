@@ -13,23 +13,27 @@
  "notes": "Default backend LZMA at level 7; -L9 is the level dial (no backend change).",
  "create_cmd": "lrzip -q -o {archive} {tar_file}",
  "extract_cmd": "lrzip -q -d -o {out_tar} {archive}",
- "runs": 1,
+ "runs": 3,
  "timeout_s": 1800,
- "recorded_at": "2026-07-09T09:33:52+00:00",
+ "recorded_at": "2026-07-09T12:16:38+00:00",
  "input_bytes": 11559589,
  "status": "ok",
  "archive_bytes": 3148612,
  "ratio_pct": 27.238,
  "compress_s": [
-  2.8728612498380244
+  2.446166334208101,
+  2.4464021250605583,
+  2.459027790930122
  ],
  "decompress_s": [
-  0.266787791159004
+  0.22739845793694258,
+  0.22775045782327652,
+  0.22782474989071488
  ],
- "compress_s_median": 2.873,
- "decompress_s_median": 0.267,
+ "compress_s_median": 2.446,
+ "decompress_s_median": 0.228,
  "compress_rss_bytes": 243007488,
- "decompress_rss_bytes": 16187392,
+ "decompress_rss_bytes": 16351232,
  "verify": {
   "method": "tar",
   "detail": "decompressed tar SHA-256 matches canonical tar",

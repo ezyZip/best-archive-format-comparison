@@ -13,23 +13,27 @@
  "notes": "-z defaults to gzip level 9, so default = max for dar's gzip mode.",
  "create_cmd": "dar -Q -q -w -z -c {archive_base} -R .",
  "extract_cmd": "dar -Q -q -w -O -x {archive_base} -R .",
- "runs": 1,
+ "runs": 3,
  "timeout_s": 1800,
- "recorded_at": "2026-07-09T09:36:02+00:00",
+ "recorded_at": "2026-07-09T12:19:53+00:00",
  "input_bytes": 11559589,
  "status": "ok",
- "archive_bytes": 4041229,
+ "archive_bytes": 4041230,
  "ratio_pct": 34.96,
  "compress_s": [
-  0.6272066249512136
+  0.6170112080872059,
+  0.5908344578929245,
+  0.591694749891758
  ],
  "decompress_s": [
-  0.0615210416726768
+  0.05495733395218849,
+  0.04816462518647313,
+  0.048555792309343815
  ],
- "compress_s_median": 0.627,
- "decompress_s_median": 0.062,
- "compress_rss_bytes": 11780096,
- "decompress_rss_bytes": 11059200,
+ "compress_s_median": 0.592,
+ "decompress_s_median": 0.049,
+ "compress_rss_bytes": 11763712,
+ "decompress_rss_bytes": 11108352,
  "verify": {
   "method": "tree",
   "detail": "4 files verified against manifest",

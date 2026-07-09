@@ -1,0 +1,43 @@
+{
+ "schema_version": 2,
+ "id": "tar-bz3",
+ "name": "tar.bz3 (bzip3)",
+ "tier": "A",
+ "level": "default",
+ "dataset": "full",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "tar",
+ "origin": "brew bzip3",
+ "notes": "bzip3's only dial is block size (default 16 MiB, max 511 MiB); treated as its level.",
+ "create_cmd": "bzip3 -e -c {tar_file} > {archive}",
+ "extract_cmd": "bzip3 -d -c {archive} > {out_tar}",
+ "runs": 3,
+ "timeout_s": 1800,
+ "recorded_at": "2026-07-09T13:01:41+00:00",
+ "input_bytes": 57747676,
+ "status": "ok",
+ "archive_bytes": 40093667,
+ "ratio_pct": 69.429,
+ "compress_s": [
+  7.142372917383909,
+  7.157795500010252,
+  7.2302074590697885
+ ],
+ "decompress_s": [
+  5.796427167020738,
+  5.792650166898966,
+  5.774715667124838
+ ],
+ "compress_s_median": 7.158,
+ "decompress_s_median": 5.793,
+ "compress_rss_bytes": 104759296,
+ "decompress_rss_bytes": 105807872,
+ "verify": {
+  "method": "tar",
+  "detail": "decompressed tar SHA-256 matches canonical tar",
+  "extras_ignored": []
+ },
+ "error": ""
+}

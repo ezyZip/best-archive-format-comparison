@@ -1,0 +1,43 @@
+{
+ "schema_version": 2,
+ "id": "tar-z",
+ "name": "tar.Z (compress, LZW 1984)",
+ "tier": "A",
+ "level": "default",
+ "dataset": "video",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "tar",
+ "origin": "macOS bundled",
+ "notes": "Unix compress; 16-bit LZW is both default and maximum. The .Z format of 1984.",
+ "create_cmd": "compress -c {tar_file} > {archive}",
+ "extract_cmd": "uncompress -c {archive} > {out_tar}",
+ "runs": 3,
+ "timeout_s": 900,
+ "recorded_at": "2026-07-09T12:48:40+00:00",
+ "input_bytes": 13683124,
+ "status": "ok",
+ "archive_bytes": 18447089,
+ "ratio_pct": 134.816,
+ "compress_s": [
+  0.28736654110252857,
+  0.2841344582848251,
+  0.28476304095238447
+ ],
+ "decompress_s": [
+  0.12603804096579552,
+  0.12455766694620252,
+  0.12452095793560147
+ ],
+ "compress_s_median": 0.285,
+ "decompress_s_median": 0.125,
+ "compress_rss_bytes": 1966080,
+ "decompress_rss_bytes": 1966080,
+ "verify": {
+  "method": "tar",
+  "detail": "decompressed tar SHA-256 matches canonical tar",
+  "extras_ignored": []
+ },
+ "error": ""
+}

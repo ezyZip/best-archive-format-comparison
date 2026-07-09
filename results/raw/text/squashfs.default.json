@@ -13,23 +13,27 @@
  "notes": "Default compression gzip at its own default level; multithreaded by default.",
  "create_cmd": "mksquashfs . {archive} -quiet -no-progress",
  "extract_cmd": "unsquashfs -q -d ./tree {archive}",
- "runs": 1,
+ "runs": 3,
  "timeout_s": 900,
- "recorded_at": "2026-07-09T09:36:01+00:00",
+ "recorded_at": "2026-07-09T12:19:51+00:00",
  "input_bytes": 11559589,
  "status": "ok",
  "archive_bytes": 4149248,
  "ratio_pct": 35.894,
  "compress_s": [
-  0.09637237479910254
+  0.1010098340921104,
+  0.08214329089969397,
+  0.08321612514555454
  ],
  "decompress_s": [
-  0.49071412486955523
+  0.031256332993507385,
+  0.028688000049442053,
+  0.025716792326420546
  ],
- "compress_s_median": 0.096,
- "decompress_s_median": 0.491,
- "compress_rss_bytes": 37371904,
- "decompress_rss_bytes": 15843328,
+ "compress_s_median": 0.083,
+ "decompress_s_median": 0.029,
+ "compress_rss_bytes": 37879808,
+ "decompress_rss_bytes": 16171008,
  "verify": {
   "method": "tree",
   "detail": "4 files verified against manifest",

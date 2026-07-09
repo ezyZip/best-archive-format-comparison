@@ -1,0 +1,43 @@
+{
+ "schema_version": 2,
+ "id": "dmg-udzo",
+ "name": "DMG (UDZO, zlib-compressed image)",
+ "tier": "A",
+ "level": "default",
+ "dataset": "images",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "directory",
+ "origin": "macOS bundled",
+ "notes": "zlib-level is hdiutil's documented level dial for UDZO.",
+ "create_cmd": "hdiutil create -quiet -ov -format UDZO -volname CORPUS -srcfolder . {archive}",
+ "extract_cmd": "hdiutil attach -quiet -nobrowse -readonly -mountpoint ./__mnt {archive} && ditto ./__mnt . && hdiutil detach -quiet ./__mnt && rm -rf ./__mnt",
+ "runs": 3,
+ "timeout_s": 1800,
+ "recorded_at": "2026-07-09T12:44:04+00:00",
+ "input_bytes": 17011359,
+ "status": "ok",
+ "archive_bytes": 14599763,
+ "ratio_pct": 85.824,
+ "compress_s": [
+  4.033616791944951,
+  4.053440666757524,
+  4.050503375008702
+ ],
+ "decompress_s": [
+  1.4677897500805557,
+  0.24645341699942946,
+  0.23703979095444083
+ ],
+ "compress_s_median": 4.051,
+ "decompress_s_median": 0.246,
+ "compress_rss_bytes": 6619136,
+ "decompress_rss_bytes": 6619136,
+ "verify": {
+  "method": "tree",
+  "detail": "6 files verified against manifest",
+  "extras_ignored": []
+ },
+ "error": ""
+}

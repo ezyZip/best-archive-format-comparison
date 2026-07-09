@@ -1,0 +1,39 @@
+{
+ "schema_version": 2,
+ "id": "ar",
+ "name": "ar (appendix: unix archiver, store-only)",
+ "tier": "A",
+ "level": "default",
+ "dataset": "documents",
+ "engine": "native",
+ "emulated": false,
+ "appendix": true,
+ "input_mode": "tar",
+ "origin": "macOS bundled",
+ "notes": "Flat container (no directory trees) - archives the canonical tar; appendix row. -S suppresses the object-file symbol table (meaningless for data).",
+ "create_cmd": "ar rcS {archive} {tar_file}",
+ "extract_cmd": "ar x {archive}",
+ "runs": 1,
+ "timeout_s": 300,
+ "recorded_at": "2026-07-09T12:38:26+00:00",
+ "input_bytes": 15493604,
+ "status": "ok",
+ "archive_bytes": 15503428,
+ "ratio_pct": 100.063,
+ "compress_s": [
+  0.08145774994045496
+ ],
+ "decompress_s": [
+  0.05135366693139076
+ ],
+ "compress_s_median": 0.081,
+ "decompress_s_median": 0.051,
+ "compress_rss_bytes": 1228800,
+ "decompress_rss_bytes": 1228800,
+ "verify": {
+  "method": "tar",
+  "detail": "decompressed tar SHA-256 matches canonical tar",
+  "extras_ignored": []
+ },
+ "error": ""
+}

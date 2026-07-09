@@ -1,0 +1,43 @@
+{
+ "schema_version": 2,
+ "id": "arc-sea",
+ "name": "ARC (SEA, 1985)",
+ "tier": "B",
+ "level": "default",
+ "dataset": "video",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "tar",
+ "origin": "source build: github.com/hyc/arc (ARC 5.21p)",
+ "notes": "The BBS-era original. Auto-selects its best method per file (no dial). No directory support: archives the canonical tar. ARC's fixed argv buffer requires short archive names, so create writes a short name (moved into place) and extract copies to a local name first. Distinct from FreeArc (2007).",
+ "create_cmd": "arc a a.arc {tar_file} > /dev/null && mv a.arc {archive}",
+ "extract_cmd": "cp {archive} a.arc && arc x a.arc > /dev/null && rm -f a.arc",
+ "runs": 3,
+ "timeout_s": 1800,
+ "recorded_at": "2026-07-09T12:51:56+00:00",
+ "input_bytes": 13683124,
+ "status": "ok",
+ "archive_bytes": 18900878,
+ "ratio_pct": 138.133,
+ "compress_s": [
+  0.3195099998265505,
+  0.3156984578818083,
+  0.31654900033026934
+ ],
+ "decompress_s": [
+  0.05543779209256172,
+  0.05396141577512026,
+  0.051931540947407484
+ ],
+ "compress_s_median": 0.317,
+ "decompress_s_median": 0.054,
+ "compress_rss_bytes": 1966080,
+ "decompress_rss_bytes": 2277376,
+ "verify": {
+  "method": "tar",
+  "detail": "decompressed tar SHA-256 matches canonical tar",
+  "extras_ignored": []
+ },
+ "error": ""
+}

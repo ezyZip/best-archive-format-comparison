@@ -13,22 +13,26 @@
  "notes": "-ma4 selects the legacy RAR4 archive format version (not a method tune).",
  "create_cmd": "rar a -r -idq -ma4 -m5 {archive} .",
  "extract_cmd": "unrar x -idq {archive} {out_dir}/",
- "runs": 1,
+ "runs": 3,
  "timeout_s": 3600,
- "recorded_at": "2026-07-09T09:33:02+00:00",
+ "recorded_at": "2026-07-09T12:15:00+00:00",
  "input_bytes": 11559589,
  "status": "ok",
  "archive_bytes": 3404502,
  "ratio_pct": 29.452,
  "compress_s": [
-  0.29825941706076264
+  0.26897854171693325,
+  0.26948100002482533,
+  0.26804850017651916
  ],
  "decompress_s": [
-  0.06824095826596022
+  0.06505441712215543,
+  0.060820375103503466,
+  0.05970387486740947
  ],
- "compress_s_median": 0.298,
- "decompress_s_median": 0.068,
- "compress_rss_bytes": 114720768,
+ "compress_s_median": 0.269,
+ "decompress_s_median": 0.061,
+ "compress_rss_bytes": 114884608,
  "decompress_rss_bytes": 7028736,
  "verify": {
   "method": "tree",

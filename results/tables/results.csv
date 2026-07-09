@@ -1,0 +1,304 @@
+id,name,tier,engine,emulated,dataset,level,status,input_bytes,archive_bytes,ratio_pct,compress_s_median,decompress_s_median,compress_rss_bytes,verify
+apple-archive,"Apple Archive (.aar, lzfse)",A,native,False,documents,default,ok,15493604,15494298,100.004,0.055,0.042,37879808,6 files verified against manifest
+ar,"ar (appendix: unix archiver, store-only)",A,native,False,documents,default,ok,15493604,15503428,100.063,0.081,0.051,1228800,decompressed tar SHA-256 matches canonical tar
+arc-sea,"ARC (SEA, 1985)",B,native,False,documents,default,ok,15493604,21161030,136.579,0.439,0.109,1966080,decompressed tar SHA-256 matches canonical tar
+arj,ARJ (1991),B,native,False,documents,default,ok,15493604,15401980,99.409,0.149,0.117,2129920,6 files verified against manifest
+arj,ARJ (1991),B,native,False,documents,max,ok,15493604,15401965,99.409,0.154,0.121,2244608,6 files verified against manifest
+cab,"CAB (gcab, MSZIP)",A,native,False,documents,default,ok,15493604,15406575,99.438,0.236,0.043,16252928,6 files verified against manifest
+cpio,cpio (appendix: store-only),A,native,False,documents,default,ok,15493604,15494656,100.007,0.101,0.04,3227648,6 files verified against manifest
+dar,dar (Disk ARchive),A,native,False,documents,default,ok,15493604,15398739,99.388,0.421,0.114,11763712,6 files verified against manifest
+dmg-udzo,"DMG (UDZO, zlib-compressed image)",A,native,False,documents,default,ok,15493604,15765337,101.754,5.075,0.313,6569984,6 files verified against manifest
+dmg-udzo,"DMG (UDZO, zlib-compressed image)",A,native,False,documents,max,ok,15493604,15759173,101.714,5.076,0.295,6635520,6 files verified against manifest
+dmg-ulmo,"DMG (ULMO, lzma-compressed image)",A,native,False,documents,default,ok,15493604,15706786,101.376,6.079,0.49,6602752,6 files verified against manifest
+freeze,freeze (1993),B,native,False,documents,default,ok,15493604,15424652,99.555,1.248,1.051,1949696,decompressed tar SHA-256 matches canonical tar
+ha,"HA (1993, PPM-family)",B,native,False,documents,default,ok,15493604,15503401,100.063,1.298,0.115,1949696,decompressed tar SHA-256 matches canonical tar
+iso,"ISO 9660 (mkisofs, store-only)",A,native,False,documents,default,ok,15493604,15869952,102.429,0.024,0.034,6471680,6 files verified against manifest
+lha,"LHA/LZH (1988, lh5)",B,native,False,documents,default,ok,15493604,15402505,99.412,0.668,0.264,2228224,6 files verified against manifest
+lha,"LHA/LZH (1988, lh5)",B,native,False,documents,max,ok,15493604,15396229,99.372,1.007,0.135,2457600,6 files verified against manifest
+pax,pax (appendix: POSIX archiver),A,native,False,documents,default,ok,15493604,15503360,100.063,0.047,0.041,1622016,6 files verified against manifest
+pkzip,"ZIP (PKZIP 2.04g, 1993)",D,dosbox,True,documents,default,ok,15493604,15396223,99.371,30.367,0.121,153288704,decompressed tar SHA-256 matches canonical tar
+pkzip,"ZIP (PKZIP 2.04g, 1993)",D,dosbox,True,documents,max,ok,15493604,15395354,99.366,32.704,0.114,153419776,decompressed tar SHA-256 matches canonical tar
+rar4,RAR 4 (legacy format),A,native,False,documents,default,ok,15493604,15397675,99.381,0.209,0.057,122077184,6 files verified against manifest
+rar4,RAR 4 (legacy format),A,native,False,documents,max,ok,15493604,15397648,99.381,0.204,0.057,122077184,6 files verified against manifest
+rar5,RAR 5 (WinRAR/rar),A,native,False,documents,default,ok,15493604,15400341,99.398,0.221,0.048,159170560,6 files verified against manifest
+rar5,RAR 5 (WinRAR/rar),A,native,False,documents,max,ok,15493604,15400313,99.398,0.213,0.044,160153600,6 files verified against manifest
+sevenzip,"7z (7-Zip, LZMA2)",A,native,False,documents,default,ok,15493604,9260760,59.772,0.644,0.101,182304768,6 files verified against manifest
+sevenzip,"7z (7-Zip, LZMA2)",A,native,False,documents,max,ok,15493604,9260496,59.77,0.723,0.103,182321152,6 files verified against manifest
+shar,shar (appendix: shell archive),A,native,False,documents,default,failed,15493604,,,,,,
+squashfs,SquashFS (mksquashfs),A,native,False,documents,default,ok,15493604,15400960,99.402,0.06,0.033,49315840,6 files verified against manifest
+tar,"tar (uncompressed, baseline)",A,native,False,documents,default,ok,15493604,15499264,100.037,0.037,0.03,3342336,6 files verified against manifest
+tar-br,tar.br (Brotli),A,native,False,documents,default,ok,15493604,9239700,59.636,10.567,0.07,170835968,decompressed tar SHA-256 matches canonical tar
+tar-bz2,tar.bz2 (bzip2),A,native,False,documents,default,ok,15493604,15453958,99.744,1.156,0.58,7995392,decompressed tar SHA-256 matches canonical tar
+tar-bz3,tar.bz3 (bzip3),A,native,False,documents,default,ok,15493604,11398742,73.571,1.782,1.707,102219776,decompressed tar SHA-256 matches canonical tar
+tar-bz3,tar.bz3 (bzip3),A,native,False,documents,max,ok,15493604,11398742,73.571,2.029,2.142,1616543744,decompressed tar SHA-256 matches canonical tar
+tar-gz,tar.gz (gzip),A,native,False,documents,default,ok,15493604,15399419,99.392,0.277,0.018,1949696,decompressed tar SHA-256 matches canonical tar
+tar-gz,tar.gz (gzip),A,native,False,documents,max,ok,15493604,15399281,99.391,0.285,0.028,1949696,decompressed tar SHA-256 matches canonical tar
+tar-gz-zopfli,"tar.gz (zopfli, exhaustive deflate)",A,native,False,documents,default,ok,15493604,15383500,99.289,11.88,0.049,345735168,decompressed tar SHA-256 matches canonical tar
+tar-lrz,tar.lrz (lrzip),A,native,False,documents,default,ok,15493604,9314406,60.118,0.878,0.337,236208128,decompressed tar SHA-256 matches canonical tar
+tar-lrz,tar.lrz (lrzip),A,native,False,documents,max,ok,15493604,9314356,60.117,0.896,0.34,303284224,decompressed tar SHA-256 matches canonical tar
+tar-lz4,tar.lz4 (LZ4),A,native,False,documents,default,ok,15493604,15446094,99.693,0.016,0.018,21544960,decompressed tar SHA-256 matches canonical tar
+tar-lz4,tar.lz4 (LZ4),A,native,False,documents,max,ok,15493604,15429841,99.588,0.099,0.019,34340864,decompressed tar SHA-256 matches canonical tar
+tar-lzip,tar.lz (lzip),A,native,False,documents,default,ok,15493604,12816814,82.723,2.822,0.816,93192192,decompressed tar SHA-256 matches canonical tar
+tar-lzip,tar.lz (lzip),A,native,False,documents,max,ok,15493604,9314358,60.117,3.144,0.612,158482432,decompressed tar SHA-256 matches canonical tar
+tar-lzo,tar.lzo (lzop),A,native,False,documents,default,ok,15493604,15448717,99.71,0.038,0.039,2195456,decompressed tar SHA-256 matches canonical tar
+tar-lzo,tar.lzo (lzop),A,native,False,documents,max,ok,15493604,15424784,99.556,0.714,0.02,2539520,decompressed tar SHA-256 matches canonical tar
+tar-rz,tar.rz (rzip),A,native,False,documents,default,ok,15493604,9280321,59.898,0.809,0.177,60391424,decompressed tar SHA-256 matches canonical tar
+tar-rz,tar.rz (rzip),A,native,False,documents,max,ok,15493604,9279937,59.895,0.894,0.182,95715328,decompressed tar SHA-256 matches canonical tar
+tar-xz,tar.xz (xz/LZMA2),A,native,False,documents,default,ok,15493604,12743420,82.25,2.471,0.133,127582208,decompressed tar SHA-256 matches canonical tar
+tar-xz,tar.xz (xz/LZMA2),A,native,False,documents,max,ok,15493604,9261524,59.776,2.06,0.131,233816064,decompressed tar SHA-256 matches canonical tar
+tar-z,"tar.Z (compress, LZW 1984)",A,native,False,documents,default,ok,15493604,20521511,132.452,0.322,0.141,1966080,decompressed tar SHA-256 matches canonical tar
+tar-zst,tar.zst (Zstandard),A,native,False,documents,default,ok,15493604,15431811,99.601,0.031,0.031,38731776,decompressed tar SHA-256 matches canonical tar
+tar-zst,tar.zst (Zstandard),A,native,False,documents,max,ok,15493604,9252215,59.716,0.597,0.019,299089920,decompressed tar SHA-256 matches canonical tar
+wim,"WIM (wimlib, LZX)",A,native,False,documents,default,ok,15493604,15400182,99.397,0.065,0.042,17399808,6 files verified against manifest
+wim,"WIM (wimlib, LZX)",A,native,False,documents,max,ok,15493604,15399406,99.392,0.07,0.041,17416192,6 files verified against manifest
+xar,xar (macOS eXtensible ARchiver),A,native,False,documents,default,ok,15493604,15400031,99.396,0.352,0.051,6832128,6 files verified against manifest
+zip,ZIP (Info-ZIP),A,native,False,documents,default,ok,15493604,15394093,99.358,0.31,0.099,1851392,6 files verified against manifest
+zip,ZIP (Info-ZIP),A,native,False,documents,max,ok,15493604,15393992,99.357,0.303,0.098,1835008,6 files verified against manifest
+zoo,zoo (1986),B,native,False,documents,default,ok,15493604,15503529,100.064,0.929,0.077,1949696,decompressed tar SHA-256 matches canonical tar
+zoo,zoo (1986),B,native,False,documents,max,ok,15493604,15428541,99.58,0.72,0.609,1949696,decompressed tar SHA-256 matches canonical tar
+zpaq,zpaq (journaling PAQ-family),A,native,False,documents,default,ok,15493604,9577412,61.815,0.128,0.07,28082176,6 files verified against manifest
+zpaq,zpaq (journaling PAQ-family),A,native,False,documents,max,ok,15493604,9188980,59.308,29.429,30.486,299352064,6 files verified against manifest
+apple-archive,"Apple Archive (.aar, lzfse)",A,native,False,full,default,ok,57747676,47666680,82.543,0.085,0.055,86327296,18 files verified against manifest
+ar,"ar (appendix: unix archiver, store-only)",A,native,False,full,default,ok,57747676,57774148,100.046,0.175,0.082,1228800,decompressed tar SHA-256 matches canonical tar
+arc-sea,"ARC (SEA, 1985)",B,native,False,full,default,ok,57747676,65318727,113.111,1.327,0.26,1982464,decompressed tar SHA-256 matches canonical tar
+arj,ARJ (1991),B,native,False,full,default,ok,57747676,47397029,82.076,1.053,0.646,2359296,18 files verified against manifest
+arj,ARJ (1991),B,native,False,full,max,ok,57747676,47394101,82.071,1.093,0.628,2342912,18 files verified against manifest
+cab,"CAB (gcab, MSZIP)",A,native,False,full,default,ok,57747676,47903026,82.952,0.961,0.16,17285120,18 files verified against manifest
+cpio,cpio (appendix: store-only),A,native,False,full,default,ok,57747676,57750016,100.004,0.255,0.06,3293184,18 files verified against manifest
+dar,dar (Disk ARchive),A,native,False,full,default,ok,57747676,47305099,81.917,1.733,0.297,11911168,18 files verified against manifest
+dmg-udzo,"DMG (UDZO, zlib-compressed image)",A,native,False,full,default,ok,57747676,49062594,84.96,6.077,0.348,6586368,18 files verified against manifest
+dmg-udzo,"DMG (UDZO, zlib-compressed image)",A,native,False,full,max,ok,57747676,48325926,83.685,6.065,0.323,6602752,18 files verified against manifest
+dmg-ulmo,"DMG (ULMO, lzma-compressed image)",A,native,False,full,default,ok,57747676,46100879,79.832,11.09,0.844,6586368,18 files verified against manifest
+freearc,"FreeArc 0.666 (2007, Wine)",C,wine,True,full,default,timeout,57747676,,,,,,
+freearc,"FreeArc 0.666 (2007, Wine)",C,wine,True,full,max,timeout,57747676,,,,,,
+freeze,freeze (1993),B,native,False,full,default,ok,57747676,47972277,83.072,4.123,3.053,1949696,decompressed tar SHA-256 matches canonical tar
+ha,"HA (1993, PPM-family)",B,native,False,full,default,ok,57747676,47964248,83.058,4.218,3.77,1949696,decompressed tar SHA-256 matches canonical tar
+iso,"ISO 9660 (mkisofs, store-only)",A,native,False,full,default,ok,57747676,58150912,100.698,0.031,0.027,6586368,18 files verified against manifest
+lha,"LHA/LZH (1988, lh5)",B,native,False,full,default,ok,57747676,47741021,82.672,2.286,1.044,2260992,18 files verified against manifest
+lha,"LHA/LZH (1988, lh5)",B,native,False,full,max,ok,57747676,47001123,81.391,3.873,0.893,2490368,18 files verified against manifest
+pax,pax (appendix: POSIX archiver),A,native,False,full,default,ok,57747676,57774080,100.046,0.097,0.104,1720320,18 files verified against manifest
+pkzip,"ZIP (PKZIP 2.04g, 1993)",D,dosbox,True,full,default,ok,57747676,47260985,81.84,60.507,0.355,153255936,decompressed tar SHA-256 matches canonical tar
+pkzip,"ZIP (PKZIP 2.04g, 1993)",D,dosbox,True,full,max,ok,57747676,47155471,81.658,69.606,0.359,153124864,decompressed tar SHA-256 matches canonical tar
+rar4,RAR 4 (legacy format),A,native,False,full,default,ok,57747676,44496267,77.053,0.809,0.398,123453440,18 files verified against manifest
+rar4,RAR 4 (legacy format),A,native,False,full,max,ok,57747676,44442067,76.959,0.901,0.405,123650048,18 files verified against manifest
+rar5,RAR 5 (WinRAR/rar),A,native,False,full,default,ok,57747676,45172373,78.224,0.809,0.207,261406720,18 files verified against manifest
+rar5,RAR 5 (WinRAR/rar),A,native,False,full,max,ok,57747676,45095093,78.09,1.02,0.202,262471680,18 files verified against manifest
+sevenzip,"7z (7-Zip, LZMA2)",A,native,False,full,default,ok,57747676,34636274,59.979,4.132,0.419,397803520,18 files verified against manifest
+sevenzip,"7z (7-Zip, LZMA2)",A,native,False,full,max,ok,57747676,34622923,59.956,4.431,0.426,596525056,18 files verified against manifest
+shar,shar (appendix: shell archive),A,native,False,full,default,failed,57747676,,,,,,
+squashfs,SquashFS (mksquashfs),A,native,False,full,default,ok,57747676,47448064,82.164,0.203,0.041,102318080,18 files verified against manifest
+tar,"tar (uncompressed, baseline)",A,native,False,full,default,ok,57747676,57764864,100.03,0.061,0.049,3424256,18 files verified against manifest
+tar-br,tar.br (Brotli),A,native,False,full,default,ok,57747676,37536149,65.0,84.046,0.23,390889472,decompressed tar SHA-256 matches canonical tar
+tar-bz2,tar.bz2 (bzip2),A,native,False,full,default,ok,57747676,45005009,77.934,3.841,1.76,8912896,decompressed tar SHA-256 matches canonical tar
+tar-bz3,tar.bz3 (bzip3),A,native,False,full,default,ok,57747676,40093667,69.429,7.158,5.793,104759296,decompressed tar SHA-256 matches canonical tar
+tar-bz3,tar.bz3 (bzip3),A,native,False,full,max,ok,57747676,38529080,66.72,7.46,6.869,1841889280,decompressed tar SHA-256 matches canonical tar
+tar-gz,tar.gz (gzip),A,native,False,full,default,ok,57747676,47337929,81.974,1.342,0.09,1949696,decompressed tar SHA-256 matches canonical tar
+tar-gz,tar.gz (gzip),A,native,False,full,max,ok,57747676,47308709,81.923,1.501,0.095,1949696,decompressed tar SHA-256 matches canonical tar
+tar-gz-zopfli,"tar.gz (zopfli, exhaustive deflate)",A,native,False,full,default,ok,57747676,46723633,80.91,59.673,0.133,440254464,decompressed tar SHA-256 matches canonical tar
+tar-lrz,tar.lrz (lrzip),A,native,False,full,default,ok,57747676,34888810,60.416,3.047,0.603,540868608,decompressed tar SHA-256 matches canonical tar
+tar-lrz,tar.lrz (lrzip),A,native,False,full,max,ok,57747676,34887948,60.414,3.133,0.603,675201024,decompressed tar SHA-256 matches canonical tar
+tar-lz4,tar.lz4 (LZ4),A,native,False,full,default,ok,57747676,51903533,89.88,0.033,0.032,50479104,decompressed tar SHA-256 matches canonical tar
+tar-lz4,tar.lz4 (LZ4),A,native,False,full,max,ok,57747676,48768972,84.452,0.394,0.051,83197952,decompressed tar SHA-256 matches canonical tar
+tar-lzip,tar.lz (lzip),A,native,False,full,default,ok,57747676,42419300,73.456,14.984,2.726,94470144,decompressed tar SHA-256 matches canonical tar
+tar-lzip,tar.lz (lzip),A,native,False,full,max,ok,57747676,34826094,60.307,16.654,2.28,361955328,decompressed tar SHA-256 matches canonical tar
+tar-lzo,tar.lzo (lzop),A,native,False,full,default,ok,57747676,51938261,89.94,0.092,0.076,2195456,decompressed tar SHA-256 matches canonical tar
+tar-lzo,tar.lzo (lzop),A,native,False,full,max,ok,57747676,48761182,84.438,3.746,0.074,2539520,decompressed tar SHA-256 matches canonical tar
+tar-rz,tar.rz (rzip),A,native,False,full,default,ok,57747676,34552713,59.834,3.643,0.992,105185280,decompressed tar SHA-256 matches canonical tar
+tar-rz,tar.rz (rzip),A,native,False,full,max,ok,57747676,34545965,59.822,4.648,0.971,138412032,decompressed tar SHA-256 matches canonical tar
+tar-xz,tar.xz (xz/LZMA2),A,native,False,full,default,ok,57747676,42165784,73.017,6.727,0.349,381517824,decompressed tar SHA-256 matches canonical tar
+tar-xz,tar.xz (xz/LZMA2),A,native,False,full,max,ok,57747676,34634240,59.975,13.509,0.604,681967616,decompressed tar SHA-256 matches canonical tar
+tar-z,"tar.Z (compress, LZW 1984)",A,native,False,full,default,ok,57747676,61196382,105.972,1.05,0.47,1966080,decompressed tar SHA-256 matches canonical tar
+tar-zst,tar.zst (Zstandard),A,native,False,full,default,ok,57747676,47606144,82.438,0.077,0.047,74235904,decompressed tar SHA-256 matches canonical tar
+tar-zst,tar.zst (Zstandard),A,native,False,full,max,ok,57747676,35416026,61.329,6.822,0.05,770555904,decompressed tar SHA-256 matches canonical tar
+uharc,"UHARC 0.6b (2005, Wine)",C,wine,True,full,default,timeout,57747676,,,,,,
+uharc,"UHARC 0.6b (2005, Wine)",C,wine,True,full,max,timeout,57747676,,,,,,
+wim,"WIM (wimlib, LZX)",A,native,False,full,default,ok,57747676,47253422,81.827,0.287,0.147,25411584,18 files verified against manifest
+wim,"WIM (wimlib, LZX)",A,native,False,full,max,ok,57747676,47225312,81.779,0.402,0.145,25526272,18 files verified against manifest
+xar,xar (macOS eXtensible ARchiver),A,native,False,full,default,ok,57747676,47305399,81.917,1.532,0.119,8945664,18 files verified against manifest
+zip,ZIP (Info-ZIP),A,native,False,full,default,ok,57747676,47307400,81.921,1.355,0.331,1966080,18 files verified against manifest
+zip,ZIP (Info-ZIP),A,native,False,full,max,ok,57747676,47278998,81.872,1.504,0.322,1949696,18 files verified against manifest
+zoo,zoo (1986),B,native,False,full,default,ok,57747676,57774249,100.046,2.647,0.182,1949696,decompressed tar SHA-256 matches canonical tar
+zoo,zoo (1986),B,native,False,full,max,ok,57747676,47830947,82.827,2.835,1.827,1949696,decompressed tar SHA-256 matches canonical tar
+zpaq,zpaq (journaling PAQ-family),A,native,False,full,default,ok,57747676,41842744,72.458,0.716,1.842,251052032,18 files verified against manifest
+zpaq,zpaq (journaling PAQ-family),A,native,False,full,max,ok,57747676,32401266,56.108,144.418,149.917,877019136,18 files verified against manifest
+apple-archive,"Apple Archive (.aar, lzfse)",A,native,False,images,default,ok,17011359,14331217,84.245,0.054,0.026,39157760,6 files verified against manifest
+ar,"ar (appendix: unix archiver, store-only)",A,native,False,images,default,ok,17011359,17018948,100.045,0.062,0.032,1228800,decompressed tar SHA-256 matches canonical tar
+arc-sea,"ARC (SEA, 1985)",B,native,False,images,default,failed,17011359,19392634,113.998,,,,
+arj,ARJ (1991),B,native,False,images,default,ok,17011359,14176370,83.335,0.43,0.374,2211840,6 files verified against manifest
+arj,ARJ (1991),B,native,False,images,max,ok,17011359,14175886,83.332,0.426,0.376,2097152,6 files verified against manifest
+cab,"CAB (gcab, MSZIP)",A,native,False,images,default,ok,17011359,14377556,84.517,0.313,0.081,15466496,6 files verified against manifest
+cpio,cpio (appendix: store-only),A,native,False,images,default,ok,17011359,17012224,100.005,0.084,0.023,3227648,6 files verified against manifest
+dar,dar (Disk ARchive),A,native,False,images,default,ok,17011359,14212900,83.549,0.502,0.117,11468800,6 files verified against manifest
+dmg-udzo,"DMG (UDZO, zlib-compressed image)",A,native,False,images,default,ok,17011359,14599763,85.824,4.051,0.246,6619136,6 files verified against manifest
+dmg-udzo,"DMG (UDZO, zlib-compressed image)",A,native,False,images,max,ok,17011359,14599174,85.82,4.06,0.227,6602752,6 files verified against manifest
+dmg-ulmo,"DMG (ULMO, lzma-compressed image)",A,native,False,images,default,ok,17011359,13299536,78.18,6.056,0.608,6619136,6 files verified against manifest
+freeze,freeze (1993),B,native,False,images,default,ok,17011359,14428225,84.815,1.309,0.97,1949696,decompressed tar SHA-256 matches canonical tar
+ha,"HA (1993, PPM-family)",B,native,False,images,default,ok,17011359,14313860,84.143,1.265,1.198,1949696,decompressed tar SHA-256 matches canonical tar
+iso,"ISO 9660 (mkisofs, store-only)",A,native,False,images,default,ok,17011359,17387520,102.211,0.021,0.02,6488064,6 files verified against manifest
+lha,"LHA/LZH (1988, lh5)",B,native,False,images,default,ok,17011359,14274753,83.913,0.69,0.379,2228224,6 files verified against manifest
+lha,"LHA/LZH (1988, lh5)",B,native,False,images,max,ok,17011359,14016202,82.393,1.091,0.366,2457600,6 files verified against manifest
+pax,pax (appendix: POSIX archiver),A,native,False,images,default,ok,17011359,17018880,100.044,0.038,0.039,1622016,6 files verified against manifest
+pkzip,"ZIP (PKZIP 2.04g, 1993)",D,dosbox,True,images,default,ok,17011359,14078928,82.762,31.042,0.138,153501696,decompressed tar SHA-256 matches canonical tar
+pkzip,"ZIP (PKZIP 2.04g, 1993)",D,dosbox,True,images,max,ok,17011359,14038266,82.523,32.757,0.131,152272896,decompressed tar SHA-256 matches canonical tar
+rar4,RAR 4 (legacy format),A,native,False,images,default,ok,17011359,11975057,70.394,0.312,0.206,120143872,6 files verified against manifest
+rar4,RAR 4 (legacy format),A,native,False,images,max,ok,17011359,11974885,70.393,0.313,0.203,120111104,6 files verified against manifest
+rar5,RAR 5 (WinRAR/rar),A,native,False,images,default,ok,17011359,12655395,74.394,0.323,0.101,158056448,6 files verified against manifest
+rar5,RAR 5 (WinRAR/rar),A,native,False,images,max,ok,17011359,12631849,74.255,0.408,0.086,158105600,6 files verified against manifest
+sevenzip,"7z (7-Zip, LZMA2)",A,native,False,images,default,ok,17011359,12900840,75.837,1.117,0.283,229670912,6 files verified against manifest
+sevenzip,"7z (7-Zip, LZMA2)",A,native,False,images,max,ok,17011359,12900286,75.833,1.127,0.285,229687296,6 files verified against manifest
+shar,shar (appendix: shell archive),A,native,False,images,default,failed,17011359,,,,,,
+squashfs,SquashFS (mksquashfs),A,native,False,images,default,ok,17011359,14254080,83.792,0.068,0.019,49037312,6 files verified against manifest
+tar,"tar (uncompressed, baseline)",A,native,False,images,default,ok,17011359,17017856,100.038,0.04,0.024,3342336,6 files verified against manifest
+tar-br,tar.br (Brotli),A,native,False,images,default,ok,17011359,12993389,76.381,28.975,0.142,289243136,decompressed tar SHA-256 matches canonical tar
+tar-bz2,tar.bz2 (bzip2),A,native,False,images,default,ok,17011359,12863191,75.615,1.188,0.573,8896512,decompressed tar SHA-256 matches canonical tar
+tar-bz3,tar.bz3 (bzip3),A,native,False,images,default,ok,17011359,12416555,72.99,2.151,1.666,104742912,decompressed tar SHA-256 matches canonical tar
+tar-bz3,tar.bz3 (bzip3),A,native,False,images,max,ok,17011359,12417941,72.998,2.402,1.946,1653997568,decompressed tar SHA-256 matches canonical tar
+tar-gz,tar.gz (gzip),A,native,False,images,default,ok,17011359,14216716,83.572,0.408,0.046,1949696,decompressed tar SHA-256 matches canonical tar
+tar-gz,tar.gz (gzip),A,native,False,images,max,ok,17011359,14214341,83.558,0.41,0.052,1949696,decompressed tar SHA-256 matches canonical tar
+tar-gz-zopfli,"tar.gz (zopfli, exhaustive deflate)",A,native,False,images,default,ok,17011359,13858329,81.465,22.047,0.081,213696512,decompressed tar SHA-256 matches canonical tar
+tar-lrz,tar.lrz (lrzip),A,native,False,images,default,ok,17011359,12923643,75.971,1.324,0.357,343638016,decompressed tar SHA-256 matches canonical tar
+tar-lrz,tar.lrz (lrzip),A,native,False,images,max,ok,17011359,12923654,75.971,1.428,0.356,444268544,decompressed tar SHA-256 matches canonical tar
+tar-lz4,tar.lz4 (LZ4),A,native,False,images,default,ok,17011359,16058788,94.4,0.017,0.039,27066368,decompressed tar SHA-256 matches canonical tar
+tar-lz4,tar.lz4 (LZ4),A,native,False,images,max,ok,17011359,15005695,88.21,0.163,0.036,35815424,decompressed tar SHA-256 matches canonical tar
+tar-lzip,tar.lz (lzip),A,native,False,images,default,ok,17011359,12928334,75.998,3.762,0.942,94470144,decompressed tar SHA-256 matches canonical tar
+tar-lzip,tar.lz (lzip),A,native,False,images,max,ok,17011359,12919275,75.945,3.365,0.866,188891136,decompressed tar SHA-256 matches canonical tar
+tar-lzo,tar.lzo (lzop),A,native,False,images,default,ok,17011359,16268338,95.632,0.043,0.04,2195456,decompressed tar SHA-256 matches canonical tar
+tar-lzo,tar.lzo (lzop),A,native,False,images,max,ok,17011359,14962942,87.959,0.98,0.053,2539520,decompressed tar SHA-256 matches canonical tar
+tar-rz,tar.rz (rzip),A,native,False,images,default,ok,17011359,12827985,75.408,1.21,0.501,61849600,decompressed tar SHA-256 matches canonical tar
+tar-rz,tar.rz (rzip),A,native,False,images,max,ok,17011359,12829615,75.418,1.538,0.509,96829440,decompressed tar SHA-256 matches canonical tar
+tar-xz,tar.xz (xz/LZMA2),A,native,False,images,default,ok,17011359,12911580,75.9,3.364,0.37,129400832,decompressed tar SHA-256 matches canonical tar
+tar-xz,tar.xz (xz/LZMA2),A,native,False,images,max,ok,17011359,12906712,75.871,3.103,0.357,252674048,decompressed tar SHA-256 matches canonical tar
+tar-z,"tar.Z (compress, LZW 1984)",A,native,False,images,default,ok,17011359,17624039,103.602,0.317,0.137,1966080,decompressed tar SHA-256 matches canonical tar
+tar-zst,tar.zst (Zstandard),A,native,False,images,default,ok,17011359,14543121,85.491,0.05,0.043,39813120,decompressed tar SHA-256 matches canonical tar
+tar-zst,tar.zst (Zstandard),A,native,False,images,max,ok,17011359,13640058,80.182,1.732,0.034,439582720,decompressed tar SHA-256 matches canonical tar
+wim,"WIM (wimlib, LZX)",A,native,False,images,default,ok,17011359,13986232,82.217,0.091,0.078,23953408,6 files verified against manifest
+wim,"WIM (wimlib, LZX)",A,native,False,images,max,ok,17011359,13975536,82.154,0.126,0.08,23937024,6 files verified against manifest
+xar,xar (macOS eXtensible ARchiver),A,native,False,images,default,ok,17011359,14212764,83.549,0.437,0.057,7782400,6 files verified against manifest
+zip,ZIP (Info-ZIP),A,native,False,images,default,ok,17011359,14198662,83.466,0.445,0.135,1884160,6 files verified against manifest
+zip,ZIP (Info-ZIP),A,native,False,images,max,ok,17011359,14196623,83.454,0.448,0.131,1867776,6 files verified against manifest
+zoo,zoo (1986),B,native,False,images,default,ok,17011359,17019049,100.045,0.844,0.067,1949696,decompressed tar SHA-256 matches canonical tar
+zoo,zoo (1986),B,native,False,images,max,ok,17011359,14302916,84.079,0.92,0.594,1949696,decompressed tar SHA-256 matches canonical tar
+zpaq,zpaq (journaling PAQ-family),A,native,False,images,default,ok,17011359,14782922,86.9,0.349,1.407,82624512,6 files verified against manifest
+zpaq,zpaq (journaling PAQ-family),A,native,False,images,max,ok,17011359,11459900,67.366,45.564,47.154,504119296,6 files verified against manifest
+apple-archive,"Apple Archive (.aar, lzfse)",A,native,False,text,default,ok,11559589,4122000,35.659,0.059,0.036,22069248,4 files verified against manifest
+ar,"ar (appendix: unix archiver, store-only)",A,native,False,text,default,ok,11559589,11571268,100.101,0.069,0.039,1228800,decompressed tar SHA-256 matches canonical tar
+arc-sea,"ARC (SEA, 1985)",B,native,False,text,default,ok,11559589,5793561,50.119,0.203,0.125,1982464,decompressed tar SHA-256 matches canonical tar
+arj,ARJ (1991),B,native,False,text,default,ok,11559589,4135407,35.775,0.47,0.157,2080768,4 files verified against manifest
+arj,ARJ (1991),B,native,False,text,max,ok,11559589,4132970,35.754,0.519,0.153,2080768,4 files verified against manifest
+cab,"CAB (gcab, MSZIP)",A,native,False,text,default,ok,11559589,4456570,38.553,0.319,0.05,15122432,4 files verified against manifest
+cpio,cpio (appendix: store-only),A,native,False,text,default,ok,11559589,11560448,100.007,0.074,0.024,3178496,4 files verified against manifest
+dar,dar (Disk ARchive),A,native,False,text,default,ok,11559589,4041230,34.96,0.592,0.049,11763712,4 files verified against manifest
+dmg-udzo,"DMG (UDZO, zlib-compressed image)",A,native,False,text,default,ok,11559589,5021308,43.438,4.077,0.234,6569984,4 files verified against manifest
+dmg-udzo,"DMG (UDZO, zlib-compressed image)",A,native,False,text,max,ok,11559589,4201841,36.349,6.07,0.221,6602752,4 files verified against manifest
+dmg-ulmo,"DMG (ULMO, lzma-compressed image)",A,native,False,text,default,ok,11559589,3439543,29.755,7.074,0.361,6586368,4 files verified against manifest
+freearc,"FreeArc 0.666 (2007, Wine)",C,wine,True,text,default,timeout,11559589,,,,,,
+freearc,"FreeArc 0.666 (2007, Wine)",C,wine,True,text,max,timeout,11559589,,,,,,
+freeze,freeze (1993),B,native,False,text,default,ok,11559589,4433109,38.35,0.578,0.217,1949696,decompressed tar SHA-256 matches canonical tar
+ha,"HA (1993, PPM-family)",B,native,False,text,default,ok,11559589,4044465,34.988,0.811,0.355,1949696,decompressed tar SHA-256 matches canonical tar
+iso,"ISO 9660 (mkisofs, store-only)",A,native,False,text,default,ok,11559589,11933696,103.236,0.033,0.012,6471680,4 files verified against manifest
+lha,"LHA/LZH (1988, lh5)",B,native,False,text,default,ok,11559589,4395530,38.025,0.448,0.158,2195456,4 files verified against manifest
+lha,"LHA/LZH (1988, lh5)",B,native,False,text,max,ok,11559589,3912090,33.843,1.124,0.138,2441216,4 files verified against manifest
+pax,pax (appendix: POSIX archiver),A,native,False,text,default,ok,11559589,11571200,100.1,0.037,0.035,1622016,4 files verified against manifest
+pkzip,"ZIP (PKZIP 2.04g, 1993)",D,dosbox,True,text,default,ok,11559589,4105461,35.516,24.162,0.095,152272896,decompressed tar SHA-256 matches canonical tar
+pkzip,"ZIP (PKZIP 2.04g, 1993)",D,dosbox,True,text,max,ok,11559589,4040007,34.949,26.192,0.081,152125440,decompressed tar SHA-256 matches canonical tar
+rar4,RAR 4 (legacy format),A,native,False,text,default,ok,11559589,3458376,29.918,0.176,0.061,115048448,4 files verified against manifest
+rar4,RAR 4 (legacy format),A,native,False,text,max,ok,11559589,3404502,29.452,0.269,0.061,114884608,4 files verified against manifest
+rar5,RAR 5 (WinRAR/rar),A,native,False,text,default,ok,11559589,3462064,29.95,0.172,0.047,153157632,4 files verified against manifest
+rar5,RAR 5 (WinRAR/rar),A,native,False,text,max,ok,11559589,3408264,29.484,0.267,0.042,153075712,4 files verified against manifest
+sevenzip,"7z (7-Zip, LZMA2)",A,native,False,text,default,ok,11559589,3124769,27.032,1.956,0.09,147062784,4 files verified against manifest
+sevenzip,"7z (7-Zip, LZMA2)",A,native,False,text,max,ok,11559589,3112581,26.926,1.995,0.088,147030016,4 files verified against manifest
+shar,shar (appendix: shell archive),A,native,False,text,default,ok,11559589,11836674,102.397,0.126,0.177,2064384,4 files verified against manifest
+squashfs,SquashFS (mksquashfs),A,native,False,text,default,ok,11559589,4149248,35.894,0.083,0.029,37879808,4 files verified against manifest
+tar,"tar (uncompressed, baseline)",A,native,False,text,default,ok,11559589,11564032,100.038,0.03,0.026,3342336,4 files verified against manifest
+tar-br,tar.br (Brotli),A,native,False,text,default,ok,11559589,3127358,27.054,13.53,0.04,245268480,decompressed tar SHA-256 matches canonical tar
+tar-bz2,tar.bz2 (bzip2),A,native,False,text,default,ok,11559589,2983907,25.813,0.583,0.213,7995392,decompressed tar SHA-256 matches canonical tar
+tar-bz3,tar.bz3 (bzip3),A,native,False,text,default,ok,11559589,2538975,21.964,1.173,0.649,94339072,decompressed tar SHA-256 matches canonical tar
+tar-bz3,tar.bz3 (bzip3),A,native,False,text,max,ok,11559589,2538975,21.964,1.543,0.838,1620721664,decompressed tar SHA-256 matches canonical tar
+tar-gz,tar.gz (gzip),A,native,False,text,default,ok,11559589,4066933,35.182,0.403,0.035,1949696,decompressed tar SHA-256 matches canonical tar
+tar-gz,tar.gz (gzip),A,native,False,text,max,ok,11559589,4040902,34.957,0.532,0.036,1949696,decompressed tar SHA-256 matches canonical tar
+tar-gz-zopfli,"tar.gz (zopfli, exhaustive deflate)",A,native,False,text,default,ok,11559589,3838112,33.203,14.621,0.026,160153600,decompressed tar SHA-256 matches canonical tar
+tar-lrz,tar.lrz (lrzip),A,native,False,text,default,ok,11559589,3148612,27.238,2.446,0.228,243007488,decompressed tar SHA-256 matches canonical tar
+tar-lrz,tar.lrz (lrzip),A,native,False,text,max,ok,11559589,3148702,27.239,2.661,0.234,310050816,decompressed tar SHA-256 matches canonical tar
+tar-lz4,tar.lz4 (LZ4),A,native,False,text,default,ok,11559589,6714551,58.086,0.019,0.017,20250624,decompressed tar SHA-256 matches canonical tar
+tar-lz4,tar.lz4 (LZ4),A,native,False,text,max,ok,11559589,4654049,40.261,0.285,0.029,19316736,decompressed tar SHA-256 matches canonical tar
+tar-lzip,tar.lz (lzip),A,native,False,text,default,ok,11559589,3118146,26.975,3.592,0.223,89260032,decompressed tar SHA-256 matches canonical tar
+tar-lzip,tar.lz (lzip),A,native,False,text,max,ok,11559589,3108215,26.889,3.842,0.219,123092992,decompressed tar SHA-256 matches canonical tar
+tar-lzo,tar.lzo (lzop),A,native,False,text,default,ok,11559589,6535028,56.533,0.047,0.046,2195456,decompressed tar SHA-256 matches canonical tar
+tar-lzo,tar.lzo (lzop),A,native,False,text,max,ok,11559589,4716496,40.802,1.461,0.032,2539520,decompressed tar SHA-256 matches canonical tar
+tar-rz,tar.rz (rzip),A,native,False,text,default,ok,11559589,3054208,26.421,0.73,0.304,56131584,decompressed tar SHA-256 matches canonical tar
+tar-rz,tar.rz (rzip),A,native,False,text,max,ok,11559589,3062707,26.495,1.061,0.316,90996736,decompressed tar SHA-256 matches canonical tar
+tar-xz,tar.xz (xz/LZMA2),A,native,False,text,default,ok,11559589,3112172,26.923,3.225,0.125,112623616,decompressed tar SHA-256 matches canonical tar
+tar-xz,tar.xz (xz/LZMA2),A,native,False,text,max,ok,11559589,3111996,26.921,3.503,0.127,188006400,decompressed tar SHA-256 matches canonical tar
+tar-z,"tar.Z (compress, LZW 1984)",A,native,False,text,default,ok,11559589,4511529,39.028,0.168,0.085,1966080,decompressed tar SHA-256 matches canonical tar
+tar-zst,tar.zst (Zstandard),A,native,False,text,default,ok,11559589,3985558,34.478,0.044,0.02,23101440,decompressed tar SHA-256 matches canonical tar
+tar-zst,tar.zst (Zstandard),A,native,False,text,max,ok,11559589,3176779,27.482,3.033,0.021,288931840,decompressed tar SHA-256 matches canonical tar
+uharc,"UHARC 0.6b (2005, Wine)",C,wine,True,text,default,timeout,11559589,,,,,,
+uharc,"UHARC 0.6b (2005, Wine)",C,wine,True,text,max,timeout,11559589,,,,,,
+wim,"WIM (wimlib, LZX)",A,native,False,text,default,ok,11559589,4222678,36.53,0.129,0.053,24199168,4 files verified against manifest
+wim,"WIM (wimlib, LZX)",A,native,False,text,max,ok,11559589,4205654,36.382,0.197,0.051,24297472,4 files verified against manifest
+xar,xar (macOS eXtensible ARchiver),A,native,False,text,default,ok,11559589,4041014,34.958,0.557,0.041,5357568,4 files verified against manifest
+zip,ZIP (Info-ZIP),A,native,False,text,default,ok,11559589,4062367,35.143,0.41,0.085,1884160,4 files verified against manifest
+zip,ZIP (Info-ZIP),A,native,False,text,max,ok,11559589,4036316,34.917,0.544,0.074,1867776,4 files verified against manifest
+zoo,zoo (1986),B,native,False,text,default,ok,11559589,5424649,46.928,0.252,0.088,1949696,decompressed tar SHA-256 matches canonical tar
+zoo,zoo (1986),B,native,False,text,max,ok,11559589,4410114,38.151,0.732,0.225,1949696,decompressed tar SHA-256 matches canonical tar
+zpaq,zpaq (journaling PAQ-family),A,native,False,text,default,ok,11559589,4229062,36.585,0.32,1.175,91815936,4 files verified against manifest
+zpaq,zpaq (journaling PAQ-family),A,native,False,text,max,ok,11559589,2294990,19.854,26.757,27.907,325255168,4 files verified against manifest
+apple-archive,"Apple Archive (.aar, lzfse)",A,native,False,video,default,ok,13683124,13683450,100.002,0.039,0.022,34324480,2 files verified against manifest
+ar,"ar (appendix: unix archiver, store-only)",A,native,False,video,default,ok,13683124,13690948,100.057,0.041,0.024,1228800,decompressed tar SHA-256 matches canonical tar
+arc-sea,"ARC (SEA, 1985)",B,native,False,video,default,ok,13683124,18900878,138.133,0.317,0.054,1966080,decompressed tar SHA-256 matches canonical tar
+arj,ARJ (1991),B,native,False,video,default,ok,13683124,13683344,100.002,0.076,0.047,2097152,2 files verified against manifest
+arj,ARJ (1991),B,native,False,video,max,ok,13683124,13683340,100.002,0.071,0.047,2097152,2 files verified against manifest
+cab,"CAB (gcab, MSZIP)",A,native,False,video,default,ok,13683124,13655010,99.795,0.18,0.02,15220736,2 files verified against manifest
+cpio,cpio (appendix: store-only),A,native,False,video,default,ok,13683124,13683712,100.004,0.058,0.013,3162112,2 files verified against manifest
+dar,dar (Disk ARchive),A,native,False,video,default,ok,13683124,13652984,99.78,0.327,0.095,11485184,2 files verified against manifest
+dmg-udzo,"DMG (UDZO, zlib-compressed image)",A,native,False,video,default,ok,13683124,14047998,102.667,5.058,0.401,6569984,2 files verified against manifest
+dmg-udzo,"DMG (UDZO, zlib-compressed image)",A,native,False,video,max,ok,13683124,14041339,102.618,5.084,0.412,6602752,2 files verified against manifest
+dmg-ulmo,"DMG (ULMO, lzma-compressed image)",A,native,False,video,default,ok,13683124,13860580,101.297,6.054,0.338,6586368,2 files verified against manifest
+freeze,freeze (1993),B,native,False,video,default,ok,13683124,13678831,99.969,1.067,0.907,1949696,decompressed tar SHA-256 matches canonical tar
+ha,"HA (1993, PPM-family)",B,native,False,video,default,ok,13683124,13690921,100.057,1.107,0.081,1949696,decompressed tar SHA-256 matches canonical tar
+iso,"ISO 9660 (mkisofs, store-only)",A,native,False,video,default,ok,13683124,14055424,102.721,0.017,0.013,6471680,2 files verified against manifest
+lha,"LHA/LZH (1988, lh5)",B,native,False,video,default,ok,13683124,13667977,99.889,0.549,0.312,2211840,2 files verified against manifest
+lha,"LHA/LZH (1988, lh5)",B,native,False,video,max,ok,13683124,13676346,99.95,0.782,0.31,2441216,2 files verified against manifest
+pax,pax (appendix: POSIX archiver),A,native,False,video,default,ok,13683124,13690880,100.057,0.022,0.022,1622016,2 files verified against manifest
+pkzip,"ZIP (PKZIP 2.04g, 1993)",D,dosbox,True,video,default,ok,13683124,13655389,99.797,28.547,0.081,152862720,decompressed tar SHA-256 matches canonical tar
+pkzip,"ZIP (PKZIP 2.04g, 1993)",D,dosbox,True,video,max,ok,13683124,13654583,99.791,30.562,0.078,152829952,decompressed tar SHA-256 matches canonical tar
+rar4,RAR 4 (legacy format),A,native,False,video,default,ok,13683124,13664934,99.867,0.174,0.116,119963648,2 files verified against manifest
+rar4,RAR 4 (legacy format),A,native,False,video,max,ok,13683124,13664807,99.866,0.178,0.121,120078336,2 files verified against manifest
+rar5,RAR 5 (WinRAR/rar),A,native,False,video,default,ok,13683124,13654550,99.791,0.189,0.054,258719744,2 files verified against manifest
+rar5,RAR 5 (WinRAR/rar),A,native,False,video,max,ok,13683124,13654474,99.791,0.181,0.054,258686976,2 files verified against manifest
+sevenzip,"7z (7-Zip, LZMA2)",A,native,False,video,default,ok,13683124,13495384,98.628,0.563,0.02,165986304,2 files verified against manifest
+sevenzip,"7z (7-Zip, LZMA2)",A,native,False,video,max,ok,13683124,13495118,98.626,0.549,0.02,166166528,2 files verified against manifest
+shar,shar (appendix: shell archive),A,native,False,video,default,failed,13683124,,,,,,
+squashfs,SquashFS (mksquashfs),A,native,False,video,default,ok,13683124,13651968,99.772,0.052,0.018,42532864,2 files verified against manifest
+tar,"tar (uncompressed, baseline)",A,native,False,video,default,ok,13683124,13686272,100.023,0.02,0.013,3342336,2 files verified against manifest
+tar-br,tar.br (Brotli),A,native,False,video,default,ok,13683124,13489863,98.588,14.768,0.041,173260800,decompressed tar SHA-256 matches canonical tar
+tar-bz2,tar.bz2 (bzip2),A,native,False,video,default,ok,13683124,13701815,100.137,1.022,0.499,7995392,decompressed tar SHA-256 matches canonical tar
+tar-bz3,tar.bz3 (bzip3),A,native,False,video,default,ok,13683124,13680742,99.983,1.844,1.873,98582528,decompressed tar SHA-256 matches canonical tar
+tar-bz3,tar.bz3 (bzip3),A,native,False,video,max,ok,13683124,13680742,99.983,2.137,2.115,1326710784,decompressed tar SHA-256 matches canonical tar
+tar-gz,tar.gz (gzip),A,native,False,video,default,ok,13683124,13652721,99.778,0.236,0.019,1949696,decompressed tar SHA-256 matches canonical tar
+tar-gz,tar.gz (gzip),A,native,False,video,max,ok,13683124,13652518,99.776,0.251,0.018,1949696,decompressed tar SHA-256 matches canonical tar
+tar-gz-zopfli,"tar.gz (zopfli, exhaustive deflate)",A,native,False,video,default,ok,13683124,13643438,99.71,10.1,0.034,593281024,decompressed tar SHA-256 matches canonical tar
+tar-lrz,tar.lrz (lrzip),A,native,False,video,default,ok,13683124,13525099,98.845,0.44,0.053,125714432,decompressed tar SHA-256 matches canonical tar
+tar-lrz,tar.lrz (lrzip),A,native,False,video,max,ok,13683124,13525084,98.845,0.479,0.048,162316288,decompressed tar SHA-256 matches canonical tar
+tar-lz4,tar.lz4 (LZ4),A,native,False,video,default,ok,13683124,13671052,99.912,0.019,0.019,19726336,decompressed tar SHA-256 matches canonical tar
+tar-lz4,tar.lz4 (LZ4),A,native,False,video,max,ok,13683124,13669334,99.899,0.104,0.019,30883840,decompressed tar SHA-256 matches canonical tar
+tar-lzip,tar.lz (lzip),A,native,False,video,default,ok,13683124,13802289,100.871,3.234,0.87,91373568,decompressed tar SHA-256 matches canonical tar
+tar-lzip,tar.lz (lzip),A,native,False,video,max,ok,13683124,13650863,99.764,3.062,0.854,142163968,decompressed tar SHA-256 matches canonical tar
+tar-lzo,tar.lzo (lzop),A,native,False,video,default,ok,13683124,13665801,99.873,0.021,0.021,2195456,decompressed tar SHA-256 matches canonical tar
+tar-lzo,tar.lzo (lzop),A,native,False,video,max,ok,13683124,13655118,99.795,0.64,0.021,2539520,decompressed tar SHA-256 matches canonical tar
+tar-rz,tar.rz (rzip),A,native,False,video,default,ok,13683124,13511264,98.744,1.181,0.103,60342272,decompressed tar SHA-256 matches canonical tar
+tar-rz,tar.rz (rzip),A,native,False,video,max,ok,13683124,13510451,98.738,1.311,0.099,92340224,decompressed tar SHA-256 matches canonical tar
+tar-xz,tar.xz (xz/LZMA2),A,native,False,video,default,ok,13683124,13643544,99.711,2.907,0.034,126795776,decompressed tar SHA-256 matches canonical tar
+tar-xz,tar.xz (xz/LZMA2),A,native,False,video,max,ok,13683124,13494892,98.624,2.464,0.033,219987968,decompressed tar SHA-256 matches canonical tar
+tar-z,"tar.Z (compress, LZW 1984)",A,native,False,video,default,ok,13683124,18447089,134.816,0.285,0.125,1966080,decompressed tar SHA-256 matches canonical tar
+tar-zst,tar.zst (Zstandard),A,native,False,video,default,ok,13683124,13653246,99.782,0.025,0.017,35160064,decompressed tar SHA-256 matches canonical tar
+tar-zst,tar.zst (Zstandard),A,native,False,video,max,ok,13683124,13499403,98.657,0.854,0.018,301580288,decompressed tar SHA-256 matches canonical tar
+wim,"WIM (wimlib, LZX)",A,native,False,video,default,ok,13683124,13647790,99.742,0.058,0.027,17072128,2 files verified against manifest
+wim,"WIM (wimlib, LZX)",A,native,False,video,max,ok,13683124,13648182,99.745,0.057,0.022,17252352,2 files verified against manifest
+xar,xar (macOS eXtensible ARchiver),A,native,False,video,default,ok,13683124,13652880,99.779,0.274,0.029,5292032,2 files verified against manifest
+zip,ZIP (Info-ZIP),A,native,False,video,default,ok,13683124,13651508,99.769,0.257,0.077,1835008,2 files verified against manifest
+zip,ZIP (Info-ZIP),A,native,False,video,max,ok,13683124,13651297,99.767,0.268,0.075,1818624,2 files verified against manifest
+zoo,zoo (1986),B,native,False,video,default,ok,13683124,13691049,100.058,0.759,0.048,1949696,decompressed tar SHA-256 matches canonical tar
+zoo,zoo (1986),B,native,False,video,max,ok,13683124,13688578,100.04,0.587,0.505,1949696,decompressed tar SHA-256 matches canonical tar
+zpaq,zpaq (journaling PAQ-family),A,native,False,video,default,ok,13683124,13590782,99.325,0.142,0.094,36126720,2 files verified against manifest
+zpaq,zpaq (journaling PAQ-family),A,native,False,video,max,ok,13683124,13478421,98.504,41.41,43.291,314867712,2 files verified against manifest

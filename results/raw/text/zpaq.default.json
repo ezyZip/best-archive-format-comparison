@@ -15,20 +15,20 @@
  "extract_cmd": "zpaq x {archive} -to {out_dir} 2>/dev/null",
  "runs": 1,
  "timeout_s": 3600,
- "recorded_at": "2026-07-09T09:34:16+00:00",
+ "recorded_at": "2026-07-09T12:17:40+00:00",
  "input_bytes": 11559589,
  "status": "ok",
  "archive_bytes": 4229062,
  "ratio_pct": 36.585,
  "compress_s": [
-  0.3815774586983025
+  0.3199780420400202
  ],
  "decompress_s": [
-  1.2276141662150621
+  1.1753229591995478
  ],
- "compress_s_median": 0.382,
- "decompress_s_median": 1.228,
- "compress_rss_bytes": 91914240,
+ "compress_s_median": 0.32,
+ "decompress_s_median": 1.175,
+ "compress_rss_bytes": 91815936,
  "decompress_rss_bytes": 27787264,
  "verify": {
   "method": "tree",

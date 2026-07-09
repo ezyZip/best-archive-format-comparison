@@ -1,0 +1,43 @@
+{
+ "schema_version": 2,
+ "id": "tar-lzip",
+ "name": "tar.lz (lzip)",
+ "tier": "A",
+ "level": "max",
+ "dataset": "video",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "tar",
+ "origin": "brew lzip",
+ "notes": "Default level -6. plzip (parallel implementation of the same format) intentionally excluded: one row per format.",
+ "create_cmd": "lzip -9 -c {tar_file} > {archive}",
+ "extract_cmd": "lzip -dc {archive} > {out_tar}",
+ "runs": 3,
+ "timeout_s": 3600,
+ "recorded_at": "2026-07-09T12:48:54+00:00",
+ "input_bytes": 13683124,
+ "status": "ok",
+ "archive_bytes": 13650863,
+ "ratio_pct": 99.764,
+ "compress_s": [
+  3.119426084216684,
+  3.062085000332445,
+  3.0543613750487566
+ ],
+ "decompress_s": [
+  0.852012540679425,
+  0.8561438331380486,
+  0.8540110420435667
+ ],
+ "compress_s_median": 3.062,
+ "decompress_s_median": 0.854,
+ "compress_rss_bytes": 142163968,
+ "decompress_rss_bytes": 15171584,
+ "verify": {
+  "method": "tar",
+  "detail": "decompressed tar SHA-256 matches canonical tar",
+  "extras_ignored": []
+ },
+ "error": ""
+}

@@ -1,0 +1,43 @@
+{
+ "schema_version": 2,
+ "id": "arj",
+ "name": "ARJ (1991)",
+ "tier": "B",
+ "level": "default",
+ "dataset": "documents",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "directory",
+ "origin": "source build: arj 3.10.22 (Debian orig + patches)",
+ "notes": "Default method -m1; -jm enables maximum-compression mode (the documented dial).",
+ "create_cmd": "arj a -r -i -y {archive} . > /dev/null",
+ "extract_cmd": "arj x -i -y {archive} > /dev/null",
+ "runs": 3,
+ "timeout_s": 1800,
+ "recorded_at": "2026-07-09T12:37:10+00:00",
+ "input_bytes": 15493604,
+ "status": "ok",
+ "archive_bytes": 15401980,
+ "ratio_pct": 99.409,
+ "compress_s": [
+  0.1739449161104858,
+  0.14864916680380702,
+  0.14821687527000904
+ ],
+ "decompress_s": [
+  0.11717670829966664,
+  0.11228312505409122,
+  0.11892041563987732
+ ],
+ "compress_s_median": 0.149,
+ "decompress_s_median": 0.117,
+ "compress_rss_bytes": 2129920,
+ "decompress_rss_bytes": 1966080,
+ "verify": {
+  "method": "tree",
+  "detail": "6 files verified against manifest",
+  "extras_ignored": []
+ },
+ "error": ""
+}

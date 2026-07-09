@@ -13,21 +13,25 @@
  "notes": "Unix compress; 16-bit LZW is both default and maximum. The .Z format of 1984.",
  "create_cmd": "compress -c {tar_file} > {archive}",
  "extract_cmd": "uncompress -c {archive} > {out_tar}",
- "runs": 1,
+ "runs": 3,
  "timeout_s": 900,
- "recorded_at": "2026-07-09T09:34:04+00:00",
+ "recorded_at": "2026-07-09T12:17:08+00:00",
  "input_bytes": 11559589,
  "status": "ok",
  "archive_bytes": 4511529,
  "ratio_pct": 39.028,
  "compress_s": [
-  0.17971795797348022
+  0.1682022912427783,
+  0.16682754084467888,
+  0.17111149989068508
  ],
  "decompress_s": [
-  0.0938555826433003
+  0.0849390416406095,
+  0.08411312522366643,
+  0.08687445893883705
  ],
- "compress_s_median": 0.18,
- "decompress_s_median": 0.094,
+ "compress_s_median": 0.168,
+ "decompress_s_median": 0.085,
  "compress_rss_bytes": 1966080,
  "decompress_rss_bytes": 1966080,
  "verify": {

@@ -13,21 +13,25 @@
  "notes": "Default level -6 (RFC 1952 deflate).",
  "create_cmd": "gzip -c {tar_file} > {archive}",
  "extract_cmd": "gzip -dc {archive} > {out_tar}",
- "runs": 1,
+ "runs": 3,
  "timeout_s": 900,
- "recorded_at": "2026-07-09T09:33:03+00:00",
+ "recorded_at": "2026-07-09T12:15:02+00:00",
  "input_bytes": 11559589,
  "status": "ok",
  "archive_bytes": 4066933,
  "ratio_pct": 35.182,
  "compress_s": [
-  0.4142052922397852
+  0.4056659583002329,
+  0.40060016699135303,
+  0.4026912907138467
  ],
  "decompress_s": [
-  0.039191042073071
+  0.036148750223219395,
+  0.03452933393418789,
+  0.032332582864910364
  ],
- "compress_s_median": 0.414,
- "decompress_s_median": 0.039,
+ "compress_s_median": 0.403,
+ "decompress_s_median": 0.035,
  "compress_rss_bytes": 1949696,
  "decompress_rss_bytes": 1949696,
  "verify": {

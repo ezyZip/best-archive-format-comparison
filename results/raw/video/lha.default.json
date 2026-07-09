@@ -1,0 +1,43 @@
+{
+ "schema_version": 2,
+ "id": "lha",
+ "name": "LHA/LZH (1988, lh5)",
+ "tier": "B",
+ "level": "default",
+ "dataset": "video",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "directory",
+ "origin": "source build: github.com/jca02266/lha",
+ "notes": "Default method lh5 (8 KiB dict); -o7 selects lh7 (64 KiB dict), the format's largest. Extraction verified with the independent lhasa implementation.",
+ "create_cmd": "lha aq {archive} .",
+ "extract_cmd": "lha xq {archive}",
+ "runs": 3,
+ "timeout_s": 1800,
+ "recorded_at": "2026-07-09T12:51:44+00:00",
+ "input_bytes": 13683124,
+ "status": "ok",
+ "archive_bytes": 13667977,
+ "ratio_pct": 99.889,
+ "compress_s": [
+  0.549497707746923,
+  0.5910986252129078,
+  0.5385094173252583
+ ],
+ "decompress_s": [
+  0.3137693330645561,
+  0.31155370781198144,
+  0.3120319591835141
+ ],
+ "compress_s_median": 0.549,
+ "decompress_s_median": 0.312,
+ "compress_rss_bytes": 2211840,
+ "decompress_rss_bytes": 1654784,
+ "verify": {
+  "method": "tree",
+  "detail": "2 files verified against manifest",
+  "extras_ignored": []
+ },
+ "error": ""
+}

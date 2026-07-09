@@ -1,0 +1,43 @@
+{
+ "schema_version": 2,
+ "id": "wim",
+ "name": "WIM (wimlib, LZX)",
+ "tier": "A",
+ "level": "default",
+ "dataset": "documents",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "directory",
+ "origin": "brew wimlib",
+ "notes": "Default LZX at wimlib's default level (50); LZX:100 is the documented maximum of the same method.",
+ "create_cmd": "wimlib-imagex capture . {archive} CORPUS --quiet",
+ "extract_cmd": "wimlib-imagex apply {archive} 1 . --quiet",
+ "runs": 3,
+ "timeout_s": 900,
+ "recorded_at": "2026-07-09T12:36:52+00:00",
+ "input_bytes": 15493604,
+ "status": "ok",
+ "archive_bytes": 15400182,
+ "ratio_pct": 99.397,
+ "compress_s": [
+  0.07034433307126164,
+  0.06479208311066031,
+  0.05921804206445813
+ ],
+ "decompress_s": [
+  0.04840770782902837,
+  0.04178791679441929,
+  0.040504958014935255
+ ],
+ "compress_s_median": 0.065,
+ "decompress_s_median": 0.042,
+ "compress_rss_bytes": 17399808,
+ "decompress_rss_bytes": 1916928,
+ "verify": {
+  "method": "tree",
+  "detail": "6 files verified against manifest",
+  "extras_ignored": []
+ },
+ "error": ""
+}

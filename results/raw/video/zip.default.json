@@ -1,0 +1,43 @@
+{
+ "schema_version": 2,
+ "id": "zip",
+ "name": "ZIP (Info-ZIP)",
+ "tier": "A",
+ "level": "default",
+ "dataset": "video",
+ "engine": "native",
+ "emulated": false,
+ "appendix": false,
+ "input_mode": "directory",
+ "origin": "macOS bundled (Info-ZIP)",
+ "notes": "Default level is -6 (deflate).",
+ "create_cmd": "zip -q -r {archive} .",
+ "extract_cmd": "unzip -q {archive} -d {out_dir}",
+ "runs": 3,
+ "timeout_s": 900,
+ "recorded_at": "2026-07-09T12:46:41+00:00",
+ "input_bytes": 13683124,
+ "status": "ok",
+ "archive_bytes": 13651508,
+ "ratio_pct": 99.769,
+ "compress_s": [
+  0.26017133379355073,
+  0.2572315828874707,
+  0.2526331660337746
+ ],
+ "decompress_s": [
+  0.07935058418661356,
+  0.07747787516564131,
+  0.07572004199028015
+ ],
+ "compress_s_median": 0.257,
+ "decompress_s_median": 0.077,
+ "compress_rss_bytes": 1835008,
+ "decompress_rss_bytes": 2605056,
+ "verify": {
+  "method": "tree",
+  "detail": "2 files verified against manifest",
+  "extras_ignored": []
+ },
+ "error": ""
+}
