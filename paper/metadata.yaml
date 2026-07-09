@@ -1,0 +1,40 @@
+---
+title: |
+  The Ultimate Archive Format Comparison: A Reproducible Benchmark of
+  Forty-Two Compression Formats Spanning Four Decades
+author:
+  - name: ezyZip Research
+    affiliation: ezyzip.com
+date: 2026-07-09
+abstract: |
+  Casual computer users face a bewildering choice of archive formats, from the
+  ubiquitous ZIP to a long tail of modern, vintage, and obscure alternatives.
+  We present the most comprehensive practical comparison to date: a single,
+  fully reproducible benchmark of **42 archive and compression formats**,
+  evaluated on a realistic 55 MB corpus of text, office documents, images, and
+  video that mirrors a typical user's folder. Formats range from the 1984 Unix
+  `compress` (.Z) and the 1985 BBS-era ARC through today's Zstandard, Brotli,
+  and the context-mixing paq8px, and include macOS-native (Apple Archive,
+  compressed DMG), filesystem/imaging (SquashFS, WIM), and formats we resurrect
+  under emulation, including PKZIP 2.04g (1993) run under DOSBox. Every tool is
+  exercised at its default and maximum compression settings; every archive is
+  round-trip verified by SHA-256 against the original bytes; and all raw results
+  and inputs are committed so any reader can reproduce the study with a single
+  command. We report size, speed, and memory per content category, chart the
+  size/speed Pareto frontier, and translate the findings into concrete guidance
+  for everyday users. We also document an empirical format-longevity result: some
+  Windows-only archivers can no longer be run to completion on a modern Apple
+  Silicon Mac even under emulation.
+keywords:
+  - data compression
+  - archive formats
+  - benchmark
+  - reproducibility
+  - file formats
+geometry: margin=1in
+fontsize: 11pt
+linkcolor: blue
+urlcolor: blue
+link-citations: true
+numbersections: true
+---
