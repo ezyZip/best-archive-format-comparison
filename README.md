@@ -104,3 +104,79 @@ the median of 3 runs (1 for very slow tools), captured sequentially on an
 unloaded machine. Tools running under Wine/DOSBox emulation are flagged: their
 archive **sizes** are fully comparable; their timings are footnoted or
 excluded. See the paper's Methodology section for full detail.
+
+## Full results: every format, ranked best to worst
+
+The complete ranking on the full 55.07 MB corpus. Ratio = archive size ÷ input
+size (lower is better); Compress/Decompress are wall-times in seconds. Rows
+marked (emu) ran under emulation (Wine/DOSBox); their **sizes** are comparable
+but their **timings are excluded** (shown as —). Copied from
+[`results/tables/results.md`](results/tables/results.md), which also has the
+per-category rankings (text, documents, images, video) and the list of
+attempted-but-not-completed formats (FreeArc, UHARC, shar).
+
+| Rank | Format | Level | Size | Ratio | Compress | Decompress | Notes |
+|---:|---|---|---:|---:|---:|---:|---|
+| 1 | zpaq (journaling PAQ-family) | max | 30.90 MB | 56.11% | 144.4 | 149.9 |  |
+| 2 | tar.rz (rzip) | max | 32.95 MB | 59.82% | 4.65 | 0.97 |  |
+| 3 | tar.rz (rzip) | default | 32.95 MB | 59.83% | 3.64 | 0.99 |  |
+| 4 | 7z (7-Zip, LZMA2) | max | 33.02 MB | 59.96% | 4.43 | 0.43 |  |
+| 5 | tar.xz (xz/LZMA2) | max | 33.03 MB | 59.98% | 13.5 | 0.60 |  |
+| 6 | 7z (7-Zip, LZMA2) | default | 33.03 MB | 59.98% | 4.13 | 0.42 |  |
+| 7 | tar.lz (lzip) | max | 33.21 MB | 60.31% | 16.7 | 2.28 |  |
+| 8 | tar.lrz (lrzip) | max | 33.27 MB | 60.41% | 3.13 | 0.60 |  |
+| 9 | tar.lrz (lrzip) | default | 33.27 MB | 60.42% | 3.05 | 0.60 |  |
+| 10 | tar.zst (Zstandard) | max | 33.78 MB | 61.33% | 6.82 | 0.05 |  |
+| 11 | tar.br (Brotli) | default | 35.80 MB | 65.00% | 84.0 | 0.23 |  |
+| 12 | tar.bz3 (bzip3) | max | 36.74 MB | 66.72% | 7.46 | 6.87 |  |
+| 13 | tar.bz3 (bzip3) | default | 38.24 MB | 69.43% | 7.16 | 5.79 |  |
+| 14 | zpaq (journaling PAQ-family) | default | 39.90 MB | 72.46% | 0.72 | 1.84 |  |
+| 15 | tar.xz (xz/LZMA2) | default | 40.21 MB | 73.02% | 6.73 | 0.35 |  |
+| 16 | tar.lz (lzip) | default | 40.45 MB | 73.46% | 15.0 | 2.73 |  |
+| 17 | RAR 4 (legacy format) | max | 42.38 MB | 76.96% | 0.90 | 0.41 |  |
+| 18 | RAR 4 (legacy format) | default | 42.43 MB | 77.05% | 0.81 | 0.40 |  |
+| 19 | tar.bz2 (bzip2) | default | 42.92 MB | 77.93% | 3.84 | 1.76 |  |
+| 20 | RAR 5 (WinRAR/rar) | max | 43.01 MB | 78.09% | 1.02 | 0.20 |  |
+| 21 | RAR 5 (WinRAR/rar) | default | 43.08 MB | 78.22% | 0.81 | 0.21 |  |
+| 22 | DMG (ULMO, lzma-compressed image) | default | 43.97 MB | 79.83% | 11.1 | 0.84 |  |
+| 23 | tar.gz (zopfli, exhaustive deflate) | default | 44.56 MB | 80.91% | 59.7 | 0.13 |  |
+| 24 | LHA/LZH (1988, lh5) | max | 44.82 MB | 81.39% | 3.87 | 0.89 |  |
+| 25 | ZIP (PKZIP 2.04g, 1993) (emu) | max | 44.97 MB | 81.66% | — | — | emulated (size only) |
+| 26 | WIM (wimlib, LZX) | max | 45.04 MB | 81.78% | 0.40 | 0.14 |  |
+| 27 | WIM (wimlib, LZX) | default | 45.06 MB | 81.83% | 0.29 | 0.15 |  |
+| 28 | ZIP (PKZIP 2.04g, 1993) (emu) | default | 45.07 MB | 81.84% | — | — | emulated (size only) |
+| 29 | ZIP (Info-ZIP) | max | 45.09 MB | 81.87% | 1.50 | 0.32 |  |
+| 30 | dar (Disk ARchive) | default | 45.11 MB | 81.92% | 1.73 | 0.30 |  |
+| 31 | xar (macOS eXtensible ARchiver) | default | 45.11 MB | 81.92% | 1.53 | 0.12 |  |
+| 32 | ZIP (Info-ZIP) | default | 45.12 MB | 81.92% | 1.35 | 0.33 |  |
+| 33 | tar.gz (gzip) | max | 45.12 MB | 81.92% | 1.50 | 0.10 |  |
+| 34 | tar.gz (gzip) | default | 45.14 MB | 81.97% | 1.34 | 0.09 |  |
+| 35 | ARJ (1991) | max | 45.20 MB | 82.07% | 1.09 | 0.63 |  |
+| 36 | ARJ (1991) | default | 45.20 MB | 82.08% | 1.05 | 0.65 |  |
+| 37 | SquashFS (mksquashfs) | default | 45.25 MB | 82.16% | 0.20 | 0.04 |  |
+| 38 | tar.zst (Zstandard) | default | 45.40 MB | 82.44% | 0.08 | 0.05 |  |
+| 39 | Apple Archive (.aar, lzfse) | default | 45.46 MB | 82.54% | 0.09 | 0.06 |  |
+| 40 | LHA/LZH (1988, lh5) | default | 45.53 MB | 82.67% | 2.29 | 1.04 |  |
+| 41 | zoo (1986) | max | 45.62 MB | 82.83% | 2.83 | 1.83 |  |
+| 42 | CAB (gcab, MSZIP) | default | 45.68 MB | 82.95% | 0.96 | 0.16 |  |
+| 43 | HA (1993, PPM-family) | default | 45.74 MB | 83.06% | 4.22 | 3.77 |  |
+| 44 | freeze (1993) | default | 45.75 MB | 83.07% | 4.12 | 3.05 |  |
+| 45 | DMG (UDZO, zlib-compressed image) | max | 46.09 MB | 83.69% | 6.07 | 0.32 |  |
+| 46 | tar.lzo (lzop) | max | 46.50 MB | 84.44% | 3.75 | 0.07 |  |
+| 47 | tar.lz4 (LZ4) | max | 46.51 MB | 84.45% | 0.39 | 0.05 |  |
+| 48 | DMG (UDZO, zlib-compressed image) | default | 46.79 MB | 84.96% | 6.08 | 0.35 |  |
+| 49 | tar.lz4 (LZ4) | default | 49.50 MB | 89.88% | 0.03 | 0.03 |  |
+| 50 | tar.lzo (lzop) | default | 49.53 MB | 89.94% | 0.09 | 0.08 |  |
+| 51 | cpio (appendix: store-only) | default | 55.07 MB | 100.00% | 0.26 | 0.06 |  |
+| 52 | tar (uncompressed, baseline) | default | 55.09 MB | 100.03% | 0.06 | 0.05 |  |
+| 53 | ar (appendix: unix archiver, store-only) | default | 55.10 MB | 100.05% | 0.17 | 0.08 |  |
+| 54 | pax (appendix: POSIX archiver) | default | 55.10 MB | 100.05% | 0.10 | 0.10 |  |
+| 55 | zoo (1986) | default | 55.10 MB | 100.05% | 2.65 | 0.18 |  |
+| 56 | ISO 9660 (mkisofs, store-only) | default | 55.46 MB | 100.70% | 0.03 | 0.03 |  |
+| 57 | tar.Z (compress, LZW 1984) | default | 58.36 MB | 105.97% | 1.05 | 0.47 |  |
+| 58 | ARC (SEA, 1985) | default | 62.29 MB | 113.11% | 1.33 | 0.26 |  |
+
+paq8px does not appear in this table because it was measured on the text
+category only (17.76%, the smallest result in the study); the full mixed corpus
+exceeds its practical runtime. See the per-category tables in
+[`results/tables/results.md`](results/tables/results.md) for its entry.
