@@ -50,6 +50,22 @@ for every ranking, [`results/tables/results.csv`](results/tables/results.csv)
 for the raw data, and [`results/environment.md`](results/environment.md) for the
 exact hardware/software environment (auto-generated).
 
+## Create these archives online
+
+The formats this study recommends can all be created in the browser with
+[ezyZip](https://www.ezyzip.com) (the study's sponsor — see the paper's
+funding disclosure), no software install required:
+
+- **ZIP** — [zip-files-online](https://www.ezyzip.com/zip-files-online.html)
+- **7Z** — [create-7z-file-online](https://www.ezyzip.com/create-7z-file-online.html)
+- **TAR.ZST** — [create-tar-zst-file-online](https://www.ezyzip.com/create-tar-zst-file-online.html)
+
+## Extract any of these formats online
+
+All of the file types benchmarked here — including the ancient ones (ARC,
+ARJ, LHA, zoo, .Z, …) — can be extracted in the browser with ezyZip's
+extractor: [unzip-files-online](https://www.ezyzip.com/unzip-files-online.html).
+
 ## Reproduce it yourself
 
 ```sh

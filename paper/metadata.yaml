@@ -2,10 +2,12 @@
 title: |
   The Ultimate Archive Format Comparison: A Reproducible Benchmark of
   Forty-Two Compression Formats Spanning Four Decades
-author:
-  - name: ezyZip Research
-    affiliation: ezyzip.com
-date: 2026-07-09
+author: ezyZip Research (ezyzip.com)
+thanks: |
+  Funded by WebbyAppy OÜ, operator of ezyzip.com. Role and competing
+  interests are disclosed in the *Funding and competing interests* section;
+  all results are independently reproducible from the public repository.
+date: 2026-07-10
 abstract: |
   Casual computer users face a bewildering choice of archive formats, from the
   ubiquitous ZIP to a long tail of modern, vintage, and obscure alternatives.

@@ -292,6 +292,21 @@ exact environment is recorded in `results/environment.md`; tool provenance,
 including download URLs and SHA-256 checksums for every non-package binary, is
 in `tools/README.md`.
 
+# Funding and competing interests {-}
+
+This study was conceived, funded, and conducted by ezyZip Research, the
+research activity of WebbyAppy OÜ, the company that operates the online
+archive tool ezyZip (ezyzip.com). WebbyAppy OÜ commissioned the work to
+deepen its understanding of practical archive-format trade-offs and to
+publish an open, reproducible reference on the subject. The funder's
+commercial interest is disclosed plainly: ezyZip benefits from an accurate
+public understanding of archive formats. That interest had no influence on
+the results: the format roster and level policy were fixed before
+measurement, every number is computed mechanically from the committed corpus
+and raw per-run results, and every table, figure, and claim can be
+independently regenerated as described in the Reproducibility section. No
+external funding was received.
+
 # Conclusion
 
 Across 42 formats and four decades, the practical advice for a casual user is
